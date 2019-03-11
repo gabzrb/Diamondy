@@ -10,14 +10,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_11_120348) do
+ActiveRecord::Schema.define(version: 2019_03_11_130027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "contacts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_contacts_on_product_id"
+    t.index ["user_id"], name: "index_contacts_on_user_id"
+  end
+
+  create_table "jewels", force: :cascade do |t|
+    t.string "category"
+    t.string "state"
+    t.string "brand"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_jewels_on_product_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "price"
+    t.text "description"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_products_on_user_id"
+  end
+
+  create_table "special_requests", force: :cascade do |t|
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_special_requests_on_product_id"
+  end
+
+  create_table "stones", force: :cascade do |t|
+    t.string "category"
+    t.integer "size"
+    t.float "weight"
+    t.string "color"
+    t.string "purity"
+    t.string "certificate"
+    t.string "photo"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_stones_on_product_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
+    t.string "photo"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -27,4 +80,23 @@ ActiveRecord::Schema.define(version: 2019_03_11_120348) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "watches", force: :cascade do |t|
+    t.string "state"
+    t.string "brand"
+    t.string "model"
+    t.string "year"
+    t.string "material"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_watches_on_product_id"
+  end
+
+  add_foreign_key "contacts", "products"
+  add_foreign_key "contacts", "users"
+  add_foreign_key "jewels", "products"
+  add_foreign_key "products", "users"
+  add_foreign_key "special_requests", "products"
+  add_foreign_key "stones", "products"
+  add_foreign_key "watches", "products"
 end

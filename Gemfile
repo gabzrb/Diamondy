@@ -9,6 +9,7 @@ gem 'sqlite3', '~> 1.3.6'
 gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
+gem 'money-rails', '~>1.12'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'

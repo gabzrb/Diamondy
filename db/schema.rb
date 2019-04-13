@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_11_130027) do
+ActiveRecord::Schema.define(version: 2019_04_13_120152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_03_11_130027) do
     t.bigint "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "type"
     t.index ["product_id"], name: "index_contacts_on_product_id"
     t.index ["user_id"], name: "index_contacts_on_user_id"
   end
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 2019_03_11_130027) do
     t.bigint "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "type"
     t.index ["product_id"], name: "index_special_requests_on_product_id"
   end
 
@@ -76,6 +78,11 @@ ActiveRecord::Schema.define(version: 2019_03_11_130027) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "company_name"
+    t.string "siret_no"
+    t.text "services_description"
+    t.boolean "newsletter"
+    t.boolean "offers"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

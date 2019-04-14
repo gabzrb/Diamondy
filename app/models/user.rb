@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :products
   has_many :contacts
+  mount_uploader :photo, PhotoUploader
 end

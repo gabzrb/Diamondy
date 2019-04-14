@@ -1,0 +1,9 @@
+<%= simple_form_for(@watch, as: :watch, method: :post, url: product_watchs_path(@product)) do |f| %>
+  <%= f.input :state %>
+  <%= f.input :brand %>
+  <%= f.input :model %>
+  <%= f.input :year %>
+  <%= f.input :material %>
+  <%= f.button :submit %>
+<% end %>
+

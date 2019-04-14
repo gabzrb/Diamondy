@@ -2,7 +2,7 @@
 <p>Find me in app/views/products/new.html.erb</p>
 
 <%= simple_form_for @product do |f| %>
-  <%= f.input :price %>
+  <%= f.input :price_cents %>
   <%= f.input :description %>
   <%= select_tag "product_type", options_for_select([ "jewel", "stone", "watch", "special_request" ], "jewel") %>
   <%= f.button :submit %>

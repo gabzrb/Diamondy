@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :products do
     resources :jewels
     resources :special_requests
-    resources :stone
-    resources :watch
+    resources :stones
+    resources :watchs
   end
 end

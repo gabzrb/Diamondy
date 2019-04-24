@@ -9,6 +9,7 @@ gem 'sqlite3', '~> 1.3.6'
 gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
+gem 'money-rails'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
@@ -16,6 +17,9 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'

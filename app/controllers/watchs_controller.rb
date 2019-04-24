@@ -11,7 +11,7 @@ class WatchsController < ApplicationController
 
   def create
     @watch = Watch.new(watch_params)
-    @watch.product = @product
+    @watch.product_id = @product.id
     if @watch.save
       redirect_to product_path(@product)
     else

@@ -7,7 +7,6 @@ class CreateStones < ActiveRecord::Migration[5.2]
       t.string :color
       t.string :purity
       t.string :certificate
-      t.string :photo
       t.references :product, foreign_key: true
 
       t.timestamps

@@ -1,2 +1,37 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="banner" style="background-image:
+ url(<%= image_path 'banniere.jpg' %>);">
+ <div class="banner-content">
+    <h5> REJOIGNEZ LA 1ERE MARKETPLACE DEDIEE AUX PROFESSIONNELS</h5>
+    <h5> DIAMANT - BIJOUX - MONTRES ET PASSER VOTRE ANNONCE GRATUITEMENT. </h5>
+      </div>
+  <div class="banner-btn-center">
+   <%= link_to 'ANNONCEZ GRATUITEMENT',products_path, class: "btn btn-cta" %>
+   </div>
+</div>
+
+<div class="container text-center">
+
+ <%= link_to 'PASSER UNE ANNONCE',products_path, class: "btn btn-home" %>
+  <%= link_to 'CONSULTER LES ANNONCES',products_path, class: "btn btn-home" %>
+   <%= link_to 'PRODUITS DISPONIBLES',products_path, class: "btn btn-home" %>
+
+<div class="paragraphe">
+  <h5> GRATUITEMENT, SIMPLEMENT ET EN QUELQUES CLICS !</h5>
+  <p>Trouver les bijoux, montres, diamants que vous recherchez auprés de la plus grande communauté <br>de bijoutiers,joaillers en France </p>
+  <p> <strong>Quelqu'un, quelque part à la perle rare ! Voyez par vous même. </strong></p>
+
+  <video width="320" height="240" controls>
+  <source src="/assets/video/video.mp4" type="video/mp4" >
+</video>
+
+
+
+</div>
+
+
+
+</div>
+
+
+

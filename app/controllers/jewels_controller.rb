@@ -2,6 +2,10 @@ class JewelsController < ApplicationController
   before_action :set_product, only: [:new, :create]
   before_action :set_jewel, only: [:show]
 
+  def index
+    @jewels = Jewel.all
+  end
+
   def new
     @jewel = Jewel.new
   end

@@ -2,6 +2,10 @@ class SpecialRequestsController < ApplicationController
   before_action :set_product, only: [:new, :create]
   before_action :set_special_request, only: [:show]
 
+  def index
+    @special_requests = SpecialRequest.all
+  end
+
   def new
     @special_request = SpecialRequest.new
   end

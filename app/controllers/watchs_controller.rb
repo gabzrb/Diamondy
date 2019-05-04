@@ -2,6 +2,10 @@ class WatchsController < ApplicationController
   before_action :set_product, only: [:new, :create]
   before_action :set_watch, only: [:show]
 
+  def index
+    @watchs = Watch.all
+  end
+
   def new
     @watch = Watch.new
   end

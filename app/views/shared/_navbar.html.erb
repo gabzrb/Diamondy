@@ -10,8 +10,8 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
   <%= link_to 'Acceuil', root_path, class: " navbar-wagon-item navbar-wagon-link" %>
-  <%= link_to 'Passer une annonce', products_path, class: " navbar-wagon-item navbar-wagon-link" %>
-  <%= link_to 'Consulter une annonce', products_path, class: " navbar-wagon-item navbar-wagon-link" %>
+  <%= link_to 'Passer une annonce', new_annonce_path, class: " navbar-wagon-item navbar-wagon-link" %>
+  <%= link_to 'Consulter une annonce', new_annonce_path, class: " navbar-wagon-item navbar-wagon-link" %>
   <%= link_to 'Produits disponibles', products_path, class: " navbar-wagon-item navbar-wagon-link" %>
   <%= link_to 'Contactez-nous', root_path, class: " navbar-wagon-item navbar-wagon-link" %>
   <% unless user_signed_in?

@@ -1,0 +1,11 @@
+<% if user_signed_in? %>
+  <%= simple_form_for(@annonce) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :description %>
+ <%= f.input :category %>
+  <%= f.button :submit %>
+<% end %>
+<% end %>
+
+

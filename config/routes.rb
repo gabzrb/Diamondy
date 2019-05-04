@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :contacts
+  resources :annonces
 
   resources :products do
     resources :jewels

@@ -4,6 +4,14 @@
 <%= simple_form_for @product do |f| %>
   <%= f.input :price %>
   <%= f.input :description %>
-  <%= select_tag "product_type", options_for_select([ "jewel", "stone", "watch", "special_request" ], "jewel") %>
+    <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+    <%= f.input :photo1 %>
+  <%= f.input :photo_cache, as: :hidden %>
+    <%= f.input :photo2 %>
+  <%= f.input :photo_cache, as: :hidden %>
+    <%= f.input :photo3 %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.input :element, collection: ["jewel", "stone", "watch", "special_request"] %>
   <%= f.button :submit %>
 <% end %>

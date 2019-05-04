@@ -16,8 +16,9 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.user = current_user
-    if @product.save
-      check_product_redirection(params[:product_type], @product)
+    @product.element = params[:product][:element]
+    if @product.save!
+      check_product_redirection(@product)
     else
       render :new
     end
@@ -34,8 +35,8 @@ class ProductsController < ApplicationController
 
   private
 
-  def check_product_redirection(params, product)
-    redirect_to "/products/#{product.id}/#{params}s/new"
+  def check_product_redirection(product)
+    redirect_to "/products/#{product.id}/#{product.element}s/new"
   end
 
   def set_product
@@ -44,6 +45,6 @@ class ProductsController < ApplicationController
 
   def product_params
     #TODO
-    params.require(:product).permit(:price, :description)
+    params.require(:product).permit(:price, :description, :photo, :photo1, :photo2, :photo3)
   end
 end

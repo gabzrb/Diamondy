@@ -1,2 +1,8 @@
-New Jewel
+<%= simple_form_for(@jewel, as: :jewel, method: :post, url: product_watchs_path(@product)) do |f| %>
+  <%= f.error_notification %>
 
+  <%= f.input :category %>
+  <%= f.input :state %>
+  <%= f.input :brand %>
+  <%= f.button :submit %>
+<% end %>

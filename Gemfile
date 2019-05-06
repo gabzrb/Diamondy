@@ -5,7 +5,6 @@ gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
-gem 'sqlite3', '~> 1.3.6'
 gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'

@@ -6,7 +6,7 @@
     <div class="modal-content form-elegant">
       <!--Header-->
       <div class="modal-header text-center">
-        <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Sign in</strong></h3>
+        <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Se connecter</strong></h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -14,43 +14,30 @@
       <!--Body-->
       <div class="modal-body mx-4">
         <!--Body-->
-       <%= simple_form_for(@instance_user, url: registration_path(@instance_user)) do |f| %>
+       <%= simple_form_for(@instance_user, url: session_path(@instance_user)) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
+ <div class="form-inputs">
     <%= f.input :email,
-                required: true,
+                required: false,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
+                input_html: { autocomplete: "email" } %>
     <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+                required: false,
+                input_html: { autocomplete: "current-password" } %>
+
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit,  "Connexion",class: "btn-inscription"%>
   </div>
 <% end %>
-        <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign in
-          with:</p>
 
-        <div class="row my-3 d-flex justify-content-center">
-          <!--Facebook-->
-          <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fab fa-facebook-f text-center"></i></button>
-          <!--Twitter-->
-          <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fab fa-twitter"></i></button>
-          <!--Google +-->
-          <button type="button" class="btn btn-white btn-rounded z-depth-1a"><i class="fab fa-google-plus-g"></i></button>
-        </div>
+
       </div>
       <!--Footer-->
       <div class="modal-footer mx-5 pt-3 mb-1">
-        <p class="font-small grey-text d-flex justify-content-end">Not a member? <a href="#" class="blue-text ml-1">
-            Sign Up</a></p>
+        <p class="font-small grey-text d-flex justify-content-end">Pas encore membre ? <a href="#" class="blue-text ml-1">
+            Inscrivez-vous</a></p>
       </div>
     </div>
     <!--/.Content-->
@@ -59,4 +46,3 @@
 <!-- Modal -->
 
   <a href="" class=" navbar-wagon-item navbar-wagon-link" data-toggle="modal" data-target="#elegantModalForm">Inscription</a>
-

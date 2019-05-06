@@ -48,11 +48,10 @@ ActiveRecord::Schema.define(version: 2019_05_04_121632) do
     t.text "description"
     t.string "element"
     t.string "photo"
+    t.float "price"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "price_cents", default: 0, null: false
-    t.string "price_currency", default: "EUR", null: false
     t.string "photo1"
     t.string "photo2"
     t.string "photo3"

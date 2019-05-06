@@ -2,6 +2,10 @@ class StonesController < ApplicationController
   before_action :set_product, only: [:new, :create]
   before_action :set_stone, only: [:show]
 
+  def index
+    @stones = Stone.all
+  end
+
   def new
     @stone = Stone.new
   end

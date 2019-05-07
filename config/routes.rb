@@ -8,15 +8,15 @@ Rails.application.routes.draw do
   resources :contacts
   resources :annonces
 
-  resources :jewels, only: [:index]
-  resources :special_requests, only: [:index]
-  resources :stones, only: [:index]
-  resources :watchs, only: [:index]
+  resources :jewels, only: [:index, :show]
+  resources :special_requests, only: [:index, :show]
+  resources :stones, only: [:index, :show]
+  resources :watchs, only: [:index, :show]
 
   resources :products do
-    resources :jewels, only: [ :new, :create, :show, :edit, :update]
-    resources :special_requests, only: [ :new, :create, :show, :edit, :update]
-    resources :stones, only: [ :new, :create, :show, :edit, :update]
-    resources :watchs, only: [ :new, :create, :show, :edit, :update]
+    resources :jewels, only: [ :new, :create, :edit, :update]
+    resources :special_requests, only: [ :new, :create, :edit, :update]
+    resources :stones, only: [ :new, :create, :edit, :update]
+    resources :watchs, only: [ :new, :create, :edit, :update]
   end
 end

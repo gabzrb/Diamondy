@@ -17,7 +17,7 @@ class StonesController < ApplicationController
     @stone = Stone.new(stone_params)
     @stone.product_id = @product.id
     if @stone.save!
-      redirect_to product_path(@product)
+      redirect_to stone_path(@stone)
     else
       render :new
     end

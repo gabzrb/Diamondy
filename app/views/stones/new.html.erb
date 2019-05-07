@@ -1,4 +1,4 @@
-<%= simple_form_for(@stone, as: :stone, method: :post, url: product_watchs_path(@product)) do |f| %>
+<%= simple_form_for(@stone, as: :stone, method: :post, url: product_stones_path(@product)) do |f| %>
   <%= f.error_notification %>
 
   <%= f.input :size %>
@@ -8,4 +8,6 @@
   <%= f.input :purity %>
   <%= f.input :certificate %>
   <%= f.button :submit %>
+
+
 <% end %>

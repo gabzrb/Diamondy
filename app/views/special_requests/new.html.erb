@@ -1,4 +1,4 @@
-  <%= simple_form_for(@special_request, as: :special_request, method: :post, url: product_watchs_path(@product)) do |f| %>
+  <%= simple_form_for(@special_request, as: :special_request, method: :post, url: product_special_requests_path(@product)) do |f| %>
   <%= f.error_notification %>
 
   <%= f.input :description %>

@@ -14,10 +14,10 @@ class JewelsController < ApplicationController
   end
 
   def create
-    @jewel = Jewels.new(jewel_params)
-    @jewels.product_id = @product.id
+    @jewel = Jewel.new(jewel_params)
+    @jewel.product_id = @product.id
     if @jewel.save!
-      redirect_to product_path(@product)
+      redirect_to jewel_path(@jewel)
     else
       render :new
     end

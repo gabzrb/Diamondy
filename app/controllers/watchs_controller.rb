@@ -17,7 +17,7 @@ class WatchsController < ApplicationController
     @watch = Watch.new(watch_params)
     @watch.product_id = @product.id
     if @watch.save!
-      redirect_to product_path(@product)
+      redirect_to watch_path(@watch)
     else
       render :new
     end

@@ -2,10 +2,31 @@
   <%= simple_form_for(@annonce) do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :description %>
- <%= f.input :category %>
-  <%= f.button :submit %>
-<% end %>
-<% end %>
 
 
+<div class="banner-annonce" style="background-image:
+ url(<%= image_path 'deal.png' %>);">
+ <div class="black-card">
+  <div class="opacity">
+  <div class="col col-xs-13 col-md-5">
+  <%= f.input :category, collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false  %>
+   </div>
+
+  <div class="col col-xs-13 col-md-12">
+ <%= f.input :description, as: :text, :input_html => { :rows => 7, :cols => 2 }, label: false %>
+ </div>
+
+
+ <div class="banner-btn-center">
+  <%= f.button :submit, "AJOUTER A MA DEMANDE",class: "btn-annonce"%>
+<% end %>
+<% end %>
+  </div>
+ </div>
+</div>
+
+</div>
+ <% @annonces.each do |a| %>
+ <%= a.category %>
+ <%= a.description %>
+ <% end %>

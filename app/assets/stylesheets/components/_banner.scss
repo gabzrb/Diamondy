@@ -14,6 +14,20 @@
 
 
 
+.banner-annonce {
+
+  color: #f6f0e4;
+    height: 51vh;
+    background-size: cover !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+
 .banner-content {
   padding-left: 50px;
 

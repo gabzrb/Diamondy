@@ -9,6 +9,9 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <% if current_user.admin %>
+  <%= link_to 'Administrateur', admin_path, class: " navbar-wagon-item navbar-wagon-link" %>
+    <% end %>
   <%= link_to 'Acceuil', root_path, class: " navbar-wagon-item navbar-wagon-link" %>
   <%= link_to 'Passer une annonce', new_annonce_path, class: " navbar-wagon-item navbar-wagon-link" %>
   <%= link_to 'Consulter une annonce', new_annonce_path, class: " navbar-wagon-item navbar-wagon-link" %>

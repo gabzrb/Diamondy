@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'pages#dashboard', as: :dashboard
   get 'contact', to: 'pages#contact', as: :contact
 
+  get 'admin', to: 'pages#admin', as: :admin
+
   resources :contacts
   resources :annonces
 

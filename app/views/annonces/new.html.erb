@@ -26,8 +26,4 @@
 </div>
 
 </div>
- <% @annonces.each do |a| %>
- <%= a.category %>
- <%= a.description %>
- <% end %>
     <%= render 'shared/list_annonces',annonces: @annonces %>

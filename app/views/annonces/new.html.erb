@@ -36,19 +36,5 @@
 </div>
 
 </div>
+    <%= render 'shared/list_annonces',annonces: @annonces %>
 
-
-<div class="answercenter">
-
-<div class="card" style="width: 60rem;">
-  <% @annonces.each do |a| %>
-
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"> <%= a.category %>
- <%= a.description %>
- <% end %></li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>
-</div>
-</div>

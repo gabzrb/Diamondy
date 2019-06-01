@@ -4,31 +4,33 @@
 
 
 
-<div class="banner-annonce" style="background-image:
+<div class="banner" style="background-image:
  url(<%= image_path 'deal.png' %>);">
- <div class="black-card">
-  <div class="row">
+   <div class="card black-card ">
+      <div class="form-row">
+          <div class="col-7">
+           <%= f.input :category, collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false , placeholder: "Produit" , required: true %>
+          </div>
+          <div class="col">
+           <%= f.input :category, collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false , placeholder: "Type 1" %>
+          </div>
+          <div class="col">
 
-  <div class="col col-xs-12 col-md-5">
-  <%= f.input :category, collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false , placeholder: "Produit" %>
-   </div>
-
-   <div class="col col-xs-12 col-md-4 tabsmargin">
-  <%= f.input :category, collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false , placeholder: "Type 1" %>
-   </div>
-
-   <div class="col col-xs-12 col-md-3 tabsmargin">
-  <%= f.input :category, name: "type", collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false , placeholder: "Type 2" %>
-   </div>
+        <%= f.input :category, name: "type", collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false , placeholder: "Type 2" %>
+          </div>
+      </div>
 
 
-  <div class="col col-xs-12 col-md-12">
- <%= f.input :description, as: :text, :input_html => { :rows => 7, :cols => 2 }, label: false %>
+   <%= f.input :description, as: :text, :input_html => { :rows => 7, :cols => 2 }, label: false %>
+
+
+  <%= f.button :submit, "AJOUTER A MA DEMANDE",class: "btn btn-block  btn-annonce"%>
  </div>
 
+ </div>
 
  <div class="banner-btn-center">
-  <%= f.button :submit, "AJOUTER A MA DEMANDE",class: "btn-annonce"%>
+
 <% end %>
 <% end %>
   </div>

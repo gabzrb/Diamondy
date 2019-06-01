@@ -1,7 +1,6 @@
 
 .banner {
   color: #f6f0e4;
-    height: 40vh;
     background-size: cover !important;
     display: flex;
     flex-direction: column;
@@ -30,6 +29,7 @@
 
 .banner-content {
   padding-left: 50px;
+  margin-top: 70px;
 
 }
 
@@ -44,6 +44,7 @@
     display: flex;
     justify-content: center;
     margin-top: 10px;
+        margin-bottom: 70px;
 
   }
 

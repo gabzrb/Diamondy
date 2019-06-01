@@ -7,12 +7,22 @@
 <div class="banner-annonce" style="background-image:
  url(<%= image_path 'deal.png' %>);">
  <div class="black-card">
-  <div class="opacity">
-  <div class="col col-xs-13 col-md-5">
-  <%= f.input :category, collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false  %>
+  <div class="row">
+
+  <div class="col col-xs-12 col-md-5">
+  <%= f.input :category, collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false , placeholder: "Produit" %>
    </div>
 
-  <div class="col col-xs-13 col-md-12">
+   <div class="col col-xs-12 col-md-4 tabsmargin">
+  <%= f.input :category, collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false , placeholder: "Type 1" %>
+   </div>
+
+   <div class="col col-xs-12 col-md-3 tabsmargin">
+  <%= f.input :category, name: "type", collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false , placeholder: "Type 2" %>
+   </div>
+
+
+  <div class="col col-xs-12 col-md-12">
  <%= f.input :description, as: :text, :input_html => { :rows => 7, :cols => 2 }, label: false %>
  </div>
 
@@ -22,12 +32,9 @@
 <% end %>
 <% end %>
   </div>
- </div>
+  </div>
 </div>
 
 </div>
- <% @annonces.each do |a| %>
- <%= a.category %>
- <%= a.description %>
- <% end %>
     <%= render 'shared/list_annonces',annonces: @annonces %>
+

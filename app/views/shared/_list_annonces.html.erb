@@ -3,7 +3,14 @@
     <div class="col-sm-12 col-md-10">
       <table class="table table-hover">
         <tbody>
-        <% annonces.each do |annonce| %>
+          <%= form_tag new_annonce_path, method: :get do %>
+          <%= select_tag "query_type", options_for_select(["Bijoux","Diamant","Montre", "Demande spéciale"], "Bijoux"),
+          class: "form-control",
+          placeholder: "Type d'annonce"
+          %>
+          <%= button_tag %>
+          <% end %>
+          <% annonces.each do |annonce| %>
           <tr>
             <th scope="row"><%= annonce.created_at.strftime("%d/%m/%Y") %></th>
             <td><%= annonce.category %></td>

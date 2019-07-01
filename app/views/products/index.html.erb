@@ -1,9 +1,14 @@
-<h1>Choisissez votre produit</h1>
 
 
+    <div class="text-center title-margin">
+    <h1>Choisissez votre produit</h1>
+    </div>
 
+<div class="container">
+  <div class="row">
+<div class="col-md-3 col-sm-12 ">
 <div class="cardproduit ">
-  <div class="card-img" style="background-image:url(https://images.unsplash.com/photo-1493847242172-d46053a1f671?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9f91dd5d50f16ba80af53a62d4caf2ce&auto=format&fit=crop&w=500&q=60);">
+  <div class="cardproduit-img" style="background-image:url(https://i.ibb.co/cYPRmcc/diamondproduct.jpg);">
     <div class="overlay">
       <div class="overlay-content">
          <%= link_to "Pierres", stones_path %>
@@ -11,16 +16,19 @@
     </div>
   </div>
 
-  <div class="card-content">
+  <div class="cardproduit-content">
     <a href="#!">
-      <h2>Title</h2>
-      <p>Lorem ipsum dolor sit amet consectetur, lorem ipsum dolor</p>
+      <h2>Pierre</h2>
+      <p>Trouver la pierre de votre choix</p>
     </a>
   </div>
 </div>
+</div>
 
+
+<div class="col-md-3 col-sm-12 ">
 <div class="cardproduit">
-  <div class="card-img" style="background-image:url(https://images.unsplash.com/photo-1491374812364-00028bbe7d2f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a22e4862c36c552e726815949fbcb41a&auto=format&fit=crop&w=500&q=60);">
+  <div class="cardproduit-img" style="background-image:url(https://i.ibb.co/NNZJd2h/serkan-turk-v6jc-Ubxet-L0-unsplash.jpg);">
     <div class="overlay">
       <div class="overlay-content">
       <%= link_to "Bijoux", jewels_path %>
@@ -28,16 +36,19 @@
     </div>
   </div>
 
-  <div class="card-content">
+  <div class="cardproduit-content">
     <a href="#!">
-      <h2>Title</h2>
-      <p>Lorem ipsum dolor sit amet consectetur, lorem ipsum dolor</p>
+      <h2>Bijoux</h2>
+      <p>Trouver le bijoux de votre choix</p>
     </a>
   </div>
 </div>
+</div>
 
+
+<div class="col-md-3 col-sm-12 ">
 <div class="cardproduit">
-  <div class="card-img" style="background-image:url(https://images.unsplash.com/photo-1519176336903-04be58a477d2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=eda05ddcb3154f39fd8ce88fdd44f531&auto=format&fit=crop&w=500&q=60);">
+  <div class="cardproduit-img" style="background-image:url(https://i.ibb.co/hDb2xdp/pixel-bee-u8is-JQ6-Qj-F4-unsplash.jpg);">
     <div class="overlay">
       <div class="overlay-content">
           <%= link_to "Montres", watchs_path %>
@@ -45,19 +56,18 @@
     </div>
   </div>
 
-  <div class="card-content">
+  <div class="cardproduit-content">
     <a href="#!">
-      <h2>Title</h2>
-      <p>Lorem ipsum dolor sit amet consectetur, lorem ipsum dolor</p>
+      <h2>Montres</h2>
+      <p>Trouver la montre qui vous convient</p>
     </a>
   </div>
 </div>
+</div>
 
-
-
-
+<div class="col-md-3 col-sm-12 ">
 <div class="cardproduit">
-  <div class="card-img" style="background-image:url(https://images.unsplash.com/photo-1519176336903-04be58a477d2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=eda05ddcb3154f39fd8ce88fdd44f531&auto=format&fit=crop&w=500&q=60);">
+  <div class="cardproduit-img" style="background-image:url(https://i.ibb.co/fk65335/ines-alvarez-fdez-L-N7-Ba-NLC5-Y-unsplash.jpg);">
     <div class="overlay">
       <div class="overlay-content">
        <%= link_to "Demandes Speciales", special_requests_path %>
@@ -65,12 +75,18 @@
     </div>
   </div>
 
-  <div class="card-content">
+
+  <div class="cardproduit-content">
     <a href="#!">
-      <h2>Title</h2>
-      <p>Lorem ipsum dolor sit amet consectetur, lorem ipsum dolor</p>
+      <h2>Demande Spéciale</h2>
+      <p>Pierre semi-précieuse, Impression 3D ...</p>
     </a>
   </div>
+</div>
+</div>
+
+
+</div>
 </div>
 
 
@@ -78,5 +94,3 @@
 
 
 
-
-<%= link_to "Rajouter un produit", new_product_path %>

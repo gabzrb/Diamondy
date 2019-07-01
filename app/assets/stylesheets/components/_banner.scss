@@ -13,6 +13,10 @@
 
 
 
+.container {
+  margin-top: 15px;
+}
+
 .banner-annonce {
 
   color: #f6f0e4;
@@ -55,3 +59,14 @@
   justify-content: center;
 }
 
+
+
+.productcontent {
+    display: flex;
+    justify-content: center;
+}
+
+
+.title-margin {
+ margin-top: 40px;
+}

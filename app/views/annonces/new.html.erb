@@ -1,41 +1,29 @@
 <% if user_signed_in? %>
-  <%= simple_form_for(@annonce) do |f| %>
-  <%= f.error_notification %>
-
-
-
+<%= simple_form_for(@annonce) do |f| %>
+<%= f.error_notification %>
 <div class="banner" style="background-image:
- url(<%= image_path 'deal.png' %>);">
-   <div class="card black-card ">
-      <div class="form-row">
-          <div class="col-7">
-           <%= f.input :category, collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false , placeholder: "Produit" , required: true %>
-          </div>
-          <div class="col">
-           <%= f.input :category, collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false , placeholder: "Type 1" %>
-          </div>
-          <div class="col">
-
-        <%= f.input :category, name: "type", collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false , placeholder: "Type 2" %>
-          </div>
+  url(<%= image_path 'deal.png' %>);">
+  <div class="card black-card ">
+    <div class="form-row">
+      <div class="col-7">
+        <%= f.input :category, collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false , placeholder: "Produit" , required: true %>
       </div>
-
-   <%= f.input :description, as: :text, :input_html => { :rows => 7, :cols => 2 }, label: false %>
-
-
-  <%= f.button :submit, "AJOUTER A MA DEMANDE",class: "btn btn-block  btn-annonce"%>
- </div>
-
- </div>
-
- <div class="banner-btn-center">
-
-<% end %>
-<% end %>
-  </div>
+      <div class="col">
+        <%= f.input :category, collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false , placeholder: "Type 1" %>
+      </div>
+      <div class="col">
+        <%= f.input :category, name: "type", collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false , placeholder: "Type 2" %>
+      </div>
+    </div>
+    <%= f.input :description, as: :text, :input_html => { :rows => 7, :cols => 2 }, label: false %>
+    <%= f.button :submit, "AJOUTER A MA DEMANDE",class: "btn btn-block  btn-annonce"%>
   </div>
 </div>
-
+<div class="banner-btn-center">
+  <% end %>
+  <% end %>
 </div>
-    <%= render 'shared/list_annonces',annonces: @annonces %>
-
+</div>
+</div>
+</div>
+<%= render 'shared/list_annonces',annonces: @annonces %>

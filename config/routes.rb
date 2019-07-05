@@ -3,11 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get 'dashboard', to: 'pages#dashboard', as: :dashboard
-  get 'contact', to: 'pages#contact', as: :contact
 
   get 'admin', to: 'pages#admin', as: :admin
 
-  resources :contacts
+  resources :contacts, only: [:new, :create]
   resources :annonces
 
   resources :jewels, only: [:index, :show]

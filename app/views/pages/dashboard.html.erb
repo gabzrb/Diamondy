@@ -1,1 +1,21 @@
-dashboard.html.erb
+<div class="media">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-12">
+  <%  if current_user.photo.url %>
+  <%= cl_image_tag current_user.photo, class:"mr-3" %>
+  <% else %>
+  <%= image_tag "logo.png", class:"mr-3" %>
+  <% end %>
+  <div class="media-body">
+    <h5 class="mt-0"><%= current_user.company_name %></h5>
+    <%= current_user.services_description %>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-12 navdash-b">
+  <%= link_to 'Ajouter un produit',new_product_path, class: "btn btn-home" %>
+  </div>
+  </div>
+  </div>
+</div>
+

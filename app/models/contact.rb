@@ -1,7 +1,6 @@
 class Contact < MailForm::Base
 
   attribute :first_name,    :validate  => true
-  attribute :last_name, :validate => true
   attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attribute :message,   :validate => true
 
@@ -11,7 +10,7 @@ class Contact < MailForm::Base
     {
       :subject => "Contact Form",
       :to => "gabrielzerbib6@gmail.com",
-      :from => %("#{prenom}" "#{name}" <#{email}>),
+      :from => %( "#{first_name}" <#{email}>),
 
     }
   end

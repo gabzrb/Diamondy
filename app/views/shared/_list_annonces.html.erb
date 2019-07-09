@@ -15,11 +15,39 @@
             <th scope="row"><%= annonce.created_at.strftime("%d/%m/%Y") %></th>
             <td><%= annonce.category %></td>
             <td><%= annonce.description %></td>
-            <td><%= link_to "J'ai le Produit",annonce_path(annonce) %></td>
+            <!-- Button trigger modal -->
+            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+              J'ai le Produit
+            </button></td>
           </tr>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Fiche Contact</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p><b>Nom:</b> <%= annonce.user.company_name %></p>
+                  <p><b>Address:</b> <%= annonce.user.address %></p>
+                  <br>
+                  <p><b>Email:</b> <%= annonce.user.email %></p>
+                  <br>
+                  <p><b>Siret:</b> <%= annonce.user.siret_no %></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
           <% end %>
         </tbody>
       </table>
     </div>
   </div>
 </div>
+<!-- modal -->

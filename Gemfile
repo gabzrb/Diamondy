@@ -8,6 +8,9 @@ gem 'pg'
 gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
+gem 'mail_form'
+gem 'sendgrid-ruby'
+gem 'sendgrid-actionmailer'
 
 
 gem 'autoprefixer-rails'

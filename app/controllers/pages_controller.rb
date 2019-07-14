@@ -17,6 +17,5 @@ class PagesController < ApplicationController
     @products = current_user.products
   end
 
-  def contact
-  end
+
 end

@@ -1,7 +1,6 @@
 
 .banner {
   color: #f6f0e4;
-    height: 40vh;
     background-size: cover !important;
     display: flex;
     flex-direction: column;
@@ -13,6 +12,10 @@
 }
 
 
+
+.container {
+  margin-top: 15px;
+}
 
 .banner-annonce {
 
@@ -30,6 +33,7 @@
 
 .banner-content {
   padding-left: 50px;
+  margin-top: 70px;
 
 }
 
@@ -44,6 +48,7 @@
     display: flex;
     justify-content: center;
     margin-top: 10px;
+        margin-bottom: 70px;
 
   }
 
@@ -54,3 +59,23 @@
   justify-content: center;
 }
 
+
+
+.productcontent {
+    display: flex;
+    justify-content: center;
+}
+
+
+.title-margin {
+ margin-top: 40px;
+}
+
+
+
+
+
+.flexcontact {
+   display: flex;
+    justify-content: center;
+}

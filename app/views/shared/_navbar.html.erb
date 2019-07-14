@@ -48,8 +48,8 @@
           <% if current_user.admin %>
           <li><%= link_to 'Administrateur', admin_path %></li>
           <% end %>
-          <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
           <li><%= link_to 'Mon Profile', dashboard_path %></li>
+          <li><%= link_to 'Editer Profile', edit_user_registration_path %></li>
           <li>  <%= link_to destroy_user_session_path, method: :delete do %>
           <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Se déconnecter") %> <% end %></li>
         </ul>

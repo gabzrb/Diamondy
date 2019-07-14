@@ -52,8 +52,17 @@ background-color: #24cec6;
 
 .btn-annonce {
  background-color: #11d6c9;
+}
 
+.btn-primary {
+  background-color: transparent;
+  border-color: transparent;
+  color: #11d6c9
+}
 
+.btn-primary:hover {
+background-color: #11d6c9;
+border-color:  #11d6c9;
 }
 
 .btn-validation {

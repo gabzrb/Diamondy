@@ -1,17 +1,57 @@
-<h1>Products#new</h1>
-<p>Find me in app/views/products/new.html.erb</p>
+
+<div class="container">
+  <div class="row">
+  <div class="flexcontact col col-xs-3 col-xs-12 col-lg-12">
+    <div class="contactcard text-center">
+<h1>Ajouter une fiche produit</h1>
+
+
+
 
 <%= simple_form_for @product do |f| %>
-  <%= f.input :price %>
-  <%= f.input :description %>
-    <%= f.input :photo %>
+
+ <div class="container">
+    <div class="form-row">
+    <div class="col col-xs-12 col-md-6">
+      <%= f.input :element, label: 'Type de produit', collection: ["jewel", "stone", "watch", "special_request"] %>
+    </div>
+     <div class="col col-xs-12 col-md-6">
+        <%= f.input :price, label: 'Prix' %>
+     </div>
+
+  <div class=" col col-xs-12 col-md-12">
+    <%= f.input :description %>
+  </div>
+
+
+
+ <div class="col col-xs-12 col-md-3">
+   <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+  <%= f.input :photo, input_html: { class: 'hidden',id: 'photo-input'},label_html: { class: 'upload-photo'}, label: '📷 Ajouter une image'  %>
+    <%= f.input :photo_cache, as: :hidden %>
+
+ </div>
+
+ <div class="col col-xs-12 col-md-3">
+    <%= f.input :photo1, input_html: { class: 'hidden'},label_html: { class: 'upload-photo'}, label: '📷 Ajouter une image'   %>
   <%= f.input :photo_cache, as: :hidden %>
-    <%= f.input :photo1 %>
+ </div>
+  <div class="col col-xs-12 col-md-3">
+    <%= f.input :photo2, input_html: { class: 'hidden'},label_html: { class: 'upload-photo'}, label: '📷 Ajouter une image' %>
   <%= f.input :photo_cache, as: :hidden %>
-    <%= f.input :photo2 %>
+  </div>
+    <div class="col col-xs-12 col-md-3">
+    <%= f.input :photo3, input_html: { class: 'hidden'},label_html: { class: 'upload-photo'}, label: '📷 Ajouter une image'   %>
   <%= f.input :photo_cache, as: :hidden %>
-    <%= f.input :photo3 %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.input :element, collection: ["jewel", "stone", "watch", "special_request"] %>
-  <%= f.button :submit %>
+   </div>
+   <div class="form-actions">
+  <%= f.submit "Page suivante" , class: "btn-contact" %>
+</div>
 <% end %>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

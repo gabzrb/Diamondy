@@ -36,7 +36,11 @@ class ProductsController < ApplicationController
   private
 
   def check_product_redirection(product)
-    redirect_to "/products/#{product.id}/#{product.element}s/new"
+    if !(product.element.empty?)
+     redirect_to "/products/#{product.id}/#{product.element}s/new"
+    else
+      render :new
+    end
   end
 
   def set_product

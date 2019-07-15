@@ -1,1 +1,37 @@
-dashboard.html.erb
+<div class="media med-dash-nav">
+  <div class="container dash-nav">
+    <div class="row">
+      <div class="col-md-8 col-sm-12">
+        <%  if current_user.photo.url %>
+        <%= cl_image_tag current_user.photo, class:"mr-3 img-nav-dash" %>
+        <% else %>
+        <%= image_tag "logo.png", class:"mr-3 img-nav-dash" %>
+        <% end %>
+        <div class="media-body">
+          <h5 class="mt-0"><%= current_user.company_name %></h5>
+          <%= current_user.services_description %>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12 navdash-b">
+        <%= link_to 'Ajouter un produit',new_product_path, class: "btn btn-home" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container list-nav">
+  <h3>Mes Produits en ligne (<%= current_user.products.count %>)</h3>
+    <% current_user.products.each do |product| %>
+      <div class="card-product">
+          <% if product.photo.url %>
+          <%= cl_image_tag product.photo %>
+          <% else %>
+          <%= image_tag "https://i.ibb.co/cYPRmcc/diamondproduct.jpg" %>
+          <% end %>
+          <div class="card-product-infos">
+          <h2><%= product.element %></h2>
+          <h5><%= product.price %>€</h5>
+          <p><%= product.description %>.</p>
+        </div>
+      </div>
+    <% end %>
+</div>

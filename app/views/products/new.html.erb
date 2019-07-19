@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="row">
-  <div class="flexcontact col col-xs-3 col-xs-12 col-lg-12">
+  <div class=" col col-xs-12 col-lg-12">
     <div class="contactcard text-center">
 <h1>Ajouter une fiche produit</h1>
 
@@ -10,7 +10,7 @@
 
 <%= simple_form_for @product do |f| %>
 
- <div class="container">
+
     <div class="form-row">
     <div class="col col-xs-12 col-md-6">
       <%= f.input :element, label: 'Type de produit', collection: ["jewel", "stone", "watch", "special_request"] %>
@@ -25,27 +25,27 @@
 
 
 
- <div class="col col-xs-12 col-md-3">
+ <div class="col col-xs-12 col-md-12">
    <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
   <%= f.input :photo, input_html: { class: 'hidden',id: 'photo-input'},label_html: { class: 'upload-photo'}, label: '📷 Ajouter une image'  %>
     <%= f.input :photo_cache, as: :hidden %>
 
  </div>
 
- <div class="col col-xs-12 col-md-3">
-    <%= f.input :photo1, input_html: { class: 'hidden'},label_html: { class: 'upload-photo'}, label: '📷 Ajouter une image'   %>
+ <div class="col col-xs-12 col-md-12">
+    <%= f.input :photo1, input_html: { class: 'hidden',id: 'photo-input'},label_html: { class: 'upload-photo'}, label: '📷 Ajouter une image'   %>
   <%= f.input :photo_cache, as: :hidden %>
  </div>
-  <div class="col col-xs-12 col-md-3">
-    <%= f.input :photo2, input_html: { class: 'hidden'},label_html: { class: 'upload-photo'}, label: '📷 Ajouter une image' %>
+  <div class="col col-xs-12 col-md-12">
+    <%= f.input :photo2, input_html: { class: 'hidden',id: 'photo-input'},label_html: { class: 'upload-photo'}, label: '📷 Ajouter une image' %>
   <%= f.input :photo_cache, as: :hidden %>
   </div>
-    <div class="col col-xs-12 col-md-3">
-    <%= f.input :photo3, input_html: { class: 'hidden'},label_html: { class: 'upload-photo'}, label: '📷 Ajouter une image'   %>
+    <div class="col col-xs-12 col-md-12">
+    <%= f.input :photo3, input_html: { class: 'hidden',id: 'photo-input'},label_html: { class: 'upload-photo'}, label: '📷 Ajouter une image'   %>
   <%= f.input :photo_cache, as: :hidden %>
    </div>
-   <div class="form-actions">
-  <%= f.submit "Page suivante" , class: "btn-contact" %>
+   <div class="form-actions col col-xs-4 col-md-12">
+  <%= f.submit "Valider" , class: "btn-contact" %>
 </div>
 <% end %>
 
@@ -54,4 +54,4 @@
 </div>
 </div>
 </div>
-</div>
+

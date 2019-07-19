@@ -1,1 +1,33 @@
+<div class="container">
+<% @stones.each do |stone| %>
+<div class="line_confirmation"></div>
+<div class="card-trip">
+ <img src= <%= stone.product.photo  %> >
+
+
+
+
+  <div class="card-trip-infos">
+
+
+    <div>
+      <h2> <%= stone.category %></h2>
+      <p><%= stone.product.description %></p>
+    </div>
+    <div >
+        <%= link_to 'Voir Produit',products_path, class: "btn btn-contact" %>
+    </div>
+    <h2 class="card-trip-pricing"> <%= stone.product.price %>€</h2>
+    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
+  </div>
+</div>
+
+
+
+<% end %>
+
+
+
+
+</div>
 

@@ -1,13 +1,39 @@
+
+<div class="container">
+  <div class="row">
+  <div class=" col col-xs-12 col-lg-12">
+    <div class="contactcard text-center">
+      <h3>Pierre 💎</h3>
+
 <%= simple_form_for(@stone, as: :stone, method: :post, url: product_stones_path(@product)) do |f| %>
   <%= f.error_notification %>
-
+<div class="form-row">
+    <div class="col col-xs-12 col-md-6">
   <%= f.input :size %>
+ </div>
+ <div class="col col-xs-12 col-md-6">
   <%= f.input :category %>
+</div>
+  <div class="col col-xs-12 col-md-6">
   <%= f.input :weight %>
+</div>
+  <div class="col col-xs-12 col-md-6">
   <%= f.input :color %>
+</div>
+  <div class="col col-xs-12 col-md-6">
   <%= f.input :purity %>
+</div>
+  <div class="col col-xs-12 col-md-6">
   <%= f.input :certificate %>
-  <%= f.button :submit %>
+ </div>
+  <div class=" form-actions col col-xs-12 col-md-6">
+    <%= f.submit "Valider", class: "btn-contact" %>
+</div>
 
 
 <% end %>
+ </div>
+   </div>
+    </div>
+     </div>
+      </div>

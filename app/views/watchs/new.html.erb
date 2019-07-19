@@ -1,11 +1,34 @@
+<div class="container">
+  <div class="row">
+  <div class=" col col-xs-12 col-lg-12">
+    <div class="contactcard text-center">
+  <h3>Montre⌚️</h3>
 <%= simple_form_for(@watch, as: :watch, method: :post, url: product_watchs_path(@product)) do |f| %>
   <%= f.error_notification %>
 
+<div class="form-row">
+  <div class="col col-xs-12 col-md-6">
   <%= f.input :state %>
+</div>
+  <div class="col col-xs-12 col-md-6">
   <%= f.input :brand %>
+  </div>
+  <div class="col col-xs-12 col-md-6">
   <%= f.input :model %>
+  </div>
+  <div class="col col-xs-12 col-md-6">
   <%= f.input :year %>
+  </div>
+  <div class="col col-xs-12 col-md-12">
   <%= f.input :material %>
-  <%= f.button :submit %>
+  </div>
+  <div  class="form-actions col col-xs-12 col-md-6">
+    <%= f.submit "Valider", class: "btn-contact" %>
+</div>
 <% end %>
 
+
+</div>
+</div>
+</div>
+</div>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <div class="container list-nav">
 <% @watchs.each do |watch| %>
@@ -14,20 +15,28 @@
     <div>
       <h2> <%= watch.brand %></h2>
       <p><%= watch.product.description %></p>
+=======
+<div class="container">
+  <% @watchs.each do |watch| %>
+  <div class="line_confirmation"></div>
+  <div class="card-trip">
+    <img src= <%= watch.product.photo  %> >
+    <div class="card-trip-infos">
+      <div>
+        <h2> <%= watch.brand %></h2>
+        <p><%= watch.product.description %></p>
+      </div>
+      <div >
+        <%= link_to 'Voir Produit',watch_path(watch), class: "btn btn-contact" %>
+      </div>
+      <h2 class="card-trip-pricing"> <%= watch.product.price %>€</h2>
+      <% if watch.product.user.photo.url %>
+      <%= cl_image_tag watch.product.user.photo.photo, class:"card-trip-user avatar-bordered"  %>
+      <% else %>
+      <img src="https://i.ibb.co/mhL9zjd/user.png" class="card-trip-user avatar-bordered">
+      <% end %>
+>>>>>>> 8672124f790b761c925a2422cce0ce609170439a
     </div>
-    <div >
-        <%= link_to 'Voir Produit',products_path, class: "btn btn-contact" %>
-    </div>
-    <h2 class="card-trip-pricing"> <%= watch.product.price %>€</h2>
-    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
   </div>
-</div>
-
-
-
-<% end %>
-
-
-
-
+  <% end %>
 </div>

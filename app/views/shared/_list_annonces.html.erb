@@ -10,18 +10,18 @@
           %>
           <%= button_tag %>
           <% end %>
-          <% annonces.each do |annonce| %>
+          <% annonces.each_with_index do |annonce, index| %>
           <tr>
             <th scope="row"><%= annonce.created_at.strftime("%d/%m/%Y") %></th>
             <td><%= annonce.category %></td>
             <td><%= annonce.description %></td>
             <!-- Button trigger modal -->
-            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<%= index %>">
               J'ai le Produit
             </button></td>
           </tr>
           <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="exampleModal<%= index %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content2">
                 <div class="modal-header">

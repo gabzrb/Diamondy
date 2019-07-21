@@ -11,6 +11,11 @@ class WatchsController < ApplicationController
   end
 
   def show
+    @photos = []
+    @photos << @watch.product.photo if @watch.product.photo.url
+    @photos << @watch.product.photo1 if @watch.product.photo1.url
+    @photos << @watch.product.photo2 if @watch.product.photo2.url
+    @photos << @watch.product.photo3 if @watch.product.photo3.url
   end
 
   def create

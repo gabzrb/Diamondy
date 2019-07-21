@@ -1,34 +1,23 @@
 <div class="container">
-<% @jewels.each do |jewel| %>
-<div class="line_confirmation"></div>
-<div class="card-trip">
- <img src= <%= jewel.product.photo  %> >
-
-
-
-
-  <div class="card-trip-infos">
-
-
-    <div>
-      <h2> <%= jewel.category %></h2>
-      <p><%= jewel.product.description %></p>
+  <% @jewels.each do |jewel| %>
+  <div class="line_confirmation"></div>
+  <div class="card-trip">
+    <img src= <%= jewel.product.photo  %> >
+    <div class="card-trip-infos">
+      <div>
+        <h2> <%= jewel.category %></h2>
+        <p><%= jewel.product.description %></p>
+      </div>
+      <div >
+        <%= link_to 'Voir Produit',jewel_path(jewel), class: "btn btn-contact" %>
+      </div>
+      <h2 class="card-trip-pricing"> <%= jewel.product.price %>€</h2>
+      <% if jewel.product.user.photo.url %>
+      <%= cl_image_tag jewel.product.user.photo.photo, class:"card-trip-user avatar-bordered"  %>
+      <% else %>
+      <img src="https://i.ibb.co/mhL9zjd/user.png" class="card-trip-user avatar-bordered">
+      <% end %>
     </div>
-    <div >
-        <%= link_to 'Voir Produit',products_path, class: "btn btn-contact" %>
-    </div>
-    <h2 class="card-trip-pricing"> <%= jewel.product.price %>€</h2>
-    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
   </div>
+  <% end %>
 </div>
-
-
-
-<% end %>
-
-
-
-
-</div>
-
-

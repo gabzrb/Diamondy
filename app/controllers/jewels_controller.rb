@@ -11,6 +11,7 @@ class JewelsController < ApplicationController
   end
 
   def show
+     @jewel = Jewel.new
   end
 
   def create

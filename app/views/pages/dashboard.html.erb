@@ -21,17 +21,23 @@
 <div class="container list-nav">
   <h3>Mes Produits en ligne (<%= current_user.products.count %>)</h3>
     <% current_user.products.each do |product| %>
-      <div class="card-product">
+      <div class="card-trip">
           <% if product.photo.url %>
           <%= cl_image_tag product.photo %>
           <% else %>
           <%= image_tag "https://i.ibb.co/cYPRmcc/diamondproduct.jpg" %>
           <% end %>
-          <div class="card-product-infos">
+          <div class="card-trip-infos">
+            <div>
           <h2><%= product.element %></h2>
           <h5><%= product.price %>€</h5>
           <p><%= product.description %>.</p>
+
+           <%= link_to 'Voir Produit',products_path, class: "btn btn-contact" %>
         </div>
+
+
+
       </div>
     <% end %>
 </div>

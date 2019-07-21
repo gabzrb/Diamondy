@@ -20,7 +20,6 @@
 </div>
 <div class="container list-nav">
   <h3>Mes Produits en ligne (<%= current_user.products.count %>)</h3>
-<<<<<<< HEAD
     <% current_user.products.each do |product| %>
       <div class="card-trip">
           <% if product.photo.url %>
@@ -36,24 +35,7 @@
 
            <%= link_to 'Voir Produit',products_path, class: "btn btn-contact" %>
         </div>
-
-
-
       </div>
-=======
-  <% current_user.products.each do |product| %>
-  <div class="card-product">
-    <% if product.photo.url %>
-    <%= cl_image_tag product.photo %>
-    <% else %>
-    <%= image_tag "https://i.ibb.co/cYPRmcc/diamondproduct.jpg" %>
->>>>>>> 8672124f790b761c925a2422cce0ce609170439a
-    <% end %>
-    <div class="card-product-infos">
-      <h2><%= product.element %></h2>
-      <h5><%= product.price %>€</h5>
-      <p><%= product.description %>.</p>
-    </div>
-  </div>
+
   <% end %>
 </div>

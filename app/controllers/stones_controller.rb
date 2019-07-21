@@ -11,6 +11,11 @@ class StonesController < ApplicationController
   end
 
   def show
+    @photos = []
+    @photos << @stone.product.photo if @stone.product.photo.url
+    @photos << @stone.product.photo1 if @stone.product.photo1.url
+    @photos << @stone.product.photo2 if @stone.product.photo2.url
+    @photos << @stone.product.photo3 if @stone.product.photo3.url
   end
 
   def create

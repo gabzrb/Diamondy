@@ -11,7 +11,12 @@ class JewelsController < ApplicationController
   end
 
   def show
-     @jewel = Jewel.new
+    @jewel = Jewel.new
+    @photos = []
+    @photos << @jewel.product.photo if @jewel.product.photo.url
+    @photos << @jewel.product.photo1 if @jewel.product.photo1.url
+    @photos << @jewel.product.photo2 if @jewel.product.photo2.url
+    @photos << @jewel.product.photo3 if @jewel.product.photo3.url
   end
 
   def create

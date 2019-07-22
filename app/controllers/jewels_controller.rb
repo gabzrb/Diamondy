@@ -11,7 +11,6 @@ class JewelsController < ApplicationController
   end
 
   def show
-    @jewel = Jewel.new
     @photos = []
     @photos << @jewel.product.photo if @jewel.product.photo.url
     @photos << @jewel.product.photo1 if @jewel.product.photo1.url
@@ -32,7 +31,7 @@ class JewelsController < ApplicationController
   private
 
   def set_jewel
-    @jewels = Jewel.find(params[:id])
+    @jewel = Jewel.find(params[:id])
   end
 
   def set_product

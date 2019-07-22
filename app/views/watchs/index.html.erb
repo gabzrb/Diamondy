@@ -1,21 +1,12 @@
-<<<<<<< HEAD
-
 <div class="container list-nav">
-<% @watchs.each do |watch| %>
-<div class="line_confirmation"></div>
-<div class="card-trip">
- <img src= <%= watch.product.photo  %> >
-
-
-
-
-  <div class="card-trip-infos">
-
-
-    <div>
-      <h2> <%= watch.brand %></h2>
-      <p><%= watch.product.description %></p>
-
+  <% @watchs.each do |watch| %>
+  <div class="line_confirmation"></div>
+  <div class="card-trip">
+    <img src= <%= watch.product.photo  %> >
+    <div class="card-trip-infos">
+      <div>
+        <h2> <%= watch.brand %></h2>
+        <p><%= watch.product.description %></p>
       </div>
       <div >
         <%= link_to 'Voir Produit',watch_path(watch), class: "btn btn-contact" %>
@@ -26,7 +17,6 @@
       <% else %>
       <img src="https://i.ibb.co/mhL9zjd/user.png" class="card-trip-user avatar-bordered">
       <% end %>
-
     </div>
   </div>
   <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_14_115312) do
+ActiveRecord::Schema.define(version: 2019_07_27_114737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2019_07_14_115312) do
 
   create_table "stones", force: :cascade do |t|
     t.string "category"
-    t.integer "size"
+    t.string "size"
     t.float "weight"
     t.string "color"
     t.string "purity"

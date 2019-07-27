@@ -7,13 +7,13 @@
   <%= f.error_notification %>
 <div class="form-row">
   <div class="col col-xs-12 col-md-6">
-  <%= f.input :category %>
+  <%= f.input :category, collection: Jewel::CATEGORY %>
   </div>
     <div class="col col-xs-12 col-md-6">
-    <%= f.input :state %>
+    <%= f.input :state, collection: Jewel::STATES %>
     </div>
     <div class="col col-xs-12 col-md-12">
-    <%= f.input :brand %>
+    <%= f.input :brand, collection: Jewel::BRANDS %>
     </div>
     <div class="form-actions col col-xs-12 col-md-6">
     <%= f.submit "Valider", class: "btn-contact" %>

@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    product_conection(@products)
   end
 
   def show
@@ -34,6 +35,14 @@ class ProductsController < ApplicationController
   end
 
   private
+
+  def product_conection(products)
+    products.each do |product|
+      if (product.jewel.nil? && product.stone.nil? && product.watch.nil? && product.special_request.nil?)
+        product.destroy!
+      end
+    end
+  end
 
   def check_product_redirection(product)
     if !(product.element.empty?)

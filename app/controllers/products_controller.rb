@@ -26,9 +26,17 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    redirect_to root_path if @product.user != current_user
+    @obj = @product.conect
   end
 
   def update
+    @product.update(product_params)
+    if @product.save
+      redirect_to dashboard_path
+    else
+      render :edit
+    end
   end
 
   def destroy

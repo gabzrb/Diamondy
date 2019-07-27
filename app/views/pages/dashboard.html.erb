@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-8 col-sm-12">
         <%  if current_user.photo.url %>
-        <%= cl_image_tag current_user.photo, class:"mr-3 img-nav-dash" %>
+        <%= cl_image_tag current_user.photo, class:"mr-3 img-nav-dash", crop: :fill %>
         <% else %>
         <%= image_tag "logo.png", class:"mr-3 img-nav-dash" %>
         <% end %>
@@ -18,6 +18,7 @@
     </div>
   </div>
 </div>
+
 <div class="container list-nav">
   <h3>Mes Produits en ligne (<%= current_user.products.count %>)</h3>
     <% current_user.products.each do |product| %>
@@ -30,12 +31,22 @@
           <div class="card-trip-infos">
             <div>
           <h2><%= product.element %></h2>
-          <h5><%= product.price %>€</h5>
           <p><%= product.description %>.</p>
-
-           <%= link_to 'Voir Produit',products_path, class: "btn btn-contact" %>
         </div>
-      </div>
+          <div>
+           <%= link_to 'Voir Produit',products_path, class: "btn btn-contact" %>
+           </div>
 
-  <% end %>
+         <h2 class="card-trip-pricing"> <%= product.price %>€</h2>
+      <% if product.user.photo.url %>
+      <%= cl_image_tag product.user.photo, class:"card-trip-user avatar-bordered"  %>
+      <% else %>
+     <img src="https://i.ibb.co/mhL9zjd/user.png" class="card-trip-user avatar-bordered">
+    <% end %>
+      </div>
 </div>
+
+<% end %>
+</div>
+
+

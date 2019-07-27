@@ -1,1 +1,53 @@
-show.html.erb
+<div class="container">
+
+  <div class="row">
+  <div class=" col col-xs-12 col-lg-12">
+
+   <%  @photos.each do |photo|  %>
+    <div class="card-showproduct">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= cl_image_tag photo, class: "d-block w-30"  %>
+
+    </div>
+    <div class="carousel-item">
+    <%= cl_image_tag photo, class: "d-block w-30" %>
+    </div>
+
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+ <div class="card-showproduct-infos">
+  <h1><%= @stone.product.description  %></h1>
+  <div class="line_confirmation"></div>
+  <div class="element-infos">
+    <h2>Catégorie : <%= @stone.category %></h2>
+    <h2>Taille : <%= @stone.size  %></h2>
+     <h2>Couleur : <%= @stone.color  %></h2>
+     <h2>Pureté : <%= @stone.purity  %></h2>
+     <h2>Certificat : <%= @stone.certificate  %></h2>
+
+
+
+    </div>
+             <h2 class="price-product"><%= @stone.product.price.to_i %>€</h2>
+            <%= link_to 'Fiche Marchand',"#", class: "btn btn-contact" %>
+
+  </div>
+
+
+</div>
+ <% end %>
+</div>
+</div>
+</div>
+
+

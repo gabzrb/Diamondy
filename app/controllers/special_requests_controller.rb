@@ -39,6 +39,6 @@ class SpecialRequestsController < ApplicationController
   end
 
   def special_request_params
-    params.require(:special_request).permit(:type)
+    params.require(:special_request).permit(:description)
   end
 end

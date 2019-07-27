@@ -1,7 +1,10 @@
 .img-nav-dash {
   margin: 2rem;
-  height: 20vh;
-  border-radius: 7px;
+   position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 .navdash-b {

@@ -7,19 +7,19 @@
         <%= f.error_notification %>
         <div class="form-row">
           <div class="col col-xs-12 col-md-6">
-            <%= f.input :state, collection: Watch::STATES %>
+            <%= f.input :state, collection: Watch::STATES, label:'État' %>
           </div>
           <div class="col col-xs-12 col-md-6">
-            <%= f.input :brand, collection: Watch::BRANDS %>
+            <%= f.input :brand, collection: Watch::BRANDS, label:'Marque' %>
           </div>
           <div class="col col-xs-12 col-md-6">
-            <%= f.input :model %>
+            <%= f.input :model, label:'Modèle' %>
           </div>
           <div class="col col-xs-12 col-md-6">
-            <%= f.input :year, min:1800 , max: 2020 %>
+            <%= f.input :year, min:1800 , max: 2020, label:'Année' %>
           </div>
           <div class="col col-xs-12 col-md-12">
-            <%= f.input :material, collection: Watch::MATERIALS %>
+            <%= f.input :material, collection: Watch::MATERIALS, label:'Matériaux' %>
           </div>
           <div  class="form-actions col col-xs-12 col-md-6">
             <%= f.submit "Valider", class: "btn-contact" %>

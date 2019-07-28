@@ -5,8 +5,8 @@
     <img src= <%= stone.product.photo  %> >
     <div class="card-trip-infos">
       <div>
-        <h2> <%= stone.category %></h2>
-        <p><%= stone.product.description %></p>
+        <h2><%= stone.product.description %></h2>
+        <h2> <%= stone.weight %></h2>
       </div>
       <div >
         <%= link_to 'Voir Produit',stone_path(stone), class: "btn btn-contact" %>

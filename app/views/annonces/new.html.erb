@@ -5,12 +5,7 @@
   url(<%= image_path 'deal.png' %>);">
   <div class="card black-card ">
     <div class="form-row">
-      <div class="col-7">
-        <%= f.input :category, collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false , placeholder: "Produit" , required: true %>
-      </div>
-      <div class="col">
-        <%= f.input :category, collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false , placeholder: "Type 1" %>
-      </div>
+
       <div class="col">
         <%= f.input :category, name: "type", collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false , placeholder: "Type 2" %>
       </div>

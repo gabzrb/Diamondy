@@ -21,7 +21,7 @@ class JewelsController < ApplicationController
   def create
     @jewel = Jewel.new(jewel_params)
     @jewel.product_id = @product.id
-    if @jewel.save!
+    if @jewel.save
       redirect_to jewel_path(@jewel)
     else
       render :new

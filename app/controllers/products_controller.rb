@@ -40,6 +40,8 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @product.destroy!
+    redirect_to dashboard_path
   end
 
   private

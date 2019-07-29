@@ -34,7 +34,8 @@
           <p><%= product.description %>.</p>
         </div>
           <div>
-           <%= link_to 'Voir Produit',products_path, class: "btn btn-contact" %>
+                   <%= link_to 'Editez Produit',edit_product_path(product), class: "btn btn-contact" %>
+        <%= link_to 'Suprimer Produit',product_path(product), method: :delete,  class: "btn btn-contact" %>
            </div>
 
          <h2 class="card-trip-pricing"> <%= product.price %>€</h2>

@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+  <div class=" col col-xs-12 col-lg-12">
+    <div class="contactcard text-center">
+   <h3>Editez votre Bijou 💍</h3>
+<%= simple_form_for([@product, @jewel]) do |f| %>
+  <%= f.error_notification %>
+<div class="form-row">
+  <div class="col col-xs-12 col-md-6">
+  <%= f.input :category, collection: Jewel::CATEGORY %>
+  </div>
+    <div class="col col-xs-12 col-md-6">
+    <%= f.input :state, collection: Jewel::STATES %>
+    </div>
+    <div class="col col-xs-12 col-md-12">
+    <%= f.input :brand, collection: Jewel::BRANDS %>
+    </div>
+    <div class="form-actions col col-xs-12 col-md-6">
+    <%= f.submit "Valider", class: "btn-contact" %>
+   </div>
+<% end %>
+
+</div>
+</div>
+</div>
+</div>

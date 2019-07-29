@@ -1,6 +1,6 @@
 class JewelsController < ApplicationController
-  before_action :set_product, only: [:new, :create]
-  before_action :set_jewel, only: [:show]
+  before_action :set_product, only: [:new, :create, :edit]
+  before_action :set_jewel, only: [:show, :edit, :update]
 
   def index
     @jewels = Jewel.all
@@ -21,11 +21,20 @@ class JewelsController < ApplicationController
   def create
     @jewel = Jewel.new(jewel_params)
     @jewel.product_id = @product.id
-    if @jewel.save!
+    if @jewel.save
       redirect_to jewel_path(@jewel)
     else
       render :new
     end
+  end
+
+  def edit
+    redirect_to root_path if @product.user != current_user
+  end
+
+  def update
+    @jewel.update(jewel_params)
+    redirect_to dashboard_path
   end
 
   private

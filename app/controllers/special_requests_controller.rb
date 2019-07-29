@@ -1,6 +1,6 @@
 class SpecialRequestsController < ApplicationController
-  before_action :set_product, only: [:new, :create]
-  before_action :set_special_request, only: [:show]
+  before_action :set_product, only: [:new, :create, :edit]
+  before_action :set_special_request, only: [:show, :edit, :update]
 
   def index
     @special_requests = SpecialRequest.all
@@ -27,6 +27,16 @@ class SpecialRequestsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    redirect_to root_path if @product.user != current_user
+  end
+
+  def update
+    @special_request.update(special_request_params)
+    redirect_to dashboard_path
+  end
+
 
   private
 

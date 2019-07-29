@@ -1,8 +1,10 @@
 class Jewel < ApplicationRecord
-  STATES = ['Bijou ancien (occasion)',
-              'Bijou signés (occasion)',
-              'Bijoux modernes (occasion)',
-              'Bijoux neuf']
+  belongs_to :product
+
+  STATES = ["Bijou ancien (occasion)",
+            "Bijou signés (occasion)",
+            "Bijoux modernes (occasion)",
+            "Bijoux neuf"]
 
   CATEGORY = ["bague",
               "bracelet",
@@ -25,10 +27,9 @@ class Jewel < ApplicationRecord
            "Chanel",
            "Hermes"]
 
-  belongs_to :product
+  # validates :category, inclusion: { in: BRANDS }
+  # validates :brand, inclusion: { in: CATEGORY }
   validates :state, inclusion: { in: STATES }
-  validates :brand, inclusion: { in: CATEGORY }
-  validates :category, inclusion: { in: BRANDS }
 
 end
 

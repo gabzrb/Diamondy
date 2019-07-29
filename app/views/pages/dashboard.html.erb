@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-8 col-sm-12">
         <%  if current_user.photo.url %>
-        <%= cl_image_tag current_user.photo, class:"mr-3 img-nav-dash" %>
+        <%= cl_image_tag current_user.photo, class:"mr-3 img-nav-dash", crop: :fill %>
         <% else %>
         <%= image_tag "logo.png", class:"mr-3 img-nav-dash" %>
         <% end %>
@@ -18,23 +18,36 @@
     </div>
   </div>
 </div>
+
 <div class="container list-nav">
   <h3>Mes Produits en ligne (<%= current_user.products.count %>)</h3>
-  <% current_user.products.each do |product| %>
-  <div class="card-trip">
-    <% if product.photo.url %>
-    <%= cl_image_tag product.photo %>
-    <% else %>
-    <%= image_tag "https://i.ibb.co/cYPRmcc/diamondproduct.jpg" %>
-    <% end %>
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= product.element %></h2>
-        <h5><%= product.price %>€</h5>
-        <p><%= product.description %>.</p>
-        <%= link_to 'Editez Produit',edit_product_path(product), class: "btn btn-contact" %>
+    <% current_user.products.each do |product| %>
+      <div class="card-trip">
+          <% if product.photo.url %>
+          <%= cl_image_tag product.photo %>
+          <% else %>
+          <%= image_tag "https://i.ibb.co/cYPRmcc/diamondproduct.jpg" %>
+          <% end %>
+          <div class="card-trip-infos">
+            <div>
+          <h2><%= product.element %></h2>
+          <p><%= product.description %>.</p>
+        </div>
+          <div>
+                   <%= link_to 'Editez Produit',edit_product_path(product), class: "btn btn-contact" %>
         <%= link_to 'Suprimer Produit',product_path(product), method: :delete,  class: "btn btn-contact" %>
+           </div>
+
+         <h2 class="card-trip-pricing"> <%= product.price %>€</h2>
+      <% if product.user.photo.url %>
+      <%= cl_image_tag product.user.photo, class:"card-trip-user avatar-bordered"  %>
+      <% else %>
+     <img src="https://i.ibb.co/mhL9zjd/user.png" class="card-trip-user avatar-bordered">
+    <% end %>
       </div>
-    </div>
-  </div>
-  <% end %>
+</div>
+
+<% end %>
+</div>
+
+

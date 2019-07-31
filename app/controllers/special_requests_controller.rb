@@ -12,10 +12,7 @@ class SpecialRequestsController < ApplicationController
 
   def show
     @photos = []
-    @photos << @special_request.product.photo if @special_request.product.photo.url
-    @photos << @special_request.product.photo1 if @special_request.product.photo1.url
-    @photos << @special_request.product.photo2 if @special_request.product.photo2.url
-    @photos << @special_request.product.photo3 if @special_request.product.photo3.url
+    @special_request.product.product_attachments.each{ |a| @photos << a.photo}
   end
 
   def create

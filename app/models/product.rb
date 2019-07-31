@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   has_one :special_request, dependent: :destroy
   has_one :stone, dependent: :destroy
   has_one :watch, dependent: :destroy
-  has_many :product_attachments
+  has_many :product_attachments, dependent: :destroy
   accepts_nested_attributes_for :product_attachments
 
   def conect

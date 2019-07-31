@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_27_114737) do
+ActiveRecord::Schema.define(version: 2019_07_31_143143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,17 +44,21 @@ ActiveRecord::Schema.define(version: 2019_07_27_114737) do
     t.index ["product_id"], name: "index_jewels_on_product_id"
   end
 
+  create_table "product_attachments", force: :cascade do |t|
+    t.string "photo"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_attachments_on_product_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.text "description"
     t.string "element"
-    t.string "photo"
     t.float "price"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photo1"
-    t.string "photo2"
-    t.string "photo3"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -118,6 +122,7 @@ ActiveRecord::Schema.define(version: 2019_07_27_114737) do
   add_foreign_key "contacts", "products"
   add_foreign_key "contacts", "users"
   add_foreign_key "jewels", "products"
+  add_foreign_key "product_attachments", "products"
   add_foreign_key "products", "users"
   add_foreign_key "special_requests", "products"
   add_foreign_key "stones", "products"

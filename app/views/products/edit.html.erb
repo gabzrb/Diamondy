@@ -1,56 +1,42 @@
 <div class="container">
   <div class="row">
-  <div class=" col col-xs-12 col-lg-12">
-    <div class="contactcard text-center">
-<h1>Editez votre fiche produit</h1>
-
-
-
-
-<%= simple_form_for @product do |f| %>
-
-
-    <div class="form-row">
-     <div class="col col-xs-12 col-md-6">
-        <%= f.input :price, label: 'Prix' %>
-     </div>
-
-  <div class=" col col-xs-12 col-md-12">
-    <%= f.input :description %>
+    <div class=" col col-xs-12 col-lg-12">
+      <div class="contactcard text-center">
+        <h1>Editez votre fiche produit</h1>
+        <%= simple_form_for @product do |f| %>
+        <div class="form-row">
+          <div class="col col-xs-12 col-md-6">
+            <%= f.input :price, label: 'Prix' %>
+          </div>
+          <div class=" col col-xs-12 col-md-6">
+            <%= f.input :description %>
+          </div>
+          <div class="form-row">
+            <% @product.product_attachments.each do |pa| %>
+            <div class="col">
+              <%= cl_image_tag pa.photo, class:"img-thumbnail rounded mx-auto d-block" %>
+              <%= link_to "❌", product_product_attachment_path(@product, pa), method: :delete %>
+              <%#= link_to "✏️", edit_product_product_attachment_path(@product, pa) %>
+            </div>
+            <% end %>
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <%= f.fields_for @product_attachment do |p| %>
+              <div class="field">
+                <%= p.label "Rajouter une ou plusieurs images ⇩" %><br>
+                <%= p.file_field :photo, :multiple => true, name: "product_attachments[photo][]" %>
+              </div>
+              <% end %>
+            </div>
+          </div>
+          <%= link_to "Plus d'options", "/products/#{@product.id}/#{@product.element}s/#{@obj.id}/edit" %>
+          <div class="form-actions col col-xs-4 col-md-12">
+            <%= f.submit "Valider" , class: "btn-contact" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <%= link_to "Plus d'options", "/products/#{@product.id}/#{@product.element}s/#{@obj.id}/edit" %>
-
-
- <div class="col col-xs-12 col-md-12">
-   <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
-  <%= f.input :photo, input_html: { class: 'hidden',id: 'photo-input'},label_html: { class: 'upload-photo'}, label: '📷 Ajouter une image'  %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= cl_image_tag @product.photo if @product.photo.url %>
- </div>
-
- <div class="col col-xs-12 col-md-12">
-    <%= f.input :photo1, input_html: { class: 'hidden',id: 'photo-input'},label_html: { class: 'upload-photo'}, label: '📷 Ajouter une image'   %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= cl_image_tag @product.photo1 if @product.photo1.url %>
- </div>
-  <div class="col col-xs-12 col-md-12">
-    <%= f.input :photo2, input_html: { class: 'hidden',id: 'photo-input'},label_html: { class: 'upload-photo'}, label: '📷 Ajouter une image' %>
-  <%= f.input :photo_cache, as: :hidden %>
-    <%= cl_image_tag @product.photo2 if @product.photo2.url %>
-  </div>
-    <div class="col col-xs-12 col-md-12">
-    <%= f.input :photo3, input_html: { class: 'hidden',id: 'photo-input'},label_html: { class: 'upload-photo'}, label: '📷 Ajouter une image'   %>
-  <%= f.input :photo_cache, as: :hidden %>
-    <%= cl_image_tag @product.photo3 if @product.photo3.url %>
-   </div>
-   <div class="form-actions col col-xs-4 col-md-12">
-  <%= f.submit "Valider" , class: "btn-contact" %>
-</div>
-<% end %>
-
-</div>
-</div>
-</div>
-</div>
 </div>

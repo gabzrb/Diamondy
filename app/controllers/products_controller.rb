@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @product_attachment = @product.product_attachments.build
   end
 
   def create
@@ -19,6 +20,9 @@ class ProductsController < ApplicationController
     @product.user = current_user
     @product.element = params[:product][:element]
     if @product.save!
+      params[:product_attachments]['photo'].each do |photo|
+          @product_attachment = @product.product_attachments.create!(photo: photo)
+      end
       check_product_redirection(@product)
     else
       render :new
@@ -28,11 +32,15 @@ class ProductsController < ApplicationController
   def edit
     redirect_to root_path if @product.user != current_user
     @obj = @product.conect
+    @product_attachment = ProductAttachment.new
   end
 
   def update
     @product.update(product_params)
     if @product.save
+      params[:product_attachments]['photo'].each do |photo|
+        @product_attachment = @product.product_attachments.create!(photo: photo)
+      end
       redirect_to dashboard_path
     else
       render :edit
@@ -67,7 +75,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    #TODO
-    params.require(:product).permit(:price, :description, :element, :photo, :photo1, :photo2, :photo3, :photo_cache)
+    params.require(:product).permit(:price, :description, :element, product_attachments_attributes: [:id, :product_id, :photo])
   end
 end

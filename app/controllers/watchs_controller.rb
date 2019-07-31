@@ -12,10 +12,7 @@ class WatchsController < ApplicationController
 
   def show
     @photos = []
-    @photos << @watch.product.photo if @watch.product.photo.url
-    @photos << @watch.product.photo1 if @watch.product.photo1.url
-    @photos << @watch.product.photo2 if @watch.product.photo2.url
-    @photos << @watch.product.photo3 if @watch.product.photo3.url
+    @watch.product.product_attachments.each{ |a| @photos << a.photo}
   end
 
   def create

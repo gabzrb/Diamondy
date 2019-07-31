@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :watchs, only: [:index, :show]
 
   resources :products do
+    resources :product_attachments, only: [:edit, :update, :destroy]
     resources :jewels, only: [ :new, :create, :edit, :update]
     resources :special_requests, only: [ :new, :create, :edit, :update]
     resources :stones, only: [ :new, :create, :edit, :update]

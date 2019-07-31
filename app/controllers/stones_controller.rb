@@ -12,10 +12,7 @@ class StonesController < ApplicationController
 
   def show
     @photos = []
-    @photos << @stone.product.photo if @stone.product.photo.url
-    @photos << @stone.product.photo1 if @stone.product.photo1.url
-    @photos << @stone.product.photo2 if @stone.product.photo2.url
-    @photos << @stone.product.photo3 if @stone.product.photo3.url
+    @stone.product.product_attachments.each{ |a| @photos << a.photo}
   end
 
   def create

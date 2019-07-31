@@ -1,49 +1,40 @@
 <div class="container">
-
   <div class="row">
-  <div class=" col col-xs-12 col-lg-12">
-
-   <%  @photos.each do |photo|  %>
-    <div class="card-showproduct">
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%= cl_image_tag photo, class: "d-block w-30"  %>
-
+    <div class=" col col-xs-12 col-lg-12">
+      <div class="card-showproduct">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <%= cl_image_tag @photos[0], class: "d-block w-30"  %>
+            </div>
+            <% @photos.each_with_index do |photo, i|  %>
+            <% next if i == 0 %>
+            <div class="carousel-item">
+              <%= cl_image_tag photo, class: "d-block w-30" %>
+            </div>
+            <% end %>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <div class="card-showproduct-infos">
+          <h1><%= @jewel.product.description  %></h1>
+          <div class="line_confirmation"></div>
+          <div class="element-infos">
+            <h2>Catégorie : <%= @jewel.category %></h2>
+            <h2>Etat : <%= @jewel.state  %></h2>
+            <h2>Marque : <%= @jewel.brand  %></h2>
+          </div>
+          <h2 class="price-product"><%= @jewel.product.price.to_i %>€</h2>
+          <%= link_to 'Fiche Marchand',"#", class: "btn btn-contact" %>
+        </div>
+      </div>
     </div>
-    <div class="carousel-item">
-    <%= cl_image_tag photo, class: "d-block w-30" %>
-    </div>
-
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
 </div>
- <div class="card-showproduct-infos">
-  <h1><%= @jewel.product.description  %></h1>
-  <div class="line_confirmation"></div>
-  <div class="element-infos">
-    <h2>Catégorie : <%= @jewel.category %></h2>
-    <h2>Etat : <%= @jewel.state  %></h2>
-     <h2>Marque : <%= @jewel.brand  %></h2>
-
-
-    </div>
-    <h2 class="price-product"><%= @jewel.product.price.to_i %>€</h2>
-            <%= link_to 'Fiche Marchand',"#", class: "btn btn-contact" %>
-
-  </div>
-
-
-</div>
- <% end %>
-</div>
-</div>
-</div>
-

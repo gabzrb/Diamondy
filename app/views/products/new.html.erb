@@ -26,9 +26,12 @@
 
 
  <div class="col col-xs-12 col-md-12">
-   <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
-  <%= f.input :photo, input_html: { class: 'hidden',id: 'photo-input'},label_html: { class: 'upload-photo'}, label: '📷 Ajouter une image'  %>
-    <%= f.input :photo_cache, as: :hidden %>
+   <%= f.fields_for :product_attachment do |p| %>
+     <div class="field">
+       <%= p.label :photo %><br>
+       <%= p.file_field :photo %>
+     </div>
+   <% end %>
 
  </div>
 

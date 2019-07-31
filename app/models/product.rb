@@ -4,10 +4,8 @@ class Product < ApplicationRecord
   has_one :special_request, dependent: :destroy
   has_one :stone, dependent: :destroy
   has_one :watch, dependent: :destroy
-  mount_uploader :photo, PhotoUploader
-  mount_uploader :photo1, PhotoUploader
-  mount_uploader :photo2, PhotoUploader
-  mount_uploader :photo3, PhotoUploader
+  has_many :product_attachments
+  accepts_nested_attributes_for :product_attachments
 
   def conect
     return self.jewel if self.jewel

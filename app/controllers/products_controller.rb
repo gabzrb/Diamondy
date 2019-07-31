@@ -12,13 +12,18 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @product_attachment = ProductAttachment.new
   end
 
   def create
     @product = Product.new(product_params)
+    @product_attachment = ProductAttachment.create(params[:product][:product_attachment])
     @product.user = current_user
     @product.element = params[:product][:element]
     if @product.save!
+      @product_attachment.product = @product
+      @product_attachment.save
+      raise
       check_product_redirection(@product)
     else
       render :new
@@ -66,8 +71,11 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  # def product_attachment_params
+  #   params.require(:product_attachment).permit(:photo)
+  # end
+
   def product_params
-    #TODO
-    params.require(:product).permit(:price, :description, :element, :photo, :photo1, :photo2, :photo3, :photo_cache)
+    params.require(:product).permit(:price, :description, :element, :product_attachment)
   end
 end

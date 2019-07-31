@@ -2,7 +2,7 @@
   <% @special_requests.each do |special_request| %>
   <div class="line_confirmation"></div>
   <div class="card-trip">
-    <img src= <%= special_request.product.photo  %> >
+    <img src= <%= special_request.product.product_attachments.first.photo.url %> >
     <div class="card-trip-infos">
       <div>
         <p><%= special_request.product.description %></p>

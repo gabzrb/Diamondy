@@ -2,7 +2,7 @@
   <% @jewels.each do |jewel| %>
   <div class="line_confirmation"></div>
   <div class="card-trip">
-    <img src= <%= jewel.product.photo  %> >
+    <img src= <%= jewel.product.product_attachments.first.photo.url %> >
     <div class="card-trip-infos">
       <div>
         <h2> <%= jewel.category %></h2>

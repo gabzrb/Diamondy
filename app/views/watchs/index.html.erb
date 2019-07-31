@@ -2,7 +2,7 @@
   <% @watchs.each do |watch| %>
   <div class="line_confirmation"></div>
   <div class="card-trip">
-    <img src= <%= watch.product.photo  %> >
+    <img src= <%= watch.product.product_attachments.first.photo.url %> >
     <div class="card-trip-infos">
       <div>
         <h2> <%= watch.brand %></h2>

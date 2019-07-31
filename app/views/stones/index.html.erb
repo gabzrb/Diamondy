@@ -2,7 +2,7 @@
   <% @stones.each do |stone| %>
   <div class="line_confirmation"></div>
   <div class="card-trip">
-    <img src= <%= stone.product.photo  %> >
+    <img src= <%= stone.product.product_attachments.first.photo.url %> >
     <div class="card-trip-infos">
       <div>
         <h2><%= stone.product.description %></h2>
@@ -13,7 +13,7 @@
       </div>
       <h2 class="card-trip-pricing"> <%= stone.product.price %>€</h2>
       <% if stone.product.user.photo.url %>
-      <%= cl_image_tag stone.product.user.photo.photo, class:"card-trip-user avatar-bordered"  %>
+      <%= cl_image_tag stone.product.user.photo, class:"card-trip-user avatar-bordered"  %>
       <% else %>
       <img src="https://i.ibb.co/mhL9zjd/user.png" class="card-trip-user avatar-bordered">
       <% end %>

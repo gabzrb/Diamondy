@@ -5,7 +5,11 @@
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
+             <% if @photos[0] %>
               <%= cl_image_tag @photos[0], class: "d-block w-30"  %>
+              <% else %>
+      <img src="https://i.ibb.co/fk65335/ines-alvarez-fdez-L-N7-Ba-NLC5-Y-unsplash.jpg" >
+              <% end %>
             </div>
             <% @photos.each_with_index do |photo, i|  %>
             <% next if i == 0 %>
@@ -26,8 +30,8 @@
         <div class="card-showproduct-infos">
           <h1><%= @special_request.product.description  %></h1>
           <div class="line_confirmation"></div>
-          <div class="element-infos">
-            <h2>Description : <%= @special_request.description %></h2>
+          <div class="element-infos_sr">
+            <%= @special_request.description %>
           </div>
           <h2 class="price-product"><%= @special_request.product.price.to_i %>€</h2>
           <%= link_to 'Fiche Marchand',"#", class: "btn btn-contact" %>

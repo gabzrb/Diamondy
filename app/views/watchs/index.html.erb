@@ -2,7 +2,11 @@
   <% @watchs.each do |watch| %>
   <div class="line_confirmation"></div>
   <div class="card-trip">
-    <img src= <%= watch.product.product_attachments.first.photo.url %> >
+   <% if watch.product.product_attachments.first %>
+       <img src= <%= watch.product.product_attachments.first.photo.url %> >
+   <% else %>
+      <img src="https://i.ibb.co/hDb2xdp/pixel-bee-u8is-JQ6-Qj-F4-unsplash.jpg" >
+    <% end %>
     <div class="card-trip-infos">
       <div>
         <h2> <%= watch.brand %></h2>
@@ -11,7 +15,7 @@
       <div >
         <%= link_to 'Voir Produit',watch_path(watch), class: "btn btn-contact" %>
       </div>
-      <h2 class="card-trip-pricing"> <%= watch.product.price %>€</h2>
+      <h2 class="card-trip-pricing"> <%= watch.product.price.to_i %>€</h2>
       <% if watch.product.user.photo.url %>
       <%= cl_image_tag watch.product.user.photo, class:"card-trip-user avatar-bordered"  %>
       <% else %>

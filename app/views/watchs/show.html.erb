@@ -5,7 +5,11 @@
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
+              <% if @photos[0] %>
               <%= cl_image_tag @photos[0], class: "d-block w-30"  %>
+              <% else %>
+      <img src="https://i.ibb.co/hDb2xdp/pixel-bee-u8is-JQ6-Qj-F4-unsplash.jpg" >
+              <% end %>
             </div>
             <% @photos.each_with_index do |photo, i|  %>
             <% next if i == 0 %>

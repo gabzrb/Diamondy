@@ -37,7 +37,7 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
+  color: #21201d;
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
@@ -85,11 +85,19 @@ body {
 }
 
 .navbar {
-  background-color: #F3EDE1 !important;
+  background-color: #21201d !important;
 }
 
 
 .nav-link {
   color: #616668;
   font-size: 14px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #308EDB;
 }

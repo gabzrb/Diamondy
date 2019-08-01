@@ -20,8 +20,10 @@ class ProductsController < ApplicationController
     @product.user = current_user
     @product.element = params[:product][:element]
     if @product.save!
-      params[:product_attachments]['photo'].each do |photo|
+      if params[:product_attachments]
+        params[:product_attachments]['photo'].each do |photo|
           @product_attachment = @product.product_attachments.create!(photo: photo)
+        end
       end
       check_product_redirection(@product)
     else

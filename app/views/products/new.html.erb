@@ -14,11 +14,16 @@
           <div class=" col col-xs-12 col-md-12">
             <%= f.input :description, label:'Nom du produit' %>
           </div>
+
+
+
           <div class="col col-xs-12 col-md-12">
             <%= f.fields_for :product_attachments do |p| %>
             <div class="field">
-              <%= p.label :photo %><br>
-              <%= p.file_field :photo, :multiple => true, name: "product_attachments[photo][]" %>
+              <%= p.label :photo, class: 'upload-photo', label: '📷 Choisissez un fichier'  %>
+              <%= p.file_field :photo, :multiple => true, name: "product_attachments[photo][]", class: 'hidden' %>
+
+
             </div>
             <% end %>
           </div>

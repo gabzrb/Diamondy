@@ -2,7 +2,12 @@
   <% @stones.each do |stone| %>
   <div class="line_confirmation"></div>
   <div class="card-trip">
-    <img src= <%= stone.product.product_attachments.first.photo.url %> >
+    <% if stone.product.product_attachments.first %>
+       <img src= <%= stone.product.product_attachments.first.photo.url %> >
+   <% else %>
+      <img src="https://i.ibb.co/ScrzLhh/diamondproduct.jpg" >
+    <% end %>
+
     <div class="card-trip-infos">
       <div>
         <h2><%= stone.product.description %></h2>
@@ -11,7 +16,7 @@
       <div >
         <%= link_to 'Voir Produit',stone_path(stone), class: "btn btn-contact" %>
       </div>
-      <h2 class="card-trip-pricing"> <%= stone.product.price %>€</h2>
+      <h2 class="card-trip-pricing"> <%= stone.product.price.to_i %>€</h2>
       <% if stone.product.user.photo.url %>
       <%= cl_image_tag stone.product.user.photo, class:"card-trip-user avatar-bordered"  %>
       <% else %>

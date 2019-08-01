@@ -3,7 +3,6 @@
 <h2>Créer Votre Profile</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
 
   <div class="form-inputs">
     <div class="row">
@@ -77,21 +76,34 @@
      <%= f.input :services_description,
           required: true,
           label: false,
-           placeholder: "Description service (3OO lettres)"
+           placeholder: "Description du service (3OO lettres)"
         %>
       </div>
 
+        <div class=" col col-xs-12 col-md-6">
+            <%= f.input :phone, placeholder:'N° de téléphone', label: false; %>
+       </div>
+
+      <div class=" col col-xs-12 col-md-6">
+        <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
       <%= f.input :photo,
-          required: true,
-          label: false,
-           placeholder: " Ajouter image de profil"
-        %>
+           placeholder: " Ajouter image de profil",
+     input_html: { class: 'hidden', id: 'photo-input' }, label_html: { class: 'upload-photo',}, label: '📷 Charger un fichier' %>
+    </div>
+
    </div>
+   <div class="conditions">
+   <%= f.input :newsletter, required: true, label: false, as: :boolean, boolean_style: :inline, class: 'text-center'  %>
+   <label for="resource_newsletter">J'accepte les  <%= link_to "Conditions d'Utilisations", '#' %></label>
+  </div>
   </div>
 
   <div class="form-actions text-center">
-    <%= f.button :submit, "Valider", class: "btn-validation" %>
+
+    <%= f.button :submit, "Valider", class: "btn-validation"  %>
   </div>
+
 <% end %>
+
 </div>
 

@@ -1,0 +1,31 @@
+<div class="footer">
+  <div class="foot-image">
+    <%= link_to root_path do %>
+      <%= image_tag "logo.png", height: 80 %>
+    <% end %>
+    <p>©2019 Les Copains Bijoutiers</p>
+  </div>
+  <div class="footer-service">
+    <ul>
+      <h6><strong>NOTRE SERVICE </strong></h6>
+      <li><%= link_to 'Consulter une annonce',new_annonce_path %> </li>
+      <li><%= link_to 'Rechercher un produit', products_path %></li>
+       <li><%= link_to 'Accéder à mon profil', dashboard_path %></li>
+    </ul>
+  </div>
+  <div class="a-propos">
+    <ul>
+      <h6><strong> A PROPOS </strong></h6>
+
+      <li><%= link_to 'Conditions Générales', '#' %> </li>
+      <li><%= link_to 'Mentions légales', '#' %> </li>
+
+    </ul>
+  </div>
+
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+</div>

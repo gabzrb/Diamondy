@@ -2,7 +2,11 @@
   <% @jewels.each do |jewel| %>
   <div class="line_confirmation"></div>
   <div class="card-trip">
-    <img src= <%= jewel.product.product_attachments.first.photo.url %> >
+    <% if jewel.product.product_attachments.first %>
+       <img src= <%= jewel.product.product_attachments.first.photo.url %> >
+   <% else %>
+      <img src="https://i.ibb.co/NNZJd2h/serkan-turk-v6jc-Ubxet-L0-unsplash.jpg" >
+    <% end %>
     <div class="card-trip-infos">
       <div>
         <h2> <%= jewel.category %></h2>
@@ -11,7 +15,7 @@
       <div >
         <%= link_to 'Voir Produit',jewel_path(jewel), class: "btn btn-contact" %>
       </div>
-      <h2 class="card-trip-pricing"> <%= jewel.product.price %>€</h2>
+      <h2 class="card-trip-pricing"> <%= jewel.product.price.to_i %>€</h2>
       <% if jewel.product.user.photo.url %>
       <%= cl_image_tag jewel.product.user.photo, class:"card-trip-user avatar-bordered"  %>
       <% else %>

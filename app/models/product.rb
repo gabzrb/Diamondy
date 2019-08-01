@@ -7,6 +7,9 @@ class Product < ApplicationRecord
   has_many :product_attachments, dependent: :destroy
   accepts_nested_attributes_for :product_attachments
 
+  validates :name, presence: true
+  validates :price, presence: true
+
   def conect
     return self.jewel if self.jewel
     return self.special_request if self.special_request

@@ -5,7 +5,6 @@
   url(<%= image_path 'deal.png' %>);">
   <div class="card black-card ">
     <div class="form-row">
-
       <div class="col">
         <%= f.input :category, name: "type", collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false , placeholder: "Type 2" %>
       </div>
@@ -22,4 +21,5 @@
 </div>
 </div>
 <%= render 'shared/list_annonces',annonces: @annonces %>
+
 <%= render 'shared/footer' %>

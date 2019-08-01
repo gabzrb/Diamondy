@@ -1,16 +1,19 @@
 <div class="media med-dash-nav">
   <div class="container dash-nav">
     <div class="row">
-      <div class="col-md-8 col-sm-12">
+      <div class="col-md-8 col-sm-12 profil-info">
         <%  if current_user.photo.url %>
         <%= cl_image_tag current_user.photo, class:"mr-3 img-nav-dash", crop: :fill %>
         <% else %>
-        <%= image_tag "logo.png", class:"mr-3 img-nav-dash" %>
-        <% end %>
+     <img src="https://i.ibb.co/mhL9zjd/user.png" class="mr-3 img-nav-dash">
+      <% end %>
         <div class="media-body">
-          <h5 class="mt-0"><%= current_user.company_name %></h5>
-          <h5>     <%= current_user.services_description %>  </h5>
+          <div class="nom-profile">
           <h5> <%=  current_user.first_name %></h5>
+          <h5> <%=  current_user.last_name %></h5>
+         </div>
+          <h5 class="mt-0"><%= current_user.company_name %></h5>
+          <h5> <%= current_user.services_description %>  </h5>
         </div>
       </div>
       <div class="col-md-4 col-sm-12 navdash-b">
@@ -42,11 +45,16 @@
           <div>
             <h2><%= product.element %></h2>
             <p><%= product.description %>.</p>
+  <div class='ic'>
+           <p><i class="fas fa-pen"></i> <%= link_to 'Editer',edit_product_path(product) %></p>
+           <p> <i class="fas fa-trash"></i> <%= link_to 'Supprimer ',product_path(product), method: :delete %> </p>
+</div>
           </div>
+
           <div>
-            <%= link_to 'Editez Produit',edit_product_path(product), class: "btn btn-contact" %>
-            <%= link_to 'Suprimer Produit',product_path(product), method: :delete,  class: "btn btn-contact" %>
+          <%= link_to 'Voir Produit', "#", class: "btn btn-contact" %>
           </div>
+
           <h2 class="card-trip-pricing"> <%= product.price %>€</h2>
           <% if product.user.photo.url %>
           <%= cl_image_tag product.user.photo, class:"card-trip-user avatar-bordered"  %>

@@ -283,6 +283,9 @@
   width: 40px;
 }
 
+.card-trip-infos a{
+color: black;
+}
 
 
 .productgrid {
@@ -341,5 +344,20 @@
 }
 
 
+.icon-edit {
+  margin-top: 6px;
+}
 
+.profil-info {
+      display: flex;
+    align-items: center;
+    color: white;
+}
 
+.nom-profile {
+  display: flex;
+}
+
+.nom-profile h5 {
+  margin-right: 10px;
+}

@@ -8,4 +8,11 @@ class User < ApplicationRecord
   has_many :contacts
   has_many :annonces
   mount_uploader :photo, PhotoUploader
+  after_create :send_welcome_email
 end
+
+ def send_welcome_email
+    UserMailer.welcome(self).deliver_now
+  end
+
+

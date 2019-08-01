@@ -3,7 +3,7 @@ class AnnoncesController < ApplicationController
   before_action :set_annonce, only: [:edit, :update, :destroy]
 
   def new
-    @annonces = Annonce.all
+    @annonces = Annonce.all.order(:created_at).reverse
     @annonce = Annonce.new
     if params[:query_type]
       @annonces = Annonce.where(category: params[:query_type])

@@ -5,8 +5,9 @@ class AnnoncesController < ApplicationController
   def new
     @annonces = Annonce.all.order(:created_at).reverse
     @annonce = Annonce.new
-    if params[:query_type]
-      @annonces = Annonce.where(category: params[:query_type])
+
+    if params[:query]
+      @annonces = Annonce.search(params[:query])
     end
   end
 

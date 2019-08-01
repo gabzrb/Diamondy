@@ -4,11 +4,14 @@
       <table class="table table-hover">
         <tbody>
           <%= form_tag new_annonce_path, method: :get do %>
-          <%= select_tag "query_type", options_for_select(["Bijoux","Diamant","Montre", "Demande spéciale"], "Bijoux"),
-          class: "form-control",
-          placeholder: "Type d'annonce"
+          <div class="search-box">
+            <input type="text" placeholder="Type to search" name="query" class="search-txt">
+            <a href="" class="search-btn" >
+              <i class="fas fa-search"></i>
+            </a>
+          </div>
+          <%#= search_field :query, "query_des"
           %>
-          <%= button_tag %>
           <% end %>
           <% annonces.each_with_index do |annonce, index| %>
           <tr>
@@ -35,10 +38,8 @@
                   <p><b>Addresse:</b> <%= annonce.user.address %></p>
                   <p><b>Numéro de télephone:</b> <%= annonce.user.email %></p>
                   <p><b>Email:</b> <%= annonce.user.email %></p>
-
                   <p><b>Siret:</b> <%= annonce.user.siret_no %></p>
                 </div>
-
               </div>
             </div>
           </div>

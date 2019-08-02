@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   get 'admin', to: 'pages#admin', as: :admin
 
+  get 'conditions_generales', to: 'pages#conditions_generales'
+  get 'mentions_legales', to: 'pages#mentions_legales'
+
   resources :contacts, only: [:new, :create]
   resources :annonces
 

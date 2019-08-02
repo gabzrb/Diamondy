@@ -5,14 +5,19 @@
         <h1>Ajouter une fiche produit</h1>
         <%= simple_form_for @product, multipart: true  do |f| %>
         <div class="form-row">
+          <div class="col col-xs-12 col-md-12">
+            <%= f.input :name, label: 'Nom', required: false %>
+          </div>
           <div class="col col-xs-12 col-md-6">
             <%= f.input :element, label: 'Type de produit', collection: ["jewel", "stone", "watch", "special_request"] %>
           </div>
-          <div class="col col-xs-12 col-md-6">
-            <%= f.input :price, label: 'Prix' %>
+
+           <div class="col col-xs-12 col-md-6">
+            <%= f.input :price, label: 'Prix', required: false %>
           </div>
+
           <div class=" col col-xs-12 col-md-12">
-            <%= f.input :description, label:'Nom du produit' %>
+            <%= f.input :description, label:'Description du produit' %>
           </div>
 
 

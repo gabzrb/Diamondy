@@ -1,15 +1,19 @@
 <div class="media med-dash-nav">
   <div class="container dash-nav">
     <div class="row">
-      <div class="col-md-8 col-sm-12">
+      <div class="col-md-8 col-sm-12 profil-info">
         <%  if @user.photo.url %>
-        <%= cl_image_tag @user.photo, class:"mr-3 img-nav-dash" %>
+        <%= cl_image_tag @user.photo, class:"mr-3 img-nav-dash", crop: :fill %>
         <% else %>
-        <%= image_tag "logo.png", class:"mr-3 img-nav-dash" %>
-        <% end %>
+     <img src="https://i.ibb.co/mhL9zjd/user.png" class="mr-3 img-nav-dash">
+      <% end %>
         <div class="media-body">
+          <div class="nom-profile">
+          <h5> <%=  @user.first_name %></h5>
+          <h5> <%=  @user.last_name %></h5>
+         </div>
           <h5 class="mt-0"><%= @user.company_name %></h5>
-          <%= @user.services_description %>
+          <h5> <%= @user.services_description %>  </h5>
         </div>
       </div>
       <div class="col-md-4 col-sm-12 navdash-b">
@@ -18,20 +22,65 @@
     </div>
   </div>
 </div>
-<div class="container list-nav">
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Produit en ligne</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profil</a>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <div class="container list-nav">
   <h3>Produits mis en ligne par <%= @user.company_name %>(<%= @user.products.count %>)</h3>
-    <% @user.products.each do |product| %>
-      <div class="card-product">
-          <% if product.photo.url %>
-          <%= cl_image_tag product.photo %>
+      <% @user.products.each do |product| %>
+      <div class="card-trip">
+        <% if product.product_attachments.first %>
+        <%= cl_image_tag product.product_attachments.first.photo %>
+        <% else %>
+        <%= image_tag "https://i.ibb.co/cYPRmcc/diamondproduct.jpg" %>
+        <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= product.element %></h2>
+            <p><%= product.description %>.</p>
+  <div class='icon-edit'>
+</div>
+          </div>
+
+          <div>
+          <%= link_to 'Voir Produit', "/#{product.element}s/#{product.conect.id}", class: "btn btn-contact" %>
+          </div>
+
+          <h2 class="card-trip-pricing"> <%= product.price.to_i %>€</h2>
+          <% if product.user.photo.url %>
+          <%= cl_image_tag product.user.photo, class:"card-trip-user avatar-bordered"  %>
           <% else %>
-          <%= image_tag "https://i.ibb.co/cYPRmcc/diamondproduct.jpg" %>
+          <img src="https://i.ibb.co/mhL9zjd/user.png" class="card-trip-user avatar-bordered">
           <% end %>
-          <div class="card-product-infos">
-          <h2><%= product.element %></h2>
-          <h5><%= product.price %>€</h5>
-          <p><%= product.description %>.</p>
         </div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <div class="container list-nav">
+      <div class="card" style="width: 45rem;">
+        <div class="card-body">
+          <h5 class="card-title">Information</h5>
+          <div class="card-text">
+            <p>Prénom : <%=  @user.first_name %></p>
+            <p>Nom : <%=  @user.last_name %></p>
+            <p> Nom de la société : <%= @user.company_name %></p>
+            <p> Numéro de Siret : <%= @user.siret_no%></p>
+            <p>Email : <%= @user.email %> </p>
+            <p>Numéro de telephone : <%= @user.phone %></p>
+            <p>Service</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
 </div>

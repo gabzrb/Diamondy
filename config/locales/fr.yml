@@ -1,6 +1,8 @@
 fr:
   activerecord:
     errors:
+      messages:
+        record_invalid: "Erreurs de sauvegarde"
       models:
         user:
           attributes:

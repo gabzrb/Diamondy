@@ -18,7 +18,8 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.user = current_user
-    @product.element = params[:product][:element]
+
+    @product.element = traduct_element(params[:product][:element])
     if @product.save!
       if params[:product_attachments]
         params[:product_attachments]['photo'].each do |photo|
@@ -56,6 +57,18 @@ class ProductsController < ApplicationController
 
   private
 
+  def traduct_element(element)
+    if element == "Bijoux"
+      return "jewel"
+    elsif element == "Pierre"
+      return "stone"
+    elsif element == "Montre"
+      return "watch"
+    else
+      return "special_request"
+    end
+  end
+
   def product_conection(products)
     products.each do |product|
       if (product.jewel.nil? && product.stone.nil? && product.watch.nil? && product.special_request.nil?)
@@ -77,6 +90,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:price, :description, :element, product_attachments_attributes: [:id, :product_id, :photo])
+    params.require(:product).permit(:name, :price, :description, :element, product_attachments_attributes: [:id, :product_id, :photo])
   end
 end

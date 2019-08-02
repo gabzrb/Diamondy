@@ -17,5 +17,9 @@ class PagesController < ApplicationController
     @products = current_user.products
   end
 
+  def conditions_generales
+  end
 
+  def mentions_legales
+  end
 end

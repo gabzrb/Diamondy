@@ -34,7 +34,7 @@
             <%= @special_request.description %>
           </div>
           <h2 class="price-product"><%= @special_request.product.price.to_i %>€</h2>
-          <%= link_to 'Fiche Marchand',"#", class: "btn btn-contact" %>
+          <%= link_to 'Fiche Marchand',user_path(@special_request.product.user), class: "btn btn-contact" %>
         </div>
       </div>
     </div>

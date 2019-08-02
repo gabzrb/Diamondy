@@ -38,7 +38,7 @@
             <h2>Matériel: <br> <%= @watch.material  %></h2>
           </div>
           <h2 class="price-product"><%= @watch.product.price.to_i %>€</h2>
-          <%= link_to 'Fiche Marchand',"#", class: "btn btn-contact" %>
+          <%= link_to 'Fiche Marchand',user_path(@watch.product.user), class: "btn btn-contact" %>
         </div>
       </div>
     </div>

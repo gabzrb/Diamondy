@@ -1,13 +1,20 @@
 <div class="container list-nav">
+  <%= form_tag stones_path, method: :get do %>
+  <%= select_tag 'query[size]', options_for_select(Stone::SIZES) %>
+  <%= select_tag 'query[color]', options_for_select(Stone::COLORS) %>
+  <%= select_tag 'query[purity]', options_for_select(Stone::PURITY) %>
+  <%= select_tag 'query[certificate]', options_for_select(Stone::CERTIFICATES) %>
+  <%= submit_tag "Search" %>
+  <%= link_to "🅧", stones_path %>
+  <% end %>
   <% @stones.each do |stone| %>
   <div class="line_confirmation"></div>
   <div class="card-trip">
     <% if stone.product.product_attachments.first %>
-       <img src= <%= stone.product.product_attachments.first.photo.url %> >
-   <% else %>
-      <img src="https://i.ibb.co/ScrzLhh/diamondproduct.jpg" >
+    <img src= <%= stone.product.product_attachments.first.photo.url %> >
+    <% else %>
+    <img src="https://i.ibb.co/ScrzLhh/diamondproduct.jpg" >
     <% end %>
-
     <div class="card-trip-infos">
       <div>
         <h2><%= stone.product.description %></h2>

@@ -3,7 +3,11 @@ class JewelsController < ApplicationController
   before_action :set_jewel, only: [:show, :edit, :update]
 
   def index
-    @jewels = Jewel.all
+    if params[:query].present?
+      @jewels = Jewel.where(category: params[:query][:category], state: params[:query][:state], brand: params[:query][:brand])
+    else
+      @jewels = Jewel.all
+    end
   end
 
   def new

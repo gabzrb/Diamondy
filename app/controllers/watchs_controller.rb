@@ -3,7 +3,13 @@ class WatchsController < ApplicationController
   before_action :set_watch, only: [:show, :edit, :update]
 
   def index
-    @watchs = Watch.all
+    if params[:query].present?
+      @watchs = Watch.where(state: params[:query][:state],
+                            material: params[:query][:material],
+                            brand: params[:query][:brand])
+    else
+      @watchs = Watch.all
+    end
   end
 
   def new

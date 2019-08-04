@@ -3,7 +3,14 @@ class StonesController < ApplicationController
   before_action :set_stone, only: [:show, :edit, :update]
 
   def index
-    @stones = Stone.all
+    if params[:query].present?
+      @stones = Stone.where(size: params[:query][:size],
+                            color: params[:query][:color],
+                            purity: params[:query][:purity],
+                            certificate: params[:query][:certificate])
+    else
+      @stones = Stone.all
+    end
   end
 
   def new

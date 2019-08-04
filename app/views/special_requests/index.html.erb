@@ -1,11 +1,16 @@
 <div class="container list-nav">
+  <%= form_tag special_requests_path, method: :get do %>
+  <%= text_field_tag 'query[description]'%>
+  <%= submit_tag "Search" %>
+  <%= link_to "🅧", special_requests_path %>
+  <% end %>
   <% @special_requests.each do |special_request| %>
   <div class="line_confirmation"></div>
   <div class="card-trip">
     <% if special_request.product.product_attachments.first %>
-       <img src= <%= special_request.product.product_attachments.first.photo.url %> >
-   <% else %>
-      <img src="https://i.ibb.co/fk65335/ines-alvarez-fdez-L-N7-Ba-NLC5-Y-unsplash.jpg" >
+    <img src= <%= special_request.product.product_attachments.first.photo.url %> >
+    <% else %>
+    <img src="https://i.ibb.co/fk65335/ines-alvarez-fdez-L-N7-Ba-NLC5-Y-unsplash.jpg" >
     <% end %>
     <div class="card-trip-infos">
       <div>

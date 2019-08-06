@@ -66,8 +66,6 @@
 }
 
 
-
-
 .black-card {
     background-color: #494f4f;
     width: 53vw;
@@ -193,7 +191,12 @@
   }
 }
 
-
+@media(max-width: 768px) {
+  .cardproduit {
+    width: auto;
+    display: block;
+  }
+}
 
 .contactcard {
 
@@ -372,4 +375,9 @@ color: black;
     margin-left: 9px;
     max-width: 46vw;
     padding-bottom: 11px;
+}
+
+.products-index-link {
+  margin: auto;
+  margin-bottom: 5vh;
 }

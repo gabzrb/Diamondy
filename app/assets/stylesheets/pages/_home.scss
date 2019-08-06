@@ -1,10 +1,14 @@
 // Specific CSS for your home-page
 .paragraphe {
-
   margin-bottom: 13px;
 }
 
 
 .conditions {
   display: flex;
+}
+
+.home-video {
+  width: -webkit-fill-available;
+  height: 60vh;
 }

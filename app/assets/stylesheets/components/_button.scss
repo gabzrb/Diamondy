@@ -13,9 +13,11 @@
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-
-
-
+@media(max-width: 768px) {
+  .btn-cta {
+    width: min-content;
+  }
+}
 
 .btn-cta {
   color: #f6f0e4;
@@ -35,7 +37,7 @@
    padding: 15px 20px ;
    font-size: 15px;
    margin-bottom: 23px;
-   margin-right: 25px;
+   // margin-right: 25px;
 }
 
 
@@ -45,8 +47,10 @@
    padding: 15px 20px ;
    font-size: 15px;
    margin-bottom: 23px;
-   margin-right: 25px;
+   margin-right: 12px;
+   margin-left: 12px
 }
+
 
 .btn-home2:hover {
  border: 1px solid gray;

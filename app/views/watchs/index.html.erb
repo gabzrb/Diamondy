@@ -1,4 +1,10 @@
 <div class="container list-nav">
+    <%= form_tag watchs_path, method: :get do %>
+  <%= select_tag 'query[state]', options_for_select(Watch::STATES) %>
+  <%= select_tag 'query[brand]', options_for_select(Watch::BRANDS) %>
+  <%= select_tag 'query[material]', options_for_select(Watch::MATERIALS) %>
+  <%= link_to "🅧", watchs_path %>
+  <% end %>
   <% @watchs.each do |watch| %>
   <div class="line_confirmation"></div>
   <div class="card-trip">

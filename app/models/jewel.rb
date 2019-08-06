@@ -27,8 +27,8 @@ class Jewel < ApplicationRecord
            "Chanel",
            "Hermes"]
 
-  # validates :category, inclusion: { in: BRANDS }
-  # validates :brand, inclusion: { in: CATEGORY }
+  validates :category, inclusion: { in: CATEGORY }
+  validates :brand, inclusion: { in: BRANDS }
   validates :state, inclusion: { in: STATES }
 
 end

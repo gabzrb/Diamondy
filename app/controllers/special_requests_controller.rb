@@ -3,7 +3,11 @@ class SpecialRequestsController < ApplicationController
   before_action :set_special_request, only: [:show, :edit, :update]
 
   def index
-    @special_requests = SpecialRequest.all
+    if params[:query].present?
+      @special_requests = SpecialRequest.search(params[:query][:description])
+    else
+      @special_requests = SpecialRequest.all
+    end
   end
 
   def new

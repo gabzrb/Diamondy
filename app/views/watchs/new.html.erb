@@ -6,22 +6,22 @@
         <%= simple_form_for(@watch, as: :watch, method: :post, url: product_watchs_path(@product)) do |f| %>
         <%= f.error_notification %>
         <div class="form-row">
-          <div class="col col-xs-12 col-md-6">
+          <div class="col-xs-12 col-md-6">
             <%= f.input :state, collection: Watch::STATES, label:'État' %>
           </div>
-          <div class="col col-xs-12 col-md-6">
+          <div class="col-xs-12 col-md-6">
             <%= f.input :brand, collection: Watch::BRANDS, label:'Marque' %>
           </div>
-          <div class="col col-xs-12 col-md-6">
+          <div class="col-xs-12 col-md-6">
             <%= f.input :model, label:'Modèle' %>
           </div>
-          <div class="col col-xs-12 col-md-6">
+          <div class="col-xs-12 col-md-6">
             <%= f.input :year, min:1800 , max: 2020, label:'Année' %>
           </div>
-          <div class="col col-xs-12 col-md-12">
+          <div class="col-xs-12 col-md-12">
             <%= f.input :material, collection: Watch::MATERIALS, label:'Matériaux' %>
           </div>
-          <div  class="form-actions col col-xs-12 col-md-6">
+          <div class="form-actions col col-xs-12 col-md-6">
             <%= f.submit "Valider", class: "btn-contact" %>
           </div>
           <% end %>

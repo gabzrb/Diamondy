@@ -1,36 +1,22 @@
-
-
 <div class="banner" style="background-image:
- url(<%= image_path 'banniere.jpg' %>);">
- <div class="banner-content">
+  url(<%= image_path 'banniere.jpg' %>);">
+  <div class="banner-content">
     <h5> REJOIGNEZ LA 1ERE MARKETPLACE DEDIEE AUX PROFESSIONNELS</h5>
     <h5> DIAMANT - BIJOUX - MONTRES ET PASSER VOTRE ANNONCE GRATUITEMENT. </h5>
-      </div>
+  </div>
   <div class="banner-btn-center">
-   <%= link_to 'ANNONCEZ GRATUITEMENT',new_annonce_path, class: "btn btn-cta" %>
-   </div>
+    <%= link_to 'ANNONCEZ GRATUITEMENT',new_annonce_path, class: "btn btn-cta" %>
+  </div>
 </div>
-
 <div class="container text-center">
-
- <%= link_to 'PASSER UNE ANNONCE',new_annonce_path, class: "btn btn-home2" %>
+  <%= link_to 'PASSER UNE ANNONCE',new_annonce_path, class: "btn btn-home2" %>
   <%= link_to 'CONSULTER LES ANNONCES',products_path, class: "btn btn-home2" %>
-   <%= link_to 'PRODUITS DISPONIBLES',products_path, class: "btn btn-home2" %>
-
-<div class="paragraphe">
-  <h5> GRATUITEMENT, SIMPLEMENT ET EN QUELQUES CLICS !</h5>
-  <p>Trouver les bijoux, montres, diamants que vous recherchez auprés de la plus grande communauté <br>de bijoutiers,joaillers en France </p>
-  <p> <strong>Quelqu'un, quelque part à la perle rare ! Voyez par vous même. </strong></p>
-
- <iframe width="700" height="400" src="https://www.youtube.com/embed/n_bk2n2Ehjo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-
+  <%= link_to 'PRODUITS DISPONIBLES',products_path, class: "btn btn-home2" %>
+  <div class="paragraphe">
+    <h5> GRATUITEMENT, SIMPLEMENT ET EN QUELQUES CLICS !</h5>
+    <p>Trouver les bijoux, montres, diamants que vous recherchez auprés de la plus grande communauté <br>de bijoutiers,joaillers en France </p>
+    <p> <strong>Quelqu'un, quelque part à la perle rare ! Voyez par vous même. </strong></p>
+    <iframe src="https://www.youtube.com/embed/n_bk2n2Ehjo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="home-video"></iframe>
+  </div>
 </div>
-
-
-
-</div>
-
-
 <%= render 'shared/footer' %>

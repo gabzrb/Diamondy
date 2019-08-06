@@ -8,27 +8,20 @@
           <div class="col col-xs-12 col-md-12">
             <%= f.input :name, label: 'Nom', required: false %>
           </div>
-          <div class="col col-xs-12 col-md-6">
+          <div class="col-xs-12 col-md-6">
             <%= f.input :element, label: 'Type de produit', collection: ["Bijoux", "Pierre", "Montre", "Demande Speciale"] %>
           </div>
-
-           <div class="col col-xs-12 col-md-6">
+          <div class="col-xs-12 col-md-6">
             <%= f.input :price, label: 'Prix', required: false %>
           </div>
-
-          <div class=" col col-xs-12 col-md-12">
+          <div class="col-xs-12 col-md-12">
             <%= f.input :description, label:'Description du produit' %>
           </div>
-
-
-
-          <div class="col col-xs-12 col-md-12">
+          <div class="col-xs-12 col-md-12">
             <%= f.fields_for :product_attachments do |p| %>
             <div class="field">
               <%= p.label :photo, class: 'upload-photo', label: '📷 Choisissez un fichier'  %>
               <%= p.file_field :photo, :multiple => true, name: "product_attachments[photo][]", class: 'hidden' %>
-
-
             </div>
             <% end %>
           </div>

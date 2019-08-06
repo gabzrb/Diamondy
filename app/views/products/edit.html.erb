@@ -25,7 +25,7 @@
               <%= f.fields_for @product_attachment do |p| %>
               <div class="field">
                 <%= p.label "Rajouter une ou plusieurs images ⇩" %><br>
-                <%= p.file_field :photo, :multiple => true, name: "product_attachments[photo][]" } %>
+                <%= p.file_field :photo, :multiple => true, name: "product_attachments[photo][]" %>
               </div>
               <% end %>
             </div>

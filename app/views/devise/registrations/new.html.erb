@@ -1,109 +1,84 @@
-
 <div class="container margin-top">
-<h2>Créer Votre Profile</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-
+  <h2>Créer Votre Profile</h2>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <div class="form-inputs">
     <div class="row">
-
-
-   <div class="col-xs-12 col-md-6">
-    <%= f.input :first_name,
-                 required: true,
-                 label: false,
-                 placeholder: "Prénom"  %>
-   </div>
-
-
-   <div class="col-xs-12 col-md-6">
-    <%= f.input :last_name,
-                 required: true,
-                 label: false,
-                 placeholder: "Nom"  %>
-   </div>
-
-
-   <div class="col-xs-12 col-md-6">
-    <%= f.input :company_name,
-                 required: true,
-                 label: false,
-                 placeholder: "Nom de société"  %>
-   </div>
-
       <div class="col-xs-12 col-md-6">
-    <%= f.input :email,
-                required: true,
-                label: false,
-                autofocus: true,
-                  placeholder: "Email",
-                input_html: { autocomplete: "email" }%>
-     </div>
-
-
-   <div class="col-xs-12 col-md-6">
-    <%= f.input :address,
-                 required: true,
-                 label: false,
-                 placeholder: "Adresse"  %>
-   </div>
-
-   <div class="col-xs-12 col-md-6">
-    <%= f.input :password,
-                required: true,
-                  placeholder: "Mot de passe",
-                label: false,
-
-                input_html: { autocomplete: "new-password" } %>
-    </div>
-
-     <div class="col-xs-12 col-md-6">
-     <%= f.input :siret_no,
-                 required: true,
-                 label: false,
-                 placeholder: "Numero de SIRET"  %>
-    </div>
-
-   <div class="col-xs-12 col-md-6">
-      <%= f.input :password_confirmation,
-                required: true,
-                  placeholder: "Confirmation du mot de passe",
-                label: false,
-                input_html: { autocomplete: "new-password" } %>
-   </div>
-
+        <%= f.input :first_name,
+        required: true,
+        label: false,
+        placeholder: "Prénom"  %>
+      </div>
       <div class="col-xs-12 col-md-6">
-     <%= f.input :services_description,
-          required: true,
-          label: false,
-           placeholder: "Description du service (3OO lettres)"
+        <%= f.input :last_name,
+        required: true,
+        label: false,
+        placeholder: "Nom"  %>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <%= f.input :company_name,
+        required: true,
+        label: false,
+        placeholder: "Nom de société"  %>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <%= f.input :email,
+        required: true,
+        label: false,
+        autofocus: true,
+        placeholder: "Email",
+        input_html: { autocomplete: "email" }%>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <%= f.input :address,
+        required: true,
+        label: false,
+        placeholder: "Adresse"  %>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <%= f.input :password,
+        required: true,
+        placeholder: "Mot de passe",
+        label: false,
+        input_html: { autocomplete: "new-password" } %>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <%= f.input :siret_no,
+        required: true,
+        label: false,
+        placeholder: "Numero de SIRET"  %>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <%= f.input :password_confirmation,
+        required: true,
+        placeholder: "Confirmation du mot de passe",
+        label: false,
+        input_html: { autocomplete: "new-password" } %>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <%= f.input :services_description,
+        required: true,
+        label: false,
+        placeholder: "Description du service (3OO lettres)"
         %>
       </div>
-
-        <div class=" col col-xs-12 col-md-6">
-            <%= f.input :phone, placeholder:'N° de téléphone', label: false; %>
-       </div>
-
-      <div class=" col col-xs-12 col-md-6">
+      <div class="col-xs-12 col-md-6">
+        <%= f.input :phone, placeholder:'N° de téléphone', label: false; %>
+      </div>
+      <div class="col-xs-12 col-md-6">
         <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
-      <%= f.input :photo,
-           placeholder: " Ajouter image de profil",
-     input_html: { class: 'hidden', id: 'photo-input' }, label_html: { class: 'upload-photo',}, label: '📷 Charger un fichier' %>
+        <%= f.input :photo,
+        placeholder: " Ajouter image de profil",
+        input_html: { class: 'hidden', id: 'photo-input' }, label_html: { class: 'upload-photo',}, label: '📷 Charger un fichier' %>
+      </div>
     </div>
-
-   </div>
-   <div class="conditions">
-   <%= f.input :newsletter, required: true, label: false, as: :boolean, boolean_style: :inline, class: 'text-center'  %>
-   <label for="resource_newsletter">J'accepte les  <%= link_to "Conditions d'Utilisations", '#' %></label>
+    <div class="conditions">
+      <%= f.input :newsletter, required: true, label: false, as: :boolean, boolean_style: :inline, class: 'text-center'  %>
+      <label for="resource_newsletter">J'accepte les  <%= link_to "Conditions d'Utilisations", '#' %></label>
+    </div>
   </div>
-  </div>
-
   <div class="form-actions text-center">
-
     <%= f.button :submit, "Valider", class: "btn-validation"  %>
   </div>
-
-<% end %>
-
+  <% end %>
 </div>
-

@@ -58,11 +58,12 @@
 }
 
 .btn-inscription {
- background-color: antiquewhite;
-    padding: 0.375rem 11rem;
-    border-radius: 50px;
-    margin-top: 29px;
-    margin-bottom: 14px;
+  background-color: antiquewhite;
+  // padding: 0.375rem 11rem;
+  width: -webkit-fill-available;
+  border-radius: 50px;
+  margin-top: 29px;
+  margin-bottom: 14px;
 }
 
 .btn-contact {
@@ -106,7 +107,12 @@ border-color:  #11d6c9;
     margin-bottom: 14px;
 }
 
-
+@media(max-width: 768px) {
+  .btn-validation {
+    padding: 10px;
+    width: -webkit-fill-available;
+  }
+}
 
 .tabsmargin {
  margin-left: -3px;

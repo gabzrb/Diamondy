@@ -12,3 +12,25 @@
   width: -webkit-fill-available;
   height: 60vh;
 }
+
+
+.annonceflex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.annoncedescription {
+max-width: 32vw;
+    max-height: 23px;
+    overflow-y: scroll;
+    min-width: 33vw;
+    display: flex;
+    justify-content: center;
+        padding-left: 13px;
+    }
+
+
+.annoncetime {
+      padding-right: 12px;
+}

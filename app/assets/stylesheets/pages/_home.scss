@@ -9,8 +9,9 @@
 }
 
 .home-video {
-  width: -webkit-fill-available;
-  height: 60vh;
+  // width: -webkit-fill-available;
+  // height: 60vh;
+  width: 55vw;
 }
 
 
@@ -33,4 +34,10 @@ max-width: 32vw;
 
 .annoncetime {
       padding-right: 12px;
+}
+
+@media(max-width: 768px) {
+  .home-video {
+    width: 90vw;
+  }
 }

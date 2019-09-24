@@ -14,16 +14,16 @@
           %>
           <% end %>
           <% annonces.each_with_index do |annonce, index| %>
-        <hr>
-         <div class="annonceflex">
-          <p class="annoncetime"> <%= annonce.created_at.strftime("%d/%m/%Y") %> </p>
-        <p> <%= annonce.category %> </p>
-        <p class="annoncedescription"> <%= annonce.description %> </p>
+          <hr>
+          <div class="annonceflex">
+            <p class="annoncetime"> <%= annonce.created_at.strftime("%d/%m/%Y") %> </p>
+            <p> <%= annonce.category %> </p>
+            <p class="annoncedescription"> <%= annonce.description %> </p>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<%= index %>">
-              J'ai le Produit
+            J'ai le Produit
             </button>
-         </div>
+          </div>
           <!-- Modal -->
           <div class="modal fade" id="exampleModal<%= index %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -48,6 +48,10 @@
         </tbody>
       </table>
     </div>
+    <div class="col-sm-12 col-md-4">
+      <%= link_to "Postez une annonce", new_annonce_path, class:"btn btn-contact btn-annonce" %>
+    </div>
   </div>
+</div>
 </div>
 <!-- modal -->

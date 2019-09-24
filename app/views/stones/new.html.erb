@@ -7,11 +7,20 @@
         <%= f.error_notification %>
         <div class="form-row">
           <div class="col-xs-12 col-md-6">
-            <%= f.input :size, collection: Stone::SIZES, label:'Taille' %>
+            <%= f.input :size, collection: Stone::QUALIFICATIONS, label:'Taille' %>
           </div>
-          <!--  <div class="col col-xs-12 col-md-6">
-            <%#= f.input :category %>
-          </div> -->
+          <div class="col-xs-12 col-md-6">
+            <%= f.input :shape, collection: Stone::SHAPES, label:'Forme' %>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <%= f.input :symetry, collection: Stone::QUALIFICATIONS, label:'Symetrie' %>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <%= f.input :polish, collection: Stone::QUALIFICATIONS, label:'Polish' %>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <%= f.input :fluo, collection: Stone::FLUO, label:'Fluorescence' %>
+          </div>
           <div class="col-xs-12 col-md-6">
             <%= f.input :weight, label: 'Precisez le poids en Carats' %>
           </div>

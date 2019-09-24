@@ -53,6 +53,6 @@ class StonesController < ApplicationController
   end
 
   def stone_params
-    params.require(:stone).permit(:category, :size, :weight, :color, :purity, :certificate)
+    params.require(:stone).permit(:category, :size, :weight, :color, :purity, :certificate, :shape, :symetry, :polish, :fluo)
   end
 end

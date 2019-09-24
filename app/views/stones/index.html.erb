@@ -1,6 +1,6 @@
 <div class="container list-nav">
   <%= form_tag stones_path, method: :get do %>
-  <%= select_tag 'query[size]', options_for_select(Stone::SIZES) %>
+  <%#= select_tag 'query[size]', options_for_select(Stone::SIZES) %>
   <%= select_tag 'query[color]', options_for_select(Stone::COLORS) %>
   <%= select_tag 'query[purity]', options_for_select(Stone::PURITY) %>
   <%= select_tag 'query[certificate]', options_for_select(Stone::CERTIFICATES) %>

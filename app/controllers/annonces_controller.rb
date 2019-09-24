@@ -2,6 +2,13 @@ class AnnoncesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   before_action :set_annonce, only: [:edit, :update, :destroy]
 
+  def index
+    @annonces = Annonce.all.order(:created_at).reverse
+    if params[:query]
+      @annonces = Annonce.search(params[:query])
+    end
+  end
+
   def new
     @annonces = Annonce.all.order(:created_at).reverse
     @annonce = Annonce.new
@@ -42,5 +49,4 @@ class AnnoncesController < ApplicationController
   def annonce_params
     params.require(:annonce).permit(:category, :description)
   end
-
 end

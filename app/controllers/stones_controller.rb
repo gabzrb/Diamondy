@@ -4,6 +4,8 @@ class StonesController < ApplicationController
 
   def index
     if params[:query].present?
+      @stones = Stone.by_size(Stone::QUALIFICATIONS[Stone::QUALIFICATIONS.index(params[:query][:size_from])..Stone::QUALIFICATIONS.index(params[:query][:size_to])]) &
+      Stone.by_polish(Stone::QUALIFICATIONS[Stone::QUALIFICATIONS.index(params[:query][:size_from])..Stone::QUALIFICATIONS.index(params[:query][:size_to])])
       raise
       # Need to be done !!!!!
 
@@ -44,7 +46,6 @@ class StonesController < ApplicationController
     @stone.update(stone_params)
     redirect_to dashboard_path
   end
-
 
   private
 

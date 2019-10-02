@@ -4,9 +4,9 @@
   <%= select_tag 'query[shapes]', options_for_select(Stone::SHAPES) %>
   <%= label_tag 'Couleur' %>
   <p>De</p>
-  <%= select_tag 'query[color_from]', options_for_select(Stone::COLORS) %>
+  <%= select_tag 'query[color_from]', options_for_select(Stone::COLORS, 'D') %>
     <p>A</p>
-  <%= select_tag 'query[color_to]', options_for_select(Stone::COLORS) %>
+  <%= select_tag 'query[color_to]', options_for_select(Stone::COLORS, 'MZ') %>
 
   <%= label_tag 'Poid Carat' %>
   <p>De</p>
@@ -16,15 +16,15 @@
 
   <%= label_tag 'Pureté' %>
   <p>De</p>
-  <%= select_tag 'query[purity_from]', options_for_select(Stone::PURITY) %>
+  <%= select_tag 'query[purity_from]', options_for_select(Stone::PURITY, 'IF-LC') %>
     <p>A</p>
-  <%= select_tag 'query[purity_to]', options_for_select(Stone::PURITY) %>
+  <%= select_tag 'query[purity_to]', options_for_select(Stone::PURITY, 'P3') %>
 
   <%= label_tag 'Taille' %>
   <p>De</p>
-  <%= select_tag 'query[size_from]', options_for_select(Stone::QUALIFICATIONS) %>
+  <%= select_tag 'query[size_from]', options_for_select(Stone::QUALIFICATIONS, 'Fair') %>
     <p>A</p>
-  <%= select_tag 'query[size_to]', options_for_select(Stone::QUALIFICATIONS) %>
+  <%= select_tag 'query[size_to]', options_for_select(Stone::QUALIFICATIONS, 'Excellent') %>
 
   <%= label_tag 'Symetrie' %>
   <p>De</p>

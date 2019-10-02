@@ -5,15 +5,20 @@ class StonesController < ApplicationController
   def index
     if params[:query].present?
       @stones = Stone.by_size(Stone::QUALIFICATIONS[Stone::QUALIFICATIONS.index(params[:query][:size_from])..Stone::QUALIFICATIONS.index(params[:query][:size_to])]) &
-      Stone.by_polish(Stone::QUALIFICATIONS[Stone::QUALIFICATIONS.index(params[:query][:size_from])..Stone::QUALIFICATIONS.index(params[:query][:size_to])])
-      raise
+      Stone.by_polish(Stone::QUALIFICATIONS[Stone::QUALIFICATIONS.index(params[:query][:polish_from])..Stone::QUALIFICATIONS.index(params[:query][:polish_to])]) &
+      Stone.by_color(Stone::COLORS[Stone::COLORS.index(params[:query][:color_from])..Stone::COLORS.index(params[:query][:color_to])]) &
+      Stone.by_purity(Stone::PURITY[Stone::PURITY.index(params[:query][:purity_from])..Stone::PURITY.index(params[:query][:purity_to])]) &
+      Stone.by_symetry(Stone::QUALIFICATIONS[Stone::QUALIFICATIONS.index(params[:query][:symetry_from])..Stone::QUALIFICATIONS.index(params[:query][:symetry_to])])
       # Need to be done !!!!!
+     if params[:query][:weight_from] != ""
+       @stones = @stones & (params[:query][:weight_to] != "" ? Stone.by_weight(params[:query][:weight_from].to_f, params[:query][:weight_to].to_f) : Stone.by_weight(params[:query][:weight_from].to_f))
+     end
 
-
-      # @stones = Stone.where(size: params[:query][:size],
-      #                       color: params[:query][:color],
-      #                       purity: params[:query][:purity],
-      #                       certificate: params[:query][:certificate])
+     # TODO
+     # Shape, Fluo, Certificate
+      @stones = @stones & Stone.where(shape: params[:query][:shape],
+                            fluo: params[:query][:fluo],
+                            certificate: params[:query][:certificate])
     else
       @stones = Stone.all
     end

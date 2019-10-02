@@ -28,16 +28,16 @@
 
   <%= label_tag 'Symetrie' %>
   <p>De</p>
-  <%= select_tag 'query[symetry_from]', options_for_select(Stone::QUALIFICATIONS) %>
+  <%= select_tag 'query[symetry_from]', options_for_select(Stone::QUALIFICATIONS, 'Fair') %>
     <p>A</p>
-  <%= select_tag 'query[symetry_to]', options_for_select(Stone::QUALIFICATIONS) %>
+  <%= select_tag 'query[symetry_to]', options_for_select(Stone::QUALIFICATIONS, 'Excellent') %>
 
 
   <%= label_tag 'Polish' %>
   <p>De</p>
-  <%= select_tag 'query[polish_from]', options_for_select(Stone::QUALIFICATIONS) %>
+  <%= select_tag 'query[polish_from]', options_for_select(Stone::QUALIFICATIONS, 'Fair') %>
     <p>A</p>
-  <%= select_tag 'query[polish_to]', options_for_select(Stone::QUALIFICATIONS) %>
+  <%= select_tag 'query[polish_to]', options_for_select(Stone::QUALIFICATIONS, 'Excellent') %>
 
     <%= label_tag 'Fluorescence' %>
   <%= select_tag 'query[fluo]', options_for_select(Stone::FLUO) %>

@@ -1,3 +1,45 @@
+
+
+.border-tag {
+  display: flex;
+  margin-top: 35px;
+  flex-direction: column;
+
+}
+
+.cardcategory {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+
+.searchbouton {
+  display: flex;
+  justify-content: center;
+}
+
+.searchcategory {
+  display: flex;
+  flex-direction: column;
+
+
+
+}
+
+.searchtitle {
+  background-color: #cecece;
+  text-align: center;
+  padding-top: 3px;
+}
+
+.searchcontent {
+padding: 15px;
+background-color: #efeded;
+text-align: center;
+
+}
+
 .search-box
 {
     margin: 0 auto;

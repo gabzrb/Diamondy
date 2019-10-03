@@ -1,10 +1,41 @@
 <div class="container list-nav">
 <%= form_tag jewels_path, method: :get do %>
-<%= select_tag 'query[category]', options_for_select(Jewel::CATEGORY) %>
-<%= select_tag 'query[state]', options_for_select(Jewel::STATES) %>
-<%= select_tag 'query[brand]', options_for_select(Jewel::CATEGORY) %>
-<%= submit_tag "Search" %>
-<%= link_to "🅧", jewels_path %>
+<div class="border-tag">
+  <div class="cardcategory">
+    <div class="searchcategory">
+      <div class="searchtitle">
+          <h6> Catégorie  </h6>
+          </div>
+          <div class="searchcontent">
+            <%= select_tag 'query[category]', options_for_select(Jewel::CATEGORY)  %>
+          </div>
+        </div>
+
+    <div class="searchcategory">
+      <div class="searchtitle">
+        <h6> Etat </h6>
+      </div>
+        <div class="searchcontent">
+          <%= select_tag 'query[state]', options_for_select(Jewel::STATES) %>
+         </div>
+    </div>
+
+    <div class="searchcategory">
+      <div class="searchtitle">
+        <h6> Marque </h6>
+      </div>
+      <div class="searchcontent">
+    <%= select_tag 'query[brand]', options_for_select(Jewel::CATEGORY) %>
+      </div>
+    </div>
+    </div>
+
+    <div class="searchbouton">
+      <%= submit_tag "Rechercher", class: "btn btn-search" %>
+      <%= link_to "🅧", jewels_path %>
+    </div>
+</div>
+
 <% end %>
   <% @jewels.each do |jewel| %>
   <div class="line_confirmation"></div>

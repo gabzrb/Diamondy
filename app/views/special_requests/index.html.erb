@@ -1,8 +1,9 @@
 <div class="container list-nav">
   <%= form_tag special_requests_path, method: :get do %>
   <%= text_field_tag 'query[description]'%>
-  <%= submit_tag "Search" %>
-  <%= link_to "🅧", special_requests_path %>
+          <%= submit_tag "Rechercher", class: "btn btn-search" %>
+          <%= link_to "🅧", watchs_path %>
+
   <% end %>
   <% @special_requests.each do |special_request| %>
   <div class="line_confirmation"></div>

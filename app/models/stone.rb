@@ -26,7 +26,8 @@ class Stone < ApplicationRecord
     Stone.all.select { |diamond| range.include? diamond.polish }
   end
 
-  def self.by_weight(min, max)
+  # Max weight 10 Carats by default
+  def self.by_weight(min, max = 10)
     return [] if max < min
 
     Stone.all.select { |diamond| (min..max).include? diamond.weight }

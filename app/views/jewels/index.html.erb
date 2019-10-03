@@ -1,5 +1,6 @@
 <div class="container list-nav">
 <%= form_tag jewels_path, method: :get do %>
+
 <div class="border-tag">
   <div class="cardcategory">
     <div class="searchcategory">
@@ -25,7 +26,7 @@
         <h6> Marque </h6>
       </div>
       <div class="searchcontent">
-    <%= select_tag 'query[brand]', options_for_select(Jewel::CATEGORY) %>
+    <%= select_tag 'query[brand]', options_for_select(Jewel::BRAND) %>
       </div>
     </div>
     </div>
@@ -35,6 +36,7 @@
       <%= link_to "🅧", jewels_path %>
     </div>
 </div>
+
 
 <% end %>
   <% @jewels.each do |jewel| %>

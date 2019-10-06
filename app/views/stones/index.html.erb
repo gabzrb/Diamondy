@@ -2,11 +2,12 @@
   <%= form_tag stones_path, method: :get do %>
     <div class="border-tag">
       <div class="cardcategory">
+
         <div class="searchcategory">
           <div class="searchtitle">
             <h6> Forme  </h6>
           </div>
-             <div class="searchcontent">
+             <div class="searchcontentforme">
              <%= select_tag 'query[shapes]', options_for_select(Stone::SHAPES) %>
             </div>
           </div>
@@ -19,7 +20,7 @@
           <div class="searchtitle">
             <h6> Couleur  </h6>
           </div>
-             <div class="searchcontent">
+             <div class="searchcontentcolor">
               <div class="desearch">
                <p>De</p>
                  <%= select_tag 'query[color_from]', options_for_select(Stone::COLORS, 'D') %>
@@ -37,7 +38,7 @@
           <div class="searchtitle">
             <h6> Poids Carat </h6>
           </div>
-            <div class="searchcontent">
+            <div class="searchcontentcarat">
               <div class="desearch">
                 <p>De</p>
                <input type=number step=0.01 name=query[weight_from] />
@@ -53,11 +54,29 @@
 
 
        <div class="cardcategory">
+
+
+        <div class="searchcategory">
+             <div class="searchtitle">
+               <h6> Taille </h6>
+             </div>
+           <div class="searchcontenttaille">
+            <div class="desearch">
+              <p>De</p>
+             <%= select_tag 'query[size_from]', options_for_select(Stone::QUALIFICATIONS, 'Fair') %>
+            </div>
+             <div class="desearch">
+             <p>A</p>
+             <%= select_tag 'query[size_to]', options_for_select(Stone::QUALIFICATIONS, 'Excellent') %>
+           </div>
+          </div>
+       </div>
+
         <div class="searchcategory">
           <div class="searchtitle">
             <h6> Pureté </h6>
           </div>
-            <div class="searchcontent">
+            <div class="searchcontentpurete">
               <div class="desearch">
               <p>De</p>
              <%= select_tag 'query[purity_from]', options_for_select(Stone::PURITY, 'IF-LC') %>
@@ -70,29 +89,12 @@
           </div>
         </div>
 
-        <div class="searchcategory">
-             <div class="searchtitle">
-               <h6> Taille </h6>
-             </div>
-           <div class="searchcontent">
-            <div class="desearch">
-              <p>De</p>
-             <%= select_tag 'query[size_from]', options_for_select(Stone::QUALIFICATIONS, 'Fair') %>
-            </div>
-             <div class="desearch">
-             <p>A</p>
-             <%= select_tag 'query[size_to]', options_for_select(Stone::QUALIFICATIONS, 'Excellent') %>
-           </div>
-          </div>
-       </div>
-
-
 
         <div class="searchcategory">
              <div class="searchtitle">
                <h6> Symetrie </h6>
              </div>
-           <div class="searchcontent">
+           <div class="searchcontentsymetrie">
             <div class="desearch">
              <p>De</p>
             <%= select_tag 'query[symetry_from]', options_for_select(Stone::QUALIFICATIONS, 'Fair') %>
@@ -110,7 +112,7 @@
                <div class="searchtitle">
                  <h6> Polish </h6>
                </div>
-             <div class="searchcontent">
+             <div class="searchcontentpolish">
               <div class="desearch">
                 <p>De</p>
                 <%= select_tag 'query[polish_from]', options_for_select(Stone::QUALIFICATIONS, 'Fair') %>
@@ -126,7 +128,7 @@
              <div class="searchtitle">
                <h6> Fluorescence </h6>
              </div>
-           <div class="searchcontent">
+           <div class="searchcontentfluo">
             <%= select_tag 'query[fluo]', options_for_select(Stone::FLUO) %>
            </div>
        </div>
@@ -135,7 +137,7 @@
              <div class="searchtitle">
                <h6> Certificat </h6>
              </div>
-           <div class="searchcontent">
+           <div class="searchcontentcertificat">
             <%= select_tag 'query[certificate]', options_for_select(Stone::CERTIFICATES) %>
            </div>
         </div>
@@ -158,12 +160,12 @@
     <%= image_tag "diamond.jpg" %>
     <% end %>
     <div class="card-trip-infos">
-      <div>
+      <div class="card-trip-detail">
         <h2><%= stone.product.description %></h2>
         <h2><%= stone.weight %></h2>
       </div>
       <div >
-        <%= link_to 'Voir Produit',stone_path(stone), class: "btn btn-contact" %>
+        <%= link_to 'Voir Produit',stone_path(stone), class: "btn btn-card-trip" %>
       </div>
       <h2 class="card-trip-pricing"> <%= stone.product.price.to_i %>€</h2>
       <% if stone.product.user.photo.url %>

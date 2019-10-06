@@ -1,18 +1,18 @@
 class Jewel < ApplicationRecord
   belongs_to :product
 
-  STATES = ["Bijou ancien (occasion)",
-            "Bijou signés (occasion)",
+  STATES = ["Bijoux anciens (occasion)",
+            "Bijoux signés (occasion)",
             "Bijoux modernes (occasion)",
             "Bijoux neuf"]
 
-  CATEGORY = ["bague",
-              "bracelet",
-              "collier",
-              "boucles d'oreilles",
-              "pendentif",
-              "broche",
-              "bouton de manchette"]
+  CATEGORY = ["Bague",
+              "Bracelet",
+              "Collier",
+              "Boucles d'oreilles",
+              "Pendentif",
+              "Broche",
+              "Bouton de manchette"]
 
   BRANDS = ["Cartier",
            "Chaumet",

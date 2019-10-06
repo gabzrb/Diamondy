@@ -14,11 +14,11 @@
     <img src="https://i.ibb.co/fk65335/ines-alvarez-fdez-L-N7-Ba-NLC5-Y-unsplash.jpg" >
     <% end %>
     <div class="card-trip-infos">
-      <div>
+      <div class="card-trip-detail">
         <p><%= special_request.product.description %></p>
       </div>
       <div >
-        <%= link_to 'Voir Produit',special_request_path(special_request), class: "btn btn-contact" %>
+        <%= link_to 'Voir Produit',special_request_path(special_request), class: "btn btn-card-trip" %>
       </div>
       <h2 class="card-trip-pricing"> <%= special_request.product.price.to_i %>€</h2>
       <% if special_request.product.user.photo.url %>

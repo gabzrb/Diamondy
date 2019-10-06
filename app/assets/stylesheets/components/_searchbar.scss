@@ -1,8 +1,9 @@
 
 select {
-    border:1px solid #ccc;
-    vertical-align:top;
-    height:25px;
+    border: 1px solid grey;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    vertical-align: middle;
+    height: 25px;
 }
 input, select{
   box-sizing: border-box;
@@ -31,8 +32,16 @@ input, select{
 
 .cardcategory {
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+@media screen and (min-width: 576px) {
+  .cardcategory {
+    display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  }
 }
 
 .cardstonecategory {
@@ -51,16 +60,18 @@ input, select{
   display: flex;
   flex-direction: column;
   margin-bottom: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2)
 
 
 
 }
 
 .searchtitle {
-  background-color: #cecece;
+  background-color: #22cec6;
   text-align: center;
   padding-top: 3px;
 }
+
 
 .searchcontent {
 padding: 15px;
@@ -68,6 +79,110 @@ background-color: #efeded;
 text-align: center;
 display: flex;
 
+}
+
+
+.searchcontentforme {
+    padding: 35px;
+    background-color: #efeded;
+    text-align: center;
+    display: -webkit-box;
+    display: flex;
+    padding-right: 31px;
+    padding-top: 49px;
+    padding-bottom: 56px;
+    justify-content: center;
+}
+
+
+.searchcontentcolor {
+  padding: 21px;
+    background-color: #efeded;
+    text-align: center;
+    display: -webkit-box;
+    display: flex;
+    padding-bottom: 54px;
+    justify-content: center;
+}
+
+
+
+.searchcontentcarat {
+    padding: 1px;
+    background-color: #efeded;
+    text-align: center;
+    display: -webkit-box;
+    display: flex;
+    padding-top: 16px;
+    padding-bottom: 54px;
+    justify-content: center;
+}
+
+
+.searchcontentpurete {
+   padding: 20px;
+    background-color: #efeded;
+    text-align: center;
+    display: -webkit-box;
+    display: flex;
+    padding-bottom: 59px;
+    justify-content: center;
+}
+
+
+.searchcontenttaille {
+    padding: 15px;
+    background-color: #efeded;
+    text-align: center;
+    display: -webkit-box;
+    padding-top: 20px;
+    display: flex;
+    padding-bottom: 59px;
+    justify-content: center;
+}
+
+
+
+.searchcontentsymetrie {
+    padding: 15px;
+    background-color: #efeded;
+    text-align: center;
+    display: -webkit-box;
+    display: flex;
+    padding-bottom: 60px;
+    padding-top: 19px;
+    justify-content: center;
+}
+
+
+.searchcontentfluo {
+    padding: 50px;
+    background-color: #efeded;
+    text-align: center;
+    display: -webkit-box;
+    display: flex;
+    justify-content: center;
+}
+
+
+.searchcontentpolish {
+   padding: 31px;
+    background-color: #efeded;
+    text-align: center;
+    display: -webkit-box;
+    display: flex;
+    padding-bottom: 39px;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.searchcontentcertificat {
+    padding: 50px;
+    background-color: #efeded;
+    text-align: center;
+    display: -webkit-box;
+    display: flex;
+    justify-content: center;
 }
 
 .search-box

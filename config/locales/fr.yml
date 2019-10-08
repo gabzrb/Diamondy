@@ -4,12 +4,25 @@ fr:
       messages:
         record_invalid: "Erreurs de sauvegarde"
       models:
-        user:
+        product:
           attributes:
             email:
               blank: "Veuillez renseigner une adresse mail."
             password:
               blank: "Veuillez renseigner un mot de passe."
+            name:
+              blank: "Veuillez renseigner le nom de votre produit."
+            price:
+              blank: "Veuillez renseigner le prix de votre produit."
+        user:
+          attributes:
+            email:
+              blank: "Veuillez renseigner une adresse mail."
+              taken: "Cette email est deja present dans notre base de donnée."
+            password:
+              blank: "Veuillez renseigner un mot de passe."
+            password_confirmation:
+              confirmation: "Veuillez confirmer votre mot de passe."
 
 
     attributes:

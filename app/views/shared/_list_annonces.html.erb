@@ -4,11 +4,13 @@
       <table class="table table-hover .table-responsive-sm">
         <tbody>
           <%= form_tag new_annonce_path, method: :get do %>
-          <div class="search-box">
-            <input type="text" placeholder="Rechercher votre produit" name="query" class="search-txt">
-            <a href="" class="search-btn" >
+          <div class="col-sm-12 col-md-4 wrap">
+            <div class="search">
+              <input type="text" placeholder="Rechercher votre produit" name="query" class="searchTerm">
+              <button class="searchButton">
               <i class="fas fa-search"></i>
-            </a>
+              </button>
+            </div>
           </div>
           <%#= search_field :query, "query_des"
           %>

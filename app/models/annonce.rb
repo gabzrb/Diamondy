@@ -1,9 +1,12 @@
 class Annonce < ApplicationRecord
-  include AlgoliaSearch
+  # REMOVE ALGOLIA
+  # include AlgoliaSearch
 
-  algoliasearch do
-    attributes :description, :category
-  end
+  # algoliasearch do
+  #   attributes :description, :category
+  # end
+
+  searchkick
 
   belongs_to :user
   validates :category, inclusion: { in: ["Bijoux","Diamant","Montre", "Demande spéciale"] }

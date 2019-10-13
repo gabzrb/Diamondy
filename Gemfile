@@ -13,9 +13,7 @@ gem 'sendgrid-ruby'
 gem 'sendgrid-actionmailer'
 
 gem 'devise-i18n', '~> 1.2'
-
-
-gem "algoliasearch-rails"
+# gem "algoliasearch-rails"
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
@@ -25,6 +23,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
+gem 'searchkick'
 
 
 group :development do

@@ -1,101 +1,82 @@
-
-
-    <div class="text-center title-margin">
-    <h1>Choisissez votre produit</h1>
-    </div>
-
+<div class="text-center title-margin">
+  <h1>Choisissez votre produit</h1>
+</div>
 <div class="container">
   <div class="row justify-content-md-center">
-<div class="col-md-3 col-sm-12">
-<div class="cardproduit ">
-  <div class="cardproduit-img" style="background-image:url(https://i.ibb.co/cYPRmcc/diamondproduct.jpg);">
-    <div class="overlay">
-      <div class="overlay-content">
-         <%= link_to "Diamant", stones_path %>
+    <div class="col-md-3 col-sm-12">
+      <div class="cardproduit ">
+        <div class="cardproduit-img" style="background-image:url(https://i.ibb.co/cYPRmcc/diamondproduct.jpg);">
+          <div class="overlay">
+            <div class="overlay-content">
+              <%= link_to "Diamant", stones_path %>
+            </div>
+          </div>
+        </div>
+        <div class="cardproduit-content">
+          <a href="#!">
+            <h2>Diamant</h2>
+            <p>Trouver le diamant de votre choix</p>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="cardproduit-content">
-    <a href="#!">
-      <h2>Diamant</h2>
-      <p>Trouver le diamant de votre choix</p>
-    </a>
-  </div>
-</div>
-</div>
-
-
-<div class="col-md-3 col-sm-12 ">
-<div class="cardproduit">
-  <div class="cardproduit-img" style="background-image:url(https://i.ibb.co/NNZJd2h/serkan-turk-v6jc-Ubxet-L0-unsplash.jpg);">
-    <div class="overlay">
-      <div class="overlay-content">
-      <%= link_to "Bijoux", jewels_path %>
+    <div class="col-md-3 col-sm-12 ">
+      <div class="cardproduit">
+        <div class="cardproduit-img" style="background-image:url(https://i.ibb.co/NNZJd2h/serkan-turk-v6jc-Ubxet-L0-unsplash.jpg);">
+          <div class="overlay">
+            <div class="overlay-content">
+              <%= link_to "Bijoux", jewels_path %>
+            </div>
+          </div>
+        </div>
+        <div class="cardproduit-content">
+          <a href="#!">
+            <h2>Bijoux</h2>
+            <p>Trouver le bijoux de votre choix</p>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="cardproduit-content">
-    <a href="#!">
-      <h2>Bijoux</h2>
-      <p>Trouver le bijoux de votre choix</p>
-    </a>
-  </div>
-</div>
-</div>
-
-
-<div class="col-md-3 col-sm-12 ">
-<div class="cardproduit">
-  <div class="cardproduit-img" style="background-image:url(https://i.ibb.co/hDb2xdp/pixel-bee-u8is-JQ6-Qj-F4-unsplash.jpg);">
-    <div class="overlay">
-      <div class="overlay-content">
-          <%= link_to "Montres", watchs_path %>
+    <div class="col-md-3 col-sm-12 ">
+      <div class="cardproduit">
+        <div class="cardproduit-img" style="background-image:url(https://i.ibb.co/hDb2xdp/pixel-bee-u8is-JQ6-Qj-F4-unsplash.jpg);">
+          <div class="overlay">
+            <div class="overlay-content">
+              <%= link_to "Montres", watchs_path %>
+            </div>
+          </div>
+        </div>
+        <div class="cardproduit-content">
+          <a href="#!">
+            <h2>Montres</h2>
+            <p>Trouver la montre qui vous convient</p>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="cardproduit-content">
-    <a href="#!">
-      <h2>Montres</h2>
-      <p>Trouver la montre qui vous convient</p>
-    </a>
-  </div>
-</div>
-</div>
-
-<div class="col-md-3 col-sm-12 ">
-<div class="cardproduit">
-  <div class="cardproduit-img" style="background-image:url(https://i.ibb.co/YRkSjS6/Screen-Shot-2019-08-14-at-15-42-48.png);">
-    <div class="overlay">
-      <div class="overlay-content">
-       <%= link_to "Pierre de couleur", special_requests_path %>
+    <div class="col-md-3 col-sm-12 ">
+      <div class="cardproduit">
+        <div class="cardproduit-img" style="background-image:url(https://i.ibb.co/YRkSjS6/Screen-Shot-2019-08-14-at-15-42-48.png);">
+          <div class="overlay">
+            <div class="overlay-content">
+              <%= link_to "Pierre de couleur", special_requests_path %>
+            </div>
+          </div>
+        </div>
+        <div class="cardproduit-content">
+          <a href="#!">
+            <h2>Pierre de couleur</h2>
+            <p>Saphir, Ruby, Impression 3D ...</p>
+          </a>
+        </div>
       </div>
     </div>
+    <% if current_user %>
+    <div class="text-center products-index-link">
+      <p>  Ou </p>
+      <h2> <%= link_to "Ajoutez votre produit", new_product_path, class: "btn btn-contact2" %>
+      </h2>
+      <% end %>
+    </div>
   </div>
-
-
-  <div class="cardproduit-content">
-    <a href="#!">
-      <h2>Pierre de couleur</h2>
-      <p>Saphir, Ruby, Impression 3D ...</p>
-    </a>
-  </div>
 </div>
-</div>
- <div class="text-center products-index-link">
-  <p>  Ou </p>
-  <h2> <%= link_to "Ajoutez votre produit", new_product_path, class: "btn btn-contact2" %>
-</h2>
-
-</div>
-</div>
-</div>
-
-
-
-
-
-
-

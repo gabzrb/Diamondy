@@ -1,6 +1,7 @@
 class WatchsController < ApplicationController
   before_action :set_product, only: [:new, :create, :edit]
   before_action :set_watch, only: [:show, :edit, :update]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     if params[:query].present?

@@ -60,7 +60,7 @@ class ProductsController < ApplicationController
   def traduct_element(element)
     if element == "Bijoux"
       return "jewel"
-    elsif element == "Pierre"
+    elsif element == "Diamant"
       return "stone"
     elsif element == "Montre"
       return "watch"

@@ -6,6 +6,9 @@
         <%= simple_form_for(@special_request, as: :special_request, method: :post, url: product_special_requests_path(@product)) do |f| %>
         <%= f.error_notification %>
         <div class="form-row">
+        <div class="col-xs-12 col-md-12">
+          <%= f.input :categorie, collection: SpecialRequest::CATEGORIES, label:'Categorie' %>
+        </div>
           <div class="col-xs-12 col-md-12">
             <%= f.input :description %>
           </div>

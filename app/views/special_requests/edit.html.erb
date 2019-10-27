@@ -6,14 +6,16 @@
         <%= simple_form_for([@product, @special_request]) do |f| %>
         <%= f.error_notification %>
         <div class="form-row">
-          <div class="col-xs-12 col-md-12">
-            <%= f.input :description %>
-          </div>
-          <div  class="form-actions col-xs-12 col-md-6">
-            <%= f.submit "Valider", class: "btn-contact" %>
-          </div>
-          <% end %>
+          <%= f.input :categorie, collection: SpecialRequest::CATEGORIES, label:'Categorie' %>
         </div>
+        <div class="col-xs-12 col-md-12">
+          <%= f.input :description %>
+        </div>
+        <div  class="form-actions col-xs-12 col-md-6">
+          <%= f.submit "Valider", class: "btn-contact" %>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
+</div>

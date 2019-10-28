@@ -1,5 +1,6 @@
 class Watch < ApplicationRecord
-  BRANDS = ["A TURNER",
+  BRANDS = [ "Aucune",
+    "A TURNER",
 "ADLER",
 "ALEXANDRE REZA",
 "ALEXIS BARTHELAY",

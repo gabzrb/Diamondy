@@ -14,7 +14,8 @@ class Jewel < ApplicationRecord
               "Broche",
               "Bouton de manchette"]
 
-  BRANDS = ["Cartier",
+  BRANDS = ["Aucune",
+           "Cartier",
            "Chaumet",
            "Chopard",
            "Bulgarie",

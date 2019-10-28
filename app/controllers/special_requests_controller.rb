@@ -5,7 +5,7 @@ class SpecialRequestsController < ApplicationController
 
   def index
     if params[:query].present?
-      @special_requests = SpecialRequest.search(params[:query][:description])
+      @special_requests = SpecialRequest.by_category(params[:query][:categorie])
     else
       @special_requests = SpecialRequest.all
     end

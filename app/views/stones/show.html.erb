@@ -28,13 +28,18 @@
           </a>
         </div>
         <div class="card-showproduct-infos">
-          <h1><%= @stone.product.description  %></h1>
+          <h1><%= @stone.shape %></h1>
           <div class="line_confirmation"></div>
           <div class="element-infos">
-            <h2>Catégorie : <%= @stone.category %></h2>
-            <h2>Taille : <%= @stone.size  %></h2>
+            <h2>Poids : <%= @stone.weight%> Carat </h2>
             <h2>Couleur : <%= @stone.color  %></h2>
             <h2>Pureté : <%= @stone.purity  %></h2>
+            <h2>Taille : <%= @stone.size  %></h2>
+          </div>
+          <div class="element-infos">
+            <h2>Symétrie : <%= @stone.symetry  %></h2>
+            <h2>Polish : <%= @stone.polish  %></h2>
+            <h2>Fluorescence : <%= @stone.fluo  %></h2>
             <h2>Certificat : <%= @stone.certificate  %></h2>
           </div>
           <h2 class="price-product"><%= @stone.product.price.to_i %>€</h2>

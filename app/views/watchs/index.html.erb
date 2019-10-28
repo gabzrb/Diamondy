@@ -55,7 +55,8 @@
     <div class="card-trip-infos">
       <div class="card-trip-detail">
         <h2> <%= watch.brand %></h2>
-        <p><%= watch.product.description %></p>
+        <p><%= watch.state%></p>
+        <p> <%= watch.material %> </p>
       </div>
       <div >
         <%= link_to 'Voir Produit',watch_path(watch), class: "btn btn-card-trip" %>

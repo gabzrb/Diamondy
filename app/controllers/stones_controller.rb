@@ -16,7 +16,6 @@ class StonesController < ApplicationController
        @stones = @stones & (params[:query][:weight_to] != "" ? Stone.by_weight(params[:query][:weight_from].to_f, params[:query][:weight_to].to_f) : Stone.by_weight(params[:query][:weight_from].to_f))
      end
 
-     # TODO
      # Shape, Fluo, Certificate
       @stones = @stones & Stone.where(shape: params[:query][:shape],
                             fluo: params[:query][:fluo],

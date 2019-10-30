@@ -14,6 +14,32 @@ fr:
               blank: "Veuillez renseigner le nom de votre produit."
             price:
               blank: "Veuillez renseigner le prix de votre produit."
+        special_request:
+          attributes:
+            categorie:
+              inclusion: "Veuillez renseigner une categorie."
+        watch:
+          attributes:
+            state:
+              inclusion: "Veuillez renseigner un etat."
+            material:
+              inclusion: "Veuillez renseigner un material."
+        stone:
+          attributes:
+            shape:
+              inclusion: "Veuillez renseigner une forme."
+            color:
+              inclusion: "Veuillez renseigner une couleur."
+            size:
+              inclusion: "Veuillez renseigner une taille."
+            certificate:
+              inclusion: "Veuillez renseigner un type de certificat."
+            purity:
+              inclusion: "Veuillez renseigner une pureté."
+            symetry:
+              inclusion: "Veuillez renseigner la symetrie."
+            fluo:
+              inclusion: "Veuillez renseigner une pureté."
         user:
           attributes:
             email:
@@ -23,8 +49,6 @@ fr:
               blank: "Veuillez renseigner un mot de passe."
             password_confirmation:
               confirmation: "Veuillez confirmer votre mot de passe."
-
-
     attributes:
       user:
         confirmation_sent_at: Date d'envoi de la confirmation

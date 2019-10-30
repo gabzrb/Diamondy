@@ -2,7 +2,8 @@
   <div class="row">
     <div class=" col col-xs-12 col-lg-12">
       <div class="contactcard text-center">
-        <h1>Ajouter une fiche produit</h1>
+        <h1>Ajouter un produit</h1>
+        <p>Page 1/2</p>
         <%= simple_form_for @product, multipart: true  do |f| %>
         <div class="form-row">
 
@@ -23,7 +24,7 @@
             <% end %>
           </div>
           <div class="form-actions col col-xs-4 col-md-12">
-            <%= f.submit "Valider" , class: "btn-contact" %>
+            <%= f.submit "Page suivante" , class: "btn-contact" %>
           </div>
           <% end %>
         </div>

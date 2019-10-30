@@ -3,23 +3,12 @@
     <div class=" col-xs-12 col-lg-12">
       <div class="contactcard text-center">
         <h3>Diamant 💎</h3>
+          <p>Page 2/2</p>
         <%= simple_form_for(@stone, as: :stone, method: :post, url: product_stones_path(@product)) do |f| %>
         <%= f.error_notification %>
         <div class="form-row">
           <div class="col-xs-12 col-md-6">
-            <%= f.input :size, collection: Stone::QUALIFICATIONS, label:'Taille' %>
-          </div>
-          <div class="col-xs-12 col-md-6">
             <%= f.input :shape, collection: Stone::SHAPES, label:'Forme' %>
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <%= f.input :symetry, collection: Stone::QUALIFICATIONS, label:'Symetrie' %>
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <%= f.input :polish, collection: Stone::QUALIFICATIONS, label:'Polish' %>
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <%= f.input :fluo, collection: Stone::FLUO, label:'Fluorescence' %>
           </div>
           <div class="col-xs-12 col-md-6">
             <%= f.input :weight, label: 'Precisez le poids en Carats' %>
@@ -29,6 +18,18 @@
           </div>
           <div class="col-xs-12 col-md-6">
             <%= f.input :purity, collection: Stone::PURITY, label:'Pureté' %>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <%= f.input :size, collection: Stone::QUALIFICATIONS, label:'Taille' %>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <%= f.input :symetry, collection: Stone::QUALIFICATIONS, label:'Symetrie' %>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <%= f.input :polish, collection: Stone::QUALIFICATIONS, label:'Polish' %>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <%= f.input :fluo, collection: Stone::FLUO, label:'Fluorescence' %>
           </div>
           <div class="col-xs-12 col-md-6">
             <%= f.input :certificate, collection: Stone::CERTIFICATES, label:'Certificat' %>

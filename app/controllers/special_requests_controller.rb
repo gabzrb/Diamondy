@@ -23,7 +23,7 @@ class SpecialRequestsController < ApplicationController
   def create
     @special_request = SpecialRequest.new(special_request_params)
     @special_request.product_id = @product.id
-    if @special_request.save!
+    if @special_request.save
       redirect_to special_request_path(@special_request)
     else
       render :new

@@ -1,21 +1,13 @@
 class AnnoncesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :new]
   before_action :set_annonce, only: [:edit, :update, :destroy]
+  before_action :annonces_query, only: [:index, :new]
 
   def index
-    @annonces = Annonce.all.order(:created_at).reverse
-    if params[:query]
-      @annonces = Annonce.search(params[:query])
-    end
   end
 
   def new
-    @annonces = Annonce.all.order(:created_at).reverse
     @annonce = Annonce.new
-
-    if params[:query]
-      @annonces = Annonce.search(params[:query])
-    end
   end
 
   def create
@@ -41,6 +33,13 @@ class AnnoncesController < ApplicationController
   end
 
   private
+
+  def annonces_query
+    @annonces = Annonce.all.order(:created_at).reverse.select {|a| a.checked}
+    if params[:query]
+      @annonces = Annonce.search(params[:query]).select {|a| a.checked}
+    end
+  end
 
   def set_annonce
     @annonce = Annonce.find(params[:id])

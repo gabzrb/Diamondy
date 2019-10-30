@@ -1,0 +1,48 @@
+<div class="container">
+  <h3 class="admin-title text-center">Administrateur</h3>
+  <div class="row justify-content-md-center">
+    <div class="col-md-6 col-sm-12 col-xs-12">
+      <h5 class="admin-title text-center">Annonces en attentes (<%= @annonces_to_check.count %>)</h5>
+            <table class="table table-hover .table-responsive-sm">
+        <tbody>
+          <% @annonces_to_check.each_with_index do |annonce, index| %>
+          <hr>
+          <div class="annonceflex">
+            <p class="annoncetime"> <%= annonce.created_at.strftime("%d/%m/%Y") %> </p>
+            <%= link_to user_path(annonce.user) do %>
+            <p> <%= annonce.user.email %> </p>
+            <% end %>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<%= index %>">
+            Lire l'annonce...
+            </button>
+          </div>
+          <%= link_to "Accepter", admin_a_check_path(annonce, activity: "checked"), class:"btn-success btn-admin", method: :post%>
+          <%= link_to "Supprimer", admin_a_check_path(annonce, activity: "delete"), class:"btn-danger btn-admin", method: :post%>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal<%= index %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content2">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Annonce</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p><b>Categorie:</b> <%= annonce.category %></p>
+                  <p><b>Description:</b> <%= annonce.description %></p>
+                  <p><b>Numéro de télephone:</b> <%= annonce.user.email %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6 col-sm-12 col-xs-12">
+      <h5 class="admin-title text-center">Liste des produits a confirmer</h5>
+    </div>
+  </div>
+</div>

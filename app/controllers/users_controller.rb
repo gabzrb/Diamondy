@@ -1,16 +1,14 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [ :show ]
 
- def new
+  def new
     @user = User.new
   end
 
-def create
+  def create
     # Create the user from params
     @user = User.new(params[:user])
-    if @user.save
-      UserMailer.welcome(@user).deliver_now
-    end
+    UserMailer.welcome(@user).deliver_now if @user.save
   end
 
   def show

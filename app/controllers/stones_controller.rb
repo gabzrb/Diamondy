@@ -38,7 +38,7 @@ class StonesController < ApplicationController
   def create
     @stone = Stone.new(stone_params)
     @stone.product_id = @product.id
-    if @stone.save!
+    if @stone.save
       redirect_to stone_path(@stone)
     else
       render :new

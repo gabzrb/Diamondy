@@ -1,10 +1,10 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :product_check, only: [:index, :show]
 
   def index
     @products = Product.all
-    product_conection(@products)
   end
 
   def show
@@ -69,12 +69,8 @@ class ProductsController < ApplicationController
     end
   end
 
-  def product_conection(products)
-    products.each do |product|
-      if (product.jewel.nil? && product.stone.nil? && product.watch.nil? && product.special_request.nil?)
-        product.destroy!
-      end
-    end
+  def product_check
+    ApplicationHelper.product_conection
   end
 
   def check_product_redirection(product)

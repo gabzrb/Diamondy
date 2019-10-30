@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'pages#dashboard', as: :dashboard
 
-  get 'admin', to: 'pages#admin', as: :admin
+  get 'admin', to: 'admins#admin', as: :admin
+  post 'admin_a_check/:id', to: 'admins#admin_a_check', as: :admin_a_check
+  post 'admin_p_check/:id', to: 'admins#admin_p_check', as: :admin_p_check
 
   get 'conditions_generales', to: 'pages#conditions_generales'
   get 'mentions_legales', to: 'pages#mentions_legales'

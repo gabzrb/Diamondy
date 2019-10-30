@@ -22,9 +22,13 @@
             <p> <%= annonce.category %> </p>
             <p class="annoncedescription"> <%= annonce.description %> </p>
             <!-- Button trigger modal -->
+            <% if current_user %>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<%= index %>">
             J'ai le Produit
             </button>
+            <% else %>
+            <%= link_to "J'ai le Produit", new_user_session_path, method:"btn btn-primary" %>
+            <% end %>
           </div>
           <!-- Modal -->
           <div class="modal fade" id="exampleModal<%= index %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

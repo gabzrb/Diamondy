@@ -1,5 +1,7 @@
 class AdminsController < ApplicationController
   before_action :set_annonce, only: [:admin_a_check]
+  before_action :set_product, only: [:admin_delete_product]
+
   def admin
     if current_user.admin
       @users = User.all
@@ -26,8 +28,10 @@ class AdminsController < ApplicationController
     end
   end
 
-  def admin_p_check
+
+  def admin_delete_product
     if current_user.admin
+      raise
     else
       redirect_to root_path
     end
@@ -37,5 +41,9 @@ class AdminsController < ApplicationController
 
   def set_annonce
     @annonce = Annonce.find(params[:id])
+  end
+
+  def set_product
+    @annonce = Product.find(params[:id])
   end
 end

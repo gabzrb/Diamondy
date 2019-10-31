@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'admin', to: 'admins#admin', as: :admin
   post 'admin_a_check/:id', to: 'admins#admin_a_check', as: :admin_a_check
   post 'admin_p_check/:id', to: 'admins#admin_p_check', as: :admin_p_check
+  post 'admin_delete_product/:id', to: 'admins#admin_delete_product', as: :admin_delete_product
 
   get 'conditions_generales', to: 'pages#conditions_generales'
   get 'mentions_legales', to: 'pages#mentions_legales'

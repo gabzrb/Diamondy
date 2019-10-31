@@ -3,7 +3,7 @@
   <div class="row justify-content-md-center">
     <div class="col-md-6 col-sm-12 col-xs-12">
       <h5 class="admin-title text-center">Annonces en attentes (<%= @annonces_to_check.count %>)</h5>
-            <table class="table table-hover .table-responsive-sm">
+      <table class="table table-hover .table-responsive-sm">
         <tbody>
           <% @annonces_to_check.each_with_index do |annonce, index| %>
           <hr>
@@ -42,7 +42,64 @@
       </table>
     </div>
     <div class="col-md-6 col-sm-12 col-xs-12">
-      <h5 class="admin-title text-center">Liste des produits a confirmer</h5>
+      <h5 class="admin-title text-center">Liste des produits(<%= Product.all.count %>)</h5>
+      <table class="table table-hover .table-responsive-sm">
+        <tbody>
+          <% @products.each_with_index do |product, index| %>
+          <hr>
+          <div class="annonceflex">
+            <p class="annoncetime"> <%= product.created_at.strftime("%d/%m/%Y") %> </p>
+            <%= link_to user_path(product.user) do %>
+            <p> <%= product.user.email %> </p>
+            <% end %>
+            <%= link_to "#{product.show_element}...", "/#{product.element}s/#{product.conect.id}", class:"btn btn-primary" %>
+          </div>
+          <%= link_to "Supprimer", admin_delete_product_path(product, activity: "delete"), class:"btn-danger btn-admin", method: :post%>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
-</div>
+  <div class="row justify-content-md-center">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <h5 class="admin-title text-center">Liste des Utilisateurs(<%= User.all.count %>)</h5>
+      <table class="table table-hover .table-responsive-sm">
+        <tbody>
+          <% @users.each_with_index do |user, index| %>
+          <hr>
+          <div class="annonceflex">
+            <p class="annoncetime"> <%= user.created_at.strftime("%d/%m/%Y") %> </p>
+            <%= link_to user_path(user) do %>
+            <p> <%= user.email %> </p>
+            <% end %>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<%= index %>">
+            Plus d'infos...
+            </button>
+          </div>
+          <!--           USER DESTROY
+          -->          <%#= link_to "Supprimer", admin_a_check_path(annonce, activity: "delete"), class:"btn-danger btn-admin", method: :post%>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal<%= index %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content2">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel"><%= user.last_name %> <%= user.first_name %></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p> Nom de la société : <%=  user.company_name %></p>
+                  <p> Numéro de Siret : <%=  user.siret_no%></p>
+                  <p>Email : <%=  user.email %> </p>
+                  <p>Numéro de telephone : <%=  user.phone %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>

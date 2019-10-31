@@ -10,7 +10,8 @@
       </div>
     </div>
     <%= f.input :description, as: :text, :input_html => { :rows => 7, :cols => 2 }, label: false %>
-    <%= f.button :submit, "AJOUTER A MA DEMANDE",class: "btn btn-block  btn-annonce"%>
+    <%= f.button :submit, "AJOUTER A MA DEMANDE",class: "btn btn-block  btn-annonce",
+    data: { confirm: "Votre annonce va etre etudier par notre administarteur et sera publier au plus vite?" } %>
   </div>
 </div>
 <div class="banner-btn-center">
@@ -19,6 +20,6 @@
 </div>
 </div>
 </div>
-  <% end %>
+<% end %>
 <%= render 'shared/list_annonces',annonces: @annonces %>
 <%= render 'shared/footer' %>

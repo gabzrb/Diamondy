@@ -9,10 +9,25 @@ class User < ApplicationRecord
   has_many :annonces
   mount_uploader :photo, PhotoUploader
   after_create :send_welcome_email
-end
 
- def send_welcome_email
+  def send_welcome_email
     UserMailer.welcome(self).deliver_now
   end
+
+  def give_admin!
+    self.admin = true
+    save
+    puts "Felicitation vous etes admin!"
+    true
+  end
+
+  def remove_admin!
+    self.admin = false
+    save
+    puts "Felicitation vous n'etes plus admin!"
+    true
+  end
+end
+
 
 

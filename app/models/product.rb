@@ -10,6 +10,18 @@ class Product < ApplicationRecord
   # validates :name, presence: true
   validates :price, presence: true
 
+  def show_element
+    if element == "jewel"
+      return "Bijoux"
+    elsif element == "stone"
+      return "Diamant"
+    elsif element == "watch"
+      return "Montre"
+    else
+      return "Pierre de Couleurs"
+    end
+  end
+
   def conect
     return self.jewel if self.jewel
     return self.special_request if self.special_request

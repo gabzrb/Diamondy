@@ -13,14 +13,14 @@
             <p> <%= annonce.user.email %> </p>
             <% end %>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<%= index %>">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#annoncesModal<%= index %>">
             Lire l'annonce...
             </button>
           </div>
           <%= link_to "Accepter", admin_a_check_path(annonce, activity: "checked"), class:"btn-success btn-admin", method: :post%>
           <%= link_to "Supprimer", admin_a_check_path(annonce, activity: "delete"), class:"btn-danger btn-admin", method: :post%>
           <!-- Modal -->
-          <div class="modal fade" id="exampleModal<%= index %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="annoncesModal<%= index %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content2">
                 <div class="modal-header">
@@ -73,14 +73,14 @@
             <p> <%= user.email %> </p>
             <% end %>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<%= index %>">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userModal<%= index %>">
             Plus d'infos...
             </button>
           </div>
           <!--           USER DESTROY
           -->          <%#= link_to "Supprimer", admin_a_check_path(annonce, activity: "delete"), class:"btn-danger btn-admin", method: :post%>
           <!-- Modal -->
-          <div class="modal fade" id="exampleModal<%= index %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="userModal<%= index %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content2">
                 <div class="modal-header">
@@ -91,7 +91,7 @@
                 </div>
                 <div class="modal-body">
                   <p> Nom de la société : <%=  user.company_name %></p>
-                  <p> Numéro de Siret : <%=  user.siret_no%></p>
+                  <p> Numéro de Siret : <%=  user.siret_no %></p>
                   <p>Email : <%=  user.email %> </p>
                   <p>Numéro de telephone : <%=  user.phone %></p>
                 </div>

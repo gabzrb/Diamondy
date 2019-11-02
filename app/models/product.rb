@@ -12,7 +12,7 @@ class Product < ApplicationRecord
 
   def show_element
     if element == "jewel"
-      return "Bijoux"
+      return "Bijou"
     elsif element == "stone"
       return "Diamant"
     elsif element == "watch"

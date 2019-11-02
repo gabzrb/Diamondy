@@ -5,13 +5,13 @@
         <%  if @user.photo.url %>
         <%= cl_image_tag @user.photo, class:"mr-3 img-nav-dash", crop: :fill %>
         <% else %>
-     <img src="https://i.ibb.co/mhL9zjd/user.png" class="mr-3 img-nav-dash">
-      <% end %>
+        <img src="https://i.ibb.co/mhL9zjd/user.png" class="mr-3 img-nav-dash">
+        <% end %>
         <div class="media-body">
           <div class="nom-profile">
-          <h5> <%=  @user.first_name %></h5>
-          <h5> <%=  @user.last_name %></h5>
-         </div>
+            <h5> <%=  @user.first_name %></h5>
+            <h5> <%=  @user.last_name %></h5>
+          </div>
           <h5 class="mt-0"><%= @user.company_name %></h5>
           <h5> <%= @user.services_description %>  </h5>
         </div>
@@ -32,8 +32,37 @@
 </ul>
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <% if @product %>
     <div class="container list-nav">
-  <h3>Produits mis en ligne par <%= @user.company_name %>(<%= @user.products.count %>)</h3>
+      <h3>Le Produit qui vous interesse.</h3>
+      <div class="card-trip">
+        <% if @product.product_attachments.first %>
+        <%= cl_image_tag @product.product_attachments.first.photo %>
+        <% else %>
+        <%= image_tag "https://i.ibb.co/cYPRmcc/diamondproduct.jpg" %>
+        <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= @product.show_element %></h2>
+            <p><%= @product.description %>.</p>
+            <div class='icon-edit'>
+            </div>
+          </div>
+          <div>
+            <%= link_to 'Voir Produit', "/#{@product.element}s/#{@product.conect.id}", class: "btn btn-contact" %>
+          </div>
+          <h2 class="card-trip-pricing"> <%= @product.price.to_i %>€</h2>
+          <% if @product.user.photo.url %>
+          <%= cl_image_tag @product.user.photo, class:"card-trip-user avatar-bordered"  %>
+          <% else %>
+          <img src="https://i.ibb.co/mhL9zjd/user.png" class="card-trip-user avatar-bordered">
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <div class="container list-nav">
+      <h3>Produits mis en ligne par <%= @user.company_name %>(<%= @user.products.count %>)</h3>
       <% @user.products.each do |product| %>
       <div class="card-trip">
         <% if product.product_attachments.first %>
@@ -43,16 +72,14 @@
         <% end %>
         <div class="card-trip-infos">
           <div>
-            <h2><%= product.element %></h2>
+            <h2><%= product.show_element %></h2>
             <p><%= product.description %>.</p>
-  <div class='icon-edit'>
-</div>
+            <div class='icon-edit'>
+            </div>
           </div>
-
           <div>
-          <%= link_to 'Voir Produit', "/#{product.element}s/#{product.conect.id}", class: "btn btn-contact" %>
+            <%= link_to 'Voir Produit', "/#{product.element}s/#{product.conect.id}", class: "btn btn-contact" %>
           </div>
-
           <h2 class="card-trip-pricing"> <%= product.price.to_i %>€</h2>
           <% if product.user.photo.url %>
           <%= cl_image_tag product.user.photo, class:"card-trip-user avatar-bordered"  %>

@@ -1,12 +1,13 @@
+
 class Stone < ApplicationRecord
   # DIAMOND CLASS
 
-  SHAPES = ['Brillant(rond)', 'Coussin', 'Émeraude', 'Radiant', 'Baguette', 'Coeur', 'Ovale',  'Marquise', 'Princesse', 'Poire', 'Triangle']
+  SHAPES = ['Tous', 'Brillant(rond)', 'Coussin', 'Émeraude', 'Radiant', 'Baguette', 'Coeur', 'Ovale',  'Marquise', 'Princesse', 'Poire', 'Triangle']
   QUALIFICATIONS = ['Fair', 'Good', 'Very Good', 'Excellent']
   COLORS = ['D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'MZ']
   PURITY = ['IF-LC', 'VVS1', 'VVS2', 'VS1', 'VS2', 'SI1', 'SI2', 'P1', 'P2', 'P3']
-  CERTIFICATES = ['HRD', 'GIA', 'LFG', 'Autre', 'Pas de certificat']
-  FLUO = ['None -Nil', 'Slight', 'Medium', 'Strong']
+  CERTIFICATES = ['Tous', 'HRD', 'GIA', 'LFG', 'Autre', 'Pas de certificat']
+  FLUO = ['Tous', 'None -Nil', 'Slight', 'Medium', 'Strong']
 
   belongs_to :product
   validates :size, inclusion: { in: QUALIFICATIONS }

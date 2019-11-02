@@ -37,7 +37,7 @@
             <h2>Marque : <%= @jewel.brand  %></h2>
           </div>
           <h2 class="price-product"><%= @jewel.product.price.to_i %>€</h2>
-          <%= link_to 'Fiche Marchand',user_path(@jewel.product.user), class: "btn btn-contact" %>
+          <%= link_to 'Fiche Marchand',user_path(@jewel.product.user, query: @jewel.product.id), class: "btn btn-contact" %>
         </div>
       </div>
     </div>

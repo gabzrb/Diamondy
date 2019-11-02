@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def show
     redirect_to dashboard_path if current_user == @user
+    @product = Product.find(params[:query]) if params[:query].present?
   end
 
   private

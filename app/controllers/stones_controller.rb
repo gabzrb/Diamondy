@@ -11,15 +11,24 @@ class StonesController < ApplicationController
       Stone.by_color(Stone::COLORS[Stone::COLORS.index(params[:query][:color_from])..Stone::COLORS.index(params[:query][:color_to])]) &
       Stone.by_purity(Stone::PURITY[Stone::PURITY.index(params[:query][:purity_from])..Stone::PURITY.index(params[:query][:purity_to])]) &
       Stone.by_symetry(Stone::QUALIFICATIONS[Stone::QUALIFICATIONS.index(params[:query][:symetry_from])..Stone::QUALIFICATIONS.index(params[:query][:symetry_to])])
-      # Need to be done !!!!!
-     if params[:query][:weight_from] != ""
-       @stones = @stones & (params[:query][:weight_to] != "" ? Stone.by_weight(params[:query][:weight_from].to_f, params[:query][:weight_to].to_f) : Stone.by_weight(params[:query][:weight_from].to_f))
-     end
+
+      if params[:query][:weight_from] != ""
+        @stones = @stones & (params[:query][:weight_to] != "" ? Stone.by_weight(params[:query][:weight_from].to_f, params[:query][:weight_to].to_f) : Stone.by_weight(params[:query][:weight_from].to_f))
+      end
 
      # Shape, Fluo, Certificate
-      @stones = @stones & Stone.where(shape: params[:query][:shape],
-                            fluo: params[:query][:fluo],
-                            certificate: params[:query][:certificate])
+      if params[:query][:certificate] != "Tous"
+        @stones = @stone & Stone.where(certificate: params[:query][:certificate])
+      end
+
+      if params[:query][:shape] != "Tous"
+        @stones = @stone & Stone.where(shape: params[:query][:shape])
+      end
+
+      if params[:query][:fluo] != "Tous"
+        @stones = @stone & Stone.where(shape: params[:query][:fluo])
+      end
+
     else
       @stones = Stone.all
     end

@@ -18,15 +18,15 @@ class StonesController < ApplicationController
 
      # Shape, Fluo, Certificate
       if params[:query][:certificate] != "Tous"
-        @stones = @stone & Stone.where(certificate: params[:query][:certificate])
+        @stones = @stones & Stone.where(certificate: params[:query][:certificate])
       end
 
       if params[:query][:shape] != "Tous"
-        @stones = @stone & Stone.where(shape: params[:query][:shape])
+        @stones = @stones & Stone.where(shape: params[:query][:shape])
       end
 
       if params[:query][:fluo] != "Tous"
-        @stones = @stone & Stone.where(shape: params[:query][:fluo])
+        @stones = @stones & Stone.where(fluo: params[:query][:fluo])
       end
 
     else

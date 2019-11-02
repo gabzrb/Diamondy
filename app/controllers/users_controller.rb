@@ -14,6 +14,11 @@ class UsersController < ApplicationController
   def show
     redirect_to dashboard_path if current_user == @user
     @product = Product.find(params[:query]) if params[:query].present?
+    if params[:category].present?
+      @products = @user.products.select { |p| p.element == ApplicationHelper.traduct_element(params[:category])}
+    else
+      @products = @user.products
+    end
   end
 
   private

@@ -36,7 +36,7 @@
           </div>
             <div class="col-xs-12 col-md-6">
             <div class="field">
-                <%= f.input :cert_attachment, input_html: { class: 'hidden' }, label_html: { class: 'upload-photo'}, label: 'Upload le Certificat' %>
+                <%= f.input :cert_attachment, input_html: { class: 'hidden', id: 'cert-input' }, label_html: { class: 'upload-photo', id: 'btn-cert'}, label: 'Upload le Certificat' %>
                 <%= f.hidden_field :cert_attachment_cache %>
             </div>
           </div>
@@ -49,3 +49,5 @@
     </div>
   </div>
 </div>
+<%= javascript_pack_tag 'upload_confirm' %>
+

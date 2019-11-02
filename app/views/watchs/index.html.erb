@@ -1,56 +1,71 @@
 <div class="container list-nav">
-    <%= form_tag watchs_path, method: :get do %>
-    <div class="border-tag">
-       <div class="cardcategory">
-       <div class="col col-xs-12 ">
-         <div class="searchcategory">
+  <%= form_tag watchs_path, method: :get do %>
+  <div class="border-tag">
+    <div class="cardcategory">
+      <div class="col col-xs-12 ">
+        <div class="searchcategory">
           <div class="searchtitle">
             <h6> Etat  </h6>
           </div>
-             <div class="searchcontent">
-              <%= select_tag 'query[state]', options_for_select(Watch::STATES) %>
-            </div>
+          <div class="searchcontent">
+            <%= select_tag 'query[state]', options_for_select(Watch::STATES) %>
           </div>
         </div>
-
-       <div class="col col-xs-12 ">
-          <div class="searchcategory">
-            <div class="searchtitle">
-              <h6> Marque  </h6>
-            </div>
-            <div class="searchcontent">
-              <%= select_tag 'query[brand]', options_for_select(Watch::BRANDS) %>
-            </div>
+      </div>
+      <div class="col col-xs-12 ">
+        <div class="searchcategory">
+          <div class="searchtitle">
+            <h6> Marque  </h6>
+          </div>
+          <div class="searchcontent">
+            <%= select_tag 'query[brand]', options_for_select(Watch::BRANDS) %>
           </div>
         </div>
-
-
-         <div class="col col-xs-12 ">
-           <div class="searchcategory">
-              <div class="searchtitle">
-                    <h6> Matériaux </h6>
-              </div>
-               <div class="searchcontent">
-                  <%= select_tag 'query[material]', options_for_select(Watch::MATERIALS) %>
-               </div>
-            </div>
+      </div>
+      <div class="col col-xs-12 ">
+        <div class="searchcategory">
+          <div class="searchtitle">
+            <h6> Matériaux </h6>
           </div>
+          <div class="searchcontent">
+            <%= select_tag 'query[material]', options_for_select(Watch::MATERIALS) %>
+          </div>
+        </div>
       </div>
-
-      <div class="searchbouton">
-          <%= submit_tag "Rechercher", class: "btn btn-search" %>
-          <%= link_to "🅧", watchs_path %>
+            <div class="col col-xs-12 ">
+        <div class="searchcategory">
+          <div class="searchtitle">
+            <h6> Boite </h6>
+          </div>
+          <div class="searchcontent">
+            <%= radio_button_tag 'query[box]', false %>
+          </div>
+        </div>
       </div>
-
+                  <div class="col col-xs-12 ">
+        <div class="searchcategory">
+          <div class="searchtitle">
+            <h6> Papier </h6>
+          </div>
+          <div class="searchcontent">
+            <%= radio_button_tag 'query[paper]', false %>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="searchbouton">
+      <%= submit_tag "Rechercher", class: "btn btn-search" %>
+      <%= link_to "🅧", watchs_path %>
+    </div>
+  </div>
   <% end %>
   <% @watchs.each do |watch| %>
   <div class="line_confirmation"></div>
   <div class="card-trip">
-   <% if watch.product.product_attachments.first %>
-       <img src= <%= watch.product.product_attachments.first.photo.url %> >
-   <% else %>
-      <img src="https://i.ibb.co/hDb2xdp/pixel-bee-u8is-JQ6-Qj-F4-unsplash.jpg" >
+    <% if watch.product.product_attachments.first %>
+    <img src= <%= watch.product.product_attachments.first.photo.url %> >
+    <% else %>
+    <img src="https://i.ibb.co/hDb2xdp/pixel-bee-u8is-JQ6-Qj-F4-unsplash.jpg" >
     <% end %>
     <div class="card-trip-infos">
       <div class="card-trip-detail">

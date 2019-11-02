@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_02_105009) do
+ActiveRecord::Schema.define(version: 2019_11_02_123610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 2019_11_02_105009) do
     t.string "symetry"
     t.string "polish"
     t.string "fluo"
+    t.string "cert_attachment"
     t.index ["product_id"], name: "index_stones_on_product_id"
   end
 

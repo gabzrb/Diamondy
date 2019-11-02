@@ -34,6 +34,12 @@
           <div class="col-xs-12 col-md-6">
             <%= f.input :certificate, collection: Stone::CERTIFICATES, label:'Certificat' %>
           </div>
+            <div class="col-xs-12 col-md-6">
+            <div class="field">
+                <%= f.input :cert_attachment, input_html: { class: 'hidden' }, label_html: { class: 'upload-photo'}, label: 'Upload le Certificat' %>
+                <%= f.hidden_field :cert_attachment_cache %>
+            </div>
+          </div>
           <div class=" form-actions col-xs-12 col-md-6">
             <%= f.submit "Valider", class: "btn-contact" %>
           </div>

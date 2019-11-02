@@ -19,6 +19,8 @@ class Stone < ApplicationRecord
   validates :fluo, inclusion: { in: FLUO }
   validates :shape, inclusion: { in: SHAPES }
 
+  mount_uploader :cert_attachment, CertificateUploader
+
   def self.by_size(range)
     Stone.all.select { |diamond| range.include? diamond.size }
   end

@@ -56,7 +56,7 @@ Rails.application.configure do
   config.assets.quiet = true
   config.action_mailer.perform_deliveries = true
  config.action_mailer.raise_delivery_errors = true
- config.action_mailer.default_options = {from: 'gabrielzerbib6@gmail.com'}
+ config.action_mailer.default_options = {from: 'dan_soussan@hotmail.fr'}
 
   config.action_mailer.default_url_options = { host: 'http://localhost:3000' }
   config.action_mailer.delivery_method = :smtp

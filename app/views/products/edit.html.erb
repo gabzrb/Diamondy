@@ -2,15 +2,15 @@
   <div class="row">
     <div class=" col col-xs-12 col-lg-12">
       <div class="contactcard text-center">
-        <h1>Editez votre fiche produit</h1>
+        <h1>Editer votre fiche produit</h1>
         <%= simple_form_for @product do |f| %>
-        <div class="form-row">
-          <div class="col col-xs-12 col-md-6">
+        <div class="form-row flexedit">
+          <div class="col col-xs-12 col-md-12 flexedit2">
             <%= f.input :price, label: 'Prix' %>
           </div>
-          <div class=" col col-xs-12 col-md-6">
-            <%= f.input :description %>
-          </div>
+
+        <h4> <%= link_to "Modifier les catégories", "/products/#{@product.id}/#{@product.element}s/#{@obj.id}/edit", class: "btn btn-edit" %> </h4>
+
           <div class="form-row">
             <% @product.product_attachments.each do |pa| %>
             <div class="col">
@@ -19,19 +19,25 @@
               <%#= link_to "✏️", edit_product_product_attachment_path(@product, pa) %>
             </div>
             <% end %>
+
           </div>
+
+
           <div class="form-row">
             <div class="col">
               <%= f.fields_for @product_attachment do |p| %>
               <div class="field">
-                <%= p.label "Rajouter une ou plusieurs images ⇩" %><br>
-                <%= p.file_field :photo, :multiple => true, name: "product_attachments[photo][]" %>
+                 <%= p.label :photo, class: 'upload-photo', label: '📷 Ajoutez une/plusieurs photo/s'  %>
+                <%= p.file_field :photo, :multiple => true, name: "product_attachments[photo][]", class: 'hidden' %>
               </div>
               <% end %>
             </div>
           </div>
-          <%= link_to "Plus d'options", "/products/#{@product.id}/#{@product.element}s/#{@obj.id}/edit" %>
+
+
           <div class="form-actions col col-xs-4 col-md-12">
+
+
             <%= f.submit "Valider" , class: "btn-contact" %>
           </div>
           <% end %>

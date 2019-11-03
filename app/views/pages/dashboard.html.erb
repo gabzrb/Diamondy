@@ -1,4 +1,4 @@
-<div class="media med-dash-nav">
+<div class="media svgprofile">
   <div class="container dash-nav">
     <div class="row">
       <div class="col-md-8 col-sm-12 profil-info">
@@ -7,10 +7,11 @@
         <% else %>
         <img src="https://i.ibb.co/mhL9zjd/user.png" class="mr-3 img-nav-dash">
         <% end %>
-        <div class="media-body">
+        <div class="media-body ">
           <div class="nom-profile">
             <h5> <%=  current_user.first_name %></h5>
             <h5> <%=  current_user.last_name %></h5>
+             <h5> <%= current_user.company_name %> </h5>
           </div>
           <h5 class="mt-0"><%= current_user.company_name %></h5>
           <h5> <%= current_user.services_description %>  </h5>
@@ -76,7 +77,7 @@
             <p> Numéro de Siret : <%= current_user.siret_no%></p>
             <p>Email : <%= current_user.email %> </p>
             <p>Numéro de telephone : <%= current_user.phone %></p>
-            <p>Service</p>
+            <p>Service : <%= current_user.services_description %> </p>
           </div>
         </div>
       </div>

@@ -1,0 +1,16 @@
+
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .annonceflex {
+    font-size: 12px;
+    p.annoncedescription{
+      font-size: 12px;
+    }
+    button {
+      font-size: 12px;
+    }
+  }
+  hr {
+    margin: 0 !important;
+  }
+}

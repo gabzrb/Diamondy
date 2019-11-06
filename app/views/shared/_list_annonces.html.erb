@@ -18,8 +18,8 @@
           <% annonces.each_with_index do |annonce, index| %>
           <hr>
           <div class="annonceflex">
-            <p class="annoncetime"> <%= annonce.created_at.strftime("%d/%m/%Y") %> </p>
-            <p> <%= annonce.category %> </p>
+            <p class="annoncetime text-justify"> <%= annonce.created_at.strftime("%d/%m/%Y") %> </p>
+            <p class="text-justify"> <%= annonce.category %> </p>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#annonceModal<%= index %>">
             <p class="annoncedescription"> <%= annonce.description %> </p>
             </button>

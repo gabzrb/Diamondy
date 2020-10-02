@@ -1,18 +1,42 @@
 <div class="banner" style="background-image:
-  url(<%= image_path 'banniere.jpg' %>);">
-  <div class="banner-content">
-    <h5> Rejoignez la premiere plateforme de mise en relation des
-profesionnels du diamant et de la bijouterie-joaillerie !</h5>
-
-  </div>
-  <div class="banner-btn-center">
-    <%= link_to 'ANNONCEZ GRATUITEMENT',new_annonce_path, class: "btn btn-cta" %>
-  </div>
+  url(<%= image_path 'homepage.jpg' %>);">
+  <div class="color_overlay_banner"></div>
+ <div class=banner-content>
+    <h3> Rejoignez la premiere plateforme <br>de mise en relation des
+      profesionnels du diamant et de la bijouterie-joaillerie !</h3>
+  <%= link_to 'ANNONCE GRATUITE',new_annonce_path, class: "btn btn-cta center-block" %>
+ </div>
 </div>
+
 <div class="container text-center">
+   <div class="row">
+    <div class="col-xs-12 col-md-4  ">
+      <div class="cardproduit ">
+        <div class="cardproduit-img" style="background-image:url(<%= image_path 'bureau.png' %>);">
+       </div>
+        </div>
+        </div>
+
+    <div class="col-xs-12 col-md-4  ">
+      <div class="cardproduit ">
+        <div class="cardproduit-img" style="background-image:url(<%= image_path 'diamantaire.jpg' %>);">
+     </div>
+      </div>
+      </div>
+
+    <div class="col-xs-12 col-md-4  ">
+      <div class="cardproduit ">
+        <div class="cardproduit-img" style="background-image:url(<%= image_path 'main.jpg' %>);">
+      </div>
+    </div>
+     </div>
+      </div>
+
+      <div class="flex-button">
   <%= link_to 'PASSER UNE ANNONCE',new_annonce_path, class: "btn btn-home2" %>
   <%= link_to 'CONSULTER LES ANNONCES',annonces_path, class: "btn btn-home2" %>
   <%= link_to 'PRODUITS DISPONIBLES',products_path, class: "btn btn-home2" %>
+  </div>
   <div class="paragraphe">
     <h5> GRATUITEMENT, SIMPLEMENT ET EN QUELQUES CLICS !</h5>
     <p> <b>Bijoutiers</b>  : Trouvez le diamant que vous recherchez aupres de notre communauté de diamantaires

@@ -1,13 +1,46 @@
 
 .banner {
-  color: #f6f0e4;
-    background-size: cover !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-
+color: white;
+  text-align: center;
+  height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
+
+
+.color_overlay_banner {
+  background-color: #03033A;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.5;
+}
+
+.banner-content {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+
+.flex-button {
+
+display: flex;
+justify-content: space-between;
+align-items : center;
+}
+
+
+
+
 
 .flexedit {
 display: flex;
@@ -46,11 +79,7 @@ align-items: center;
 }
 
 
-.banner-content {
-  padding-left: 50px;
-  margin-top: 70px;
 
-}
 
 .banner-content h5 {
   font-weight: bolder;

@@ -15,6 +15,7 @@
         <div class="cardproduit-img" style="background-image:url(<%= image_path 'bureau.png' %>);">
        </div>
         </div>
+        <%= link_to 'PRODUITS DISPONIBLES',products_path, class: "btn btn-home2" %>
         </div>
 
     <div class="col-xs-12 col-md-4  ">
@@ -22,6 +23,7 @@
         <div class="cardproduit-img" style="background-image:url(<%= image_path 'diamantaire.jpg' %>);">
      </div>
       </div>
+      <%= link_to 'CONSULTER LES ANNONCES',annonces_path, class: "btn btn-home2" %>
       </div>
 
     <div class="col-xs-12 col-md-4  ">
@@ -29,13 +31,15 @@
         <div class="cardproduit-img" style="background-image:url(<%= image_path 'main.jpg' %>);">
       </div>
     </div>
+    <%= link_to 'PASSER UNE ANNONCE',new_annonce_path, class: "btn btn-home2" %>
+    <p> lorem ipsum bla bla bla bla bla</p>
      </div>
       </div>
 
       <div class="flex-button">
-  <%= link_to 'PASSER UNE ANNONCE',new_annonce_path, class: "btn btn-home2" %>
-  <%= link_to 'CONSULTER LES ANNONCES',annonces_path, class: "btn btn-home2" %>
-  <%= link_to 'PRODUITS DISPONIBLES',products_path, class: "btn btn-home2" %>
+
+
+
   </div>
   <div class="paragraphe">
     <h5> GRATUITEMENT, SIMPLEMENT ET EN QUELQUES CLICS !</h5>

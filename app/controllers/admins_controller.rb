@@ -3,6 +3,7 @@ class AdminsController < ApplicationController
   before_action :set_product, only: [:admin_delete_product]
 
   def admin
+    ApplicationHelper.product_conection
     if current_user.admin
       @users = User.all
       @products = Product.all
@@ -28,10 +29,12 @@ class AdminsController < ApplicationController
     end
   end
 
-
   def admin_delete_product
     if current_user.admin
-      raise
+      if params[:activity] == "delete"
+        @product.destroy
+        redirect_to admin_path
+      end
     else
       redirect_to root_path
     end
@@ -44,6 +47,6 @@ class AdminsController < ApplicationController
   end
 
   def set_product
-    @annonce = Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 end

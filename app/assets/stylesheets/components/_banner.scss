@@ -12,6 +12,18 @@ color: white;
 }
 
 
+.banner-contact {
+color: white;
+  text-align: center;
+  height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
 .color_overlay_banner {
   background-color: #03033A;
   left: 0;
@@ -31,16 +43,78 @@ color: white;
 }
 
 
-.flex-button {
+.banner-product {
+  height: 80vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  background-repeat:no-repeat;
 
-display: flex;
+}
+
+.banner-product2 {
+  height: 95vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  background-repeat:no-repeat;
+
+}
+
+.flex-icon {
+
+display: inline-flex;
 justify-content: space-between;
 align-items : center;
+margin-bottom: 35px;
 }
 
 
+.contact-icon {
+display: inline-flex;
+justify-content: center;
+margin-top: 35px;
+}
+
+.contact-mail {
+display: inline-flex;
+justify-content: end;
+margin-bottom: 35px;
+}
+
+.svg {
+  width: 50px;
+  position: relative;
+   margin-right: 5px;
+
+}
+
+.svg-eye {
+width: 50px;
+
+  position: relative;
+
+  margin-right: 5px;
+}
+
+.svg-watch {
+  width: 58px;
+  position: relative;
+  margin-right: 5px;
+}
 
 
+.svg-contact {
+  width: 40px;
+  position: relative;
+}
+
+
+.link-home {
+  color: black;
+}
+
+.link-home:hover {
+  color: black;
+}
 
 .flexedit {
 display: flex;
@@ -116,7 +190,14 @@ align-items: center;
 }
 
 
+.bluewrapper {
+width: 100vw;
+background-color: #b3b3d6;
+color : white;
+padding : 20px;
+text-align: center;
 
+}
 
 
 .flexcontact {

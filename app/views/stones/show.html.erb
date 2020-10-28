@@ -1,14 +1,15 @@
-<div class="container">
+
   <div class="row">
     <div class=" col col-xs-12 col-lg-12">
       <div class="card-showproduct">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="card-showproduct-picture">
+         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
              <% if @photos[0] %>
               <%= cl_image_tag @photos[0], class: "d-block w-30"  %>
               <% else %>
-      <img src="https://i.ibb.co/ScrzLhh/diamondproduct.jpg" >
+     <%= image_tag "diamant-brillant.jpg" %>
               <% end %>
             </div>
             <% @photos.each_with_index do |photo, i|  %>
@@ -26,10 +27,10 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
+         </div>
         </div>
         <div class="card-showproduct-infos">
           <h1><%= @stone.shape %></h1>
-          <div class="line_confirmation"></div>
           <div class="element-infos">
             <h2>Poids : <%= @stone.weight%> Carat </h2>
             <h2>Couleur : <%= @stone.color  %></h2>
@@ -44,11 +45,16 @@
 
           </div>
           <h2 class="price-product"><%= @stone.product.price.to_i %>€</h2>
-          <%= link_to 'Fiche Marchand',user_path(@stone.product.user, query: @stone.product.id), class: "btn btn-contact" %>
 
-            <%= link_to "Voir le certificat", @stone.cert_attachment.url, target: (:_blank if @stone.cert_attachment.url), class: "btn btn-contact"  %>
+          <div class="line_confirmation"></div>
+
+
+          <%= link_to 'Fiche Marchand',user_path(@stone.product.user, query: @stone.product.id), class: "btn btn-description2" %>
+
+            <%= link_to "Certificat", @stone.cert_attachment.url, target: (:_blank if @stone.cert_attachment.url), class: "btn btn-description3"  %>
         </div>
       </div>
     </div>
   </div>
-</div>
+  <%= render 'shared/footer' %>
+

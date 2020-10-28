@@ -69,9 +69,8 @@ input, select{
 }
 
 .border-tag {
-  display: flex;
   margin-top: 35px;
-  flex-direction: column;
+
 
 }
 
@@ -79,7 +78,37 @@ input, select{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin-left: 40px;
 }
+
+
+.cardcategory2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (min-width: 576px) {
   .cardcategory {
@@ -99,135 +128,116 @@ input, select{
 .searchbouton {
   display: flex;
   justify-content: center;
+  margin-top: 8%;
+}
+
+.searchbouton-pierres {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
 }
 
 .searchcategory {
   display: flex;
   flex-direction: column;
   margin-bottom: 12px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2)
+}
 
+.searchcategory-carat {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  margin-left: 7%;
+}
 
-
+.searchcategory-couleur {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  margin-right: 7%;
 }
 
 .searchtitle {
-  background-color: #22cec6;
-  text-align: center;
   padding-top: 3px;
+  padding-bottom: 15px;
+
 }
 
 
 .searchcontent {
 padding: 15px;
-background-color: #efeded;
+
 text-align: center;
 display: flex;
 
 }
 
 
-.searchcontentforme {
-    padding: 35px;
-    background-color: #efeded;
-    text-align: center;
-    display: -webkit-box;
-    display: flex;
-    padding-right: 31px;
-    padding-top: 49px;
-    padding-bottom: 56px;
-    justify-content: center;
-}
+
 
 
 .searchcontentcolor {
-  padding: 21px;
-    background-color: #efeded;
+
     text-align: center;
     display: -webkit-box;
     display: flex;
-    padding-bottom: 54px;
     justify-content: center;
 }
 
 
 
 .searchcontentcarat {
-    padding: 1px;
-    background-color: #efeded;
     text-align: center;
     display: -webkit-box;
     display: flex;
-    padding-top: 16px;
-    padding-bottom: 54px;
-    justify-content: center;
+
 }
 
 
 .searchcontentpurete {
-   padding: 20px;
-    background-color: #efeded;
     text-align: center;
     display: -webkit-box;
     display: flex;
-    padding-bottom: 59px;
     justify-content: center;
 }
 
 
 .searchcontenttaille {
-    padding: 15px;
-    background-color: #efeded;
+
     text-align: center;
     display: -webkit-box;
-    padding-top: 20px;
     display: flex;
-    padding-bottom: 59px;
     justify-content: center;
 }
 
 
 
 .searchcontentsymetrie {
-    padding: 15px;
-    background-color: #efeded;
+
     text-align: center;
     display: -webkit-box;
     display: flex;
-    padding-bottom: 60px;
-    padding-top: 19px;
+
     justify-content: center;
 }
 
 
 .searchcontentfluo {
-    padding: 50px;
-    background-color: #efeded;
     text-align: center;
-    display: -webkit-box;
-    display: flex;
-    justify-content: center;
+
 }
 
 
 .searchcontentpolish {
-   padding: 31px;
-    background-color: #efeded;
+
     text-align: center;
-    display: -webkit-box;
-    display: flex;
-    padding-bottom: 39px;
-    -webkit-box-pack: center;
-    justify-content: center;
+        display: flex;
+
 }
 
 .searchcontentcertificat {
-    padding: 50px;
-    background-color: #efeded;
     text-align: center;
-    display: -webkit-box;
-    display: flex;
-    justify-content: center;
+
 }
 
 .search-box

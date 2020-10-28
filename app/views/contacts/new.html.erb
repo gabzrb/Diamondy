@@ -1,19 +1,37 @@
-<div class="container">
+<div class="banner-contact" style="background-image:
+  url(<%= image_path 'pink.png' %>);">
   <div class="flexcontact">
     <div class="contactcard text-center">
       <h1> Contactez-Nous </h1>
-      <p>Vous avez une question, une demande ?</p>
-      <p>Envoyez nous un message !</p>
+
+       <div class="contact-icon">
+        <div class="svg-contact"> <%= image_tag 'placeholder.png' %> </div>
+          <p style="margin-right: 7%;">18 rue Lombard, Paris 75018</p>
+
+
+
+
+        <div class="svg-contact"> <%= image_tag 'smartphone.png' %> </div>
+          <p>07.10.20.30.50</p>
+     </div>
+
+
+       <div class="contact-mail">
+        <div class="svg-contact"> <%= image_tag 'email.png' %> </div>
+          <p>Lescopainsbijoutiers.com</p>
+      </div>
+
+
       <%= simple_form_for @contact, url: {action: "create"} do |f| %>
       <% if flash[:error].present? %>
       <p> flash[:error]</p>
       <% end %>
       <div class="container">
         <div class="form-row">
-          <div class="col-xs-12 col-md-6">
-            <%= f.input :first_name, label:false,  required:true, placeholder: "Nom" %>
+          <div class="col-xs-12 col-md-12">
+            <%= f.input :first_name, label:false,  required:true, placeholder: "Nom, Prénom" %>
           </div>
-          <div class="col-xs-12 col-md-6 ">
+          <div class="col-xs-12 col-md-12 ">
             <%= f.input :email,
             required: true,
             autofocus: true ,
@@ -25,11 +43,11 @@
             <%= f.input :message, label:false, placeholder:"Message", as: :text, required: false %>
           </div>
           <div class="form-actions">
-            <%= f.submit 'Envoyer Message', class: "btn-contact" %>
+            <%= f.submit 'Envoyer', class: "btn-description" %>
             <% end %>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+

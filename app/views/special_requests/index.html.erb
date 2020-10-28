@@ -1,35 +1,48 @@
-<div class="container list-nav">
+<div class="banner-product2" style="background-image:
+  url(<%= image_path 'pierre-banner' %>);">
+</div>
+<div class="bluewrapper2">
+    <h3>Pierres de couleur</h3>
+    <h5 class="text-center"> Sed (saepe enim redeo ad Scipionem, cuius omnis sermo erat de amici</h5>
+</div>
+
+
   <%= form_tag special_requests_path, method: :get do %>
-               <div class="searchcontentforme">
-             <%= select_tag 'query[categorie]', options_for_select(SpecialRequest::CATEGORIES) %>
-            </div>
-          <%= submit_tag "Rechercher", class: "btn btn-search" %>
+
+
+  <div class="text-center">
+    <%= select_tag 'query[categorie]', options_for_select(SpecialRequest::CATEGORIES) %>
+  </div>
+
+       <div class="searchbouton-pierres text-center">
+          <%= submit_tag "Rechercher", class: "btn btn-search-pierres" %>
           <%= link_to "🅧", special_requests_path %>
+       </div>
 
   <% end %>
-  <% @special_requests.each do |special_request| %>
+
   <div class="line_confirmation"></div>
-  <div class="card-trip">
+  <% @special_requests.each do |special_request| %>
+
+ <div class="card-trial">
+   <div class="card-trial-elements">
     <% if special_request.product.product_attachments.first %>
     <img src= <%= special_request.product.product_attachments.first.photo.url %> >
     <% else %>
     <img src="https://i.ibb.co/fk65335/ines-alvarez-fdez-L-N7-Ba-NLC5-Y-unsplash.jpg" >
     <% end %>
-    <div class="card-trip-infos">
-      <div class="card-trip-detail">
-        <h2><%= special_request.categorie%></h2>
 
-      </div>
-      <div >
-        <%= link_to 'Voir Produit',special_request_path(special_request), class: "btn btn-card-trip" %>
-      </div>
-      <h2 class="card-trip-pricing"> <%= special_request.product.price.to_i %>€</h2>
-      <% if special_request.product.user.photo.url %>
-      <%= cl_image_tag special_request.product.user.photo, class:"card-trip-user avatar-bordered"  %>
-      <% else %>
-      <img src="https://i.ibb.co/mhL9zjd/user.png" class="card-trip-user avatar-bordered">
-      <% end %>
+        <p><%= special_request.categorie%></p>
     </div>
-  </div>
+
+      <div class="text-center">
+        <%= link_to 'DESCRIPTION',special_request_path(special_request), class: "btn btn-description text-center" %>
+      </div>
+
+
+    </div>
+
   <% end %>
-</div>
+
+<%= render 'shared/footer' %>
+

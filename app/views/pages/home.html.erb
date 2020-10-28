@@ -15,7 +15,11 @@
         <div class="cardproduit-img" style="background-image:url(<%= image_path 'bureau.png' %>);">
        </div>
         </div>
-        <%= link_to 'PRODUITS DISPONIBLES',products_path, class: "btn btn-home2" %>
+        <div class="flex-icon">
+        <div class="svg-watch"> <%= image_tag 'watch.svg' %> </div>
+          <%= link_to 'PRODUITS DISPONIBLES',products_path, class: "link-home" %>
+       </div>
+          <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
         </div>
 
     <div class="col-xs-12 col-md-4  ">
@@ -23,31 +27,33 @@
         <div class="cardproduit-img" style="background-image:url(<%= image_path 'diamantaire.jpg' %>);">
      </div>
       </div>
-      <%= link_to 'CONSULTER LES ANNONCES',annonces_path, class: "btn btn-home2" %>
+       <div class="flex-icon">
+        <div class="svg-eye"> <%= image_tag 'loupe.svg' %> </div>
+           <%= link_to 'CONSULTER LES ANNONCES',annonces_path, class: "link-home" %>
+        </div>
+         <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
       </div>
 
-    <div class="col-xs-12 col-md-4  ">
+   <div class="col-xs-12 col-md-4  ">
       <div class="cardproduit ">
-        <div class="cardproduit-img" style="background-image:url(<%= image_path 'main.jpg' %>);">
+        <div class="cardproduit-img" style="background-image:url(<%= image_path 'main.jpg' %>);"></div>
+       </div>
+      <div class="flex-icon">
+        <div class="svg"> <%= image_tag 'ring.svg' %> </div>
+        <%= link_to 'PASSER UNE ANNONCE',new_annonce_path, class: "link-home" %>
+
       </div>
+      <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
     </div>
-    <%= link_to 'PASSER UNE ANNONCE',new_annonce_path, class: "btn btn-home2" %>
-    <p> lorem ipsum bla bla bla bla bla</p>
-     </div>
-      </div>
+</div>
 
-      <div class="flex-button">
-
-
-
-  </div>
   <div class="paragraphe">
     <h5> GRATUITEMENT, SIMPLEMENT ET EN QUELQUES CLICS !</h5>
     <p> <b>Bijoutiers</b>  : Trouvez le diamant que vous recherchez aupres de notre communauté de diamantaires
       en passant une annonce de votre besoin et/ou en consultant les diamants disponibles. </p>
      <p> <b>Diamantaires - Courtiers - Grossistes en bijoux </b> : Créer votre Vitrine de bijoux/Diamants en
       ligne et diffusez la auprès de notre réseau. </p>
-    <p> <strong>Quelqu'un, quelque part à la perle rare ! Voyez par vous même. </strong></p>
+    <p class="margin-video"> <strong>Quelqu'un, quelque part à la perle rare ! Voyez par vous même. </strong></p>
 <!--     <iframe src="https://www.youtube.com/embed/n_bk2n2Ehjo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="home-video"></iframe> -->
 
 <%= video_tag "video.mp4", class:"home-video", controls: true %>

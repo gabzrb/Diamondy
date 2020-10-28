@@ -1,8 +1,9 @@
-<div class="container">
+
   <div class="row">
     <div class=" col col-xs-12 col-lg-12">
       <div class="card-showproduct">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="card-showproduct-picture">
+         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
              <% if @photos[0] %>
@@ -27,16 +28,21 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
+       </div>
         <div class="card-showproduct-infos">
           <h1><%= @special_request.categorie  %></h1>
-          <div class="line_confirmation"></div>
-          <div class="element-infos_sr">
+
+          <div class="element-infos">
             <%= @special_request.description %>
           </div>
           <h2 class="price-product"><%= @special_request.product.price.to_i %>€</h2>
-          <%= link_to 'Fiche Marchand',user_path(@special_request.product.user, query: @special_request.product.id), class: "btn btn-contact" %>
+
+       <div class="line_confirmation"></div>
+
+          <%= link_to 'Fiche Marchand',user_path(@special_request.product.user, query: @special_request.product.id), class: "btn btn-description2" %>
         </div>
       </div>
     </div>
   </div>
-</div>
+
+    <%= render 'shared/footer'%>

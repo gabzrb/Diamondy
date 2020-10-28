@@ -1,88 +1,71 @@
-<div class="container list-nav">
+<div class="banner-product2" style="background-image:
+  url(<%= image_path 'watch-banner' %>);">
+</div>
+<div class="bluewrapper2">
+    <h3>Montres</h3>
+    <h5 class="text-center"> Sed (saepe enim redeo ad Scipionem, cuius omnis sermo erat de amici</h5>
+</div>
   <%= form_tag watchs_path, method: :get do %>
-  <div class="border-tag">
-    <div class="cardcategory">
-      <div class="col col-xs-12 ">
-        <div class="searchcategory">
-          <div class="searchtitle">
-            <h6> Etat  </h6>
-          </div>
-          <div class="searchcontent">
-            <%= select_tag 'query[state]', options_for_select(Watch::STATES) %>
-          </div>
-        </div>
-      </div>
-      <div class="col col-xs-12 ">
-        <div class="searchcategory">
-          <div class="searchtitle">
-            <h6> Marque  </h6>
-          </div>
-          <div class="searchcontent">
-            <%= select_tag 'query[brand]', options_for_select(Watch::BRANDS) %>
-          </div>
-        </div>
-      </div>
-      <div class="col col-xs-12 ">
-        <div class="searchcategory">
-          <div class="searchtitle">
-            <h6> Matériaux </h6>
-          </div>
-          <div class="searchcontent">
-            <%= select_tag 'query[material]', options_for_select(Watch::MATERIALS) %>
-          </div>
-        </div>
-      </div>
-      <div class="col col-xs-6 col-sm-6">
-        <div class="searchcategory">
-          <div class="searchtitle">
-            <h6> Boite </h6>
-          </div>
-          <div class="searchcontent">
-            <%= radio_button_tag 'query[box]', false %>
-          </div>
-        </div>
-      </div>
-      <div class="col col-xs-6 col-sm-6">
-        <div class="searchcategory">
-          <div class="searchtitle">
-            <h6> Papier </h6>
-          </div>
-          <div class="searchcontent">
-            <%= radio_button_tag 'query[paper]', false %>
-          </div>
-        </div>
-      </div>
+   <div class="row-diamond">
+
+      <div class="col col-xs-12 col-md-4">
+        <h6> Etat  </h6>
+        <%= select_tag 'query[state]', options_for_select(Watch::STATES) %>
+       </div>
+
+    <div class="col col-xs-12 col-md-4">
+       <h6> Marque  </h6>
+       <%= select_tag 'query[brand]', options_for_select(Watch::BRANDS) %>
     </div>
+
+     <div class="col col-xs-12 col-md-4">
+        <h6> Matériaux </h6>
+        <%= select_tag 'query[material]', options_for_select(Watch::MATERIALS) %>
+     </div>
+
+
+      <div class="col col-xs-12 col-md-4 boite-montre">
+        <h6 style="margin-right: 6px"> Boite </h6>
+        <%= radio_button_tag 'query[box]', false %>
+      </div>
+
+      <div class="col col-xs-12 col-md-4 papier-montre">
+        <h6 style="margin-right: 6px"> Papier </h6>
+        <%= radio_button_tag 'query[paper]', false %>
+      </div>
+
+    </div>
+
     <div class="searchbouton">
       <%= submit_tag "Rechercher", class: "btn btn-search" %>
       <%= link_to "🅧", watchs_path %>
     </div>
-  </div>
+
   <% end %>
+
+    <div class="line_confirmation"></div>
   <% @watchs.each do |watch| %>
-  <div class="line_confirmation"></div>
-  <div class="card-trip">
-    <% if watch.product.product_attachments.first %>
+
+  <div class="card-trial">
+   <div class="card-trial-elements">
+     <% if watch.product.product_attachments.first %>
     <img src= <%= watch.product.product_attachments.first.photo.url %> >
     <% else %>
     <img src="https://i.ibb.co/hDb2xdp/pixel-bee-u8is-JQ6-Qj-F4-unsplash.jpg" >
     <% end %>
-    <div class="card-trip-infos">
-      <div class="card-trip-detail">
-        <h2> <%= watch.brand %></h2>
-        <p><%= watch.state%></p>
-        <p> <%= watch.material %> </p>
-      </div>
-      <div >
-        <%= link_to 'Voir Produit',watch_path(watch), class: "btn btn-card-trip" %>
-      </div>
-      <h2 class="card-trip-pricing"> <%= watch.product.price.to_i %>€</h2>
-      <% if watch.product.user.photo.url %>
-      <%= cl_image_tag watch.product.user.photo, class:"card-trip-user avatar-bordered"  %>
-      <% else %>
-      <img src="https://i.ibb.co/mhL9zjd/user.png" class="card-trip-user avatar-bordered">
-      <% end %>
-    </div>
+     <p> <%= watch.brand %></p>
+     <p><%= watch.state%></p>
+     <p> <%= watch.material %> </p>
+     <p> <%= watch.product.price.to_i %>€</p>
+   </div>
+
+  <div class="text-center">
+     <%= link_to 'DESCRIPTION',watch_path(watch), class: "btn btn-description text-center" %>
+  </div>
+
+
+
   </div>
   <% end %>
-</div>
+
+<%= render 'shared/footer' %>

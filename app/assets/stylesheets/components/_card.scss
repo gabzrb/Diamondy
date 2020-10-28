@@ -157,22 +157,26 @@
 
    .price-product {
     font-size: 26px !important;
-    color: #f7a70a;
     padding-top: 15px;
    }
 
 .card-showproduct {
-  overflow: hidden;
+
   margin-top: 50px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
+  display: block;
   align-items: center;
+}
+
+.card-showproduct-picture {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2%;
 }
 
 .card-showproduct img {
   height: 100%;
-  width: 30vw;
+  width: 15vw;
   object-fit: cover;
 }
 
@@ -196,19 +200,39 @@
 .card-showproduct .card-showproduct-infos {
  text-align: center;
  width: 100vw;
+     margin-bottom: 10%;
 }
 
 
 .black-card {
-    background-color: #494f4f;
+    background-color: white;
     width: 53vw;
-    margin-bottom: 27px;
+    margin-bottom: 20%;
     margin-left: 15px;
     margin-right: 15px;
     margin-top: 40px;
     border-radius: 7px;
     padding: 14px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
+
+.annonce-banner {
+display: flex;
+justify-content: center;
+}
+
+.annonce-flex {
+  display: flex;
+justify-content: center;
+
+}
+
+
+
+
 @media(max-width: 768px) {
   .black-card  {
     width: -webkit-fill-available;
@@ -336,13 +360,14 @@
 }
 
 .contactcard {
-  background: #494f4f;
+  background: white;
   display: flex;
   flex-direction: column;
   padding-top: 35px;
   margin-top: 30px;
-  padding: 30px 10px;
-  color: white;
+  padding: 30px 20px;
+  color: black;
+  width: 27vw;
   border-radius: 7px;
 }
 

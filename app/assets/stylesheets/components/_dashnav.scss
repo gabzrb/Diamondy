@@ -17,7 +17,7 @@
 }
 
 .list-nav {
-  width: 55vw;
+  width: 95vw;
 }
 
 .list-nav h3 {
@@ -59,11 +59,40 @@
 }
 
 
-.line_confirmation {
-    border-bottom: 2px solid black;
-    width: 100%;
 
-    margin-top: 25px;
+.line_confirmation {
+    border-bottom: 2px solid #9c9ea0;
+    width: 80%;
+    margin-top: 45px;
+    margin-left: 10%;
+    margin-bottom: 5%;
+  }
+
+
+.card-trial {
+ margin-bottom: 4%;
+}
+
+.card-trial-elements {
+   display: flex;
+    flex-direction: row;
+    margin-right: 30px;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+   padding: 22px 50px 0px;
+
+      }
+
+  .card-trial img {
+
+width: 11vw;
+  position: relative;
+}
+
+
+body {
+  background-color: #ffff
 }
 
 

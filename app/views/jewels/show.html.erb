@@ -1,8 +1,9 @@
-<div class="container">
+
   <div class="row">
     <div class=" col col-xs-12 col-lg-12">
       <div class="card-showproduct">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="card-showproduct-picture">
+         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <% if @photos[0] %>
@@ -27,19 +28,24 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
+         </div>
         </div>
         <div class="card-showproduct-infos">
           <h1><%= @jewel.product.description  %></h1>
-          <div class="line_confirmation"></div>
+
           <div class="element-infos">
             <h2>Catégorie : <%= @jewel.category %></h2>
             <h2>Etat : <%= @jewel.state  %></h2>
             <h2>Marque : <%= @jewel.brand  %></h2>
           </div>
           <h2 class="price-product"><%= @jewel.product.price.to_i %>€</h2>
-          <%= link_to 'Fiche Marchand',user_path(@jewel.product.user, query: @jewel.product.id), class: "btn btn-contact" %>
+
+          <div class="line_confirmation"></div>
+
+          <%= link_to 'Fiche Marchand',user_path(@jewel.product.user, query: @jewel.product.id), class: "btn btn-description2" %>
         </div>
       </div>
     </div>
   </div>
-</div>
+ <%= render 'shared/footer' %>
+

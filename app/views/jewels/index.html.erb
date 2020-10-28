@@ -1,78 +1,66 @@
-<div class="container list-nav">
-<%= form_tag jewels_path, method: :get do %>
-
-<div class="border-tag">
-
-   <div class="cardcategory">
-     <div class="col col-xs-12 ">
-       <div class="searchcategory">
-        <div class="searchtitle">
-          <h6> Catégorie  </h6>
-          </div>
-          <div class="searchcontent">
-            <%= select_tag 'query[category]', options_for_select(Jewel::CATEGORY)  %>
-          </div>
-        </div>
-      </div>
-
-<div class="col col-xs-12 ">
-    <div class="searchcategory">
-      <div class="searchtitle">
-        <h6> Etat </h6>
-      </div>
-        <div class="searchcontent">
-          <%= select_tag 'query[state]', options_for_select(Jewel::STATES) %>
-         </div>
-    </div>
+<div class="banner-product2" style="background-image:
+  url(<%= image_path 'bijoux-banner' %>);">
+</div>
+<div class="bluewrapper2">
+    <h3>Bijoux</h3>
+    <h5 class="text-center"> Sed (saepe enim redeo ad Scipionem, cuius omnis sermo erat de amici</h5>
 </div>
 
-<div class="col col-xs-12 ">
-    <div class="searchcategory">
-      <div class="searchtitle">
-        <h6> Marque </h6>
-      </div>
-      <div class="searchcontent">
+
+<%= form_tag jewels_path, method: :get do %>
+
+<div class="row-diamond">
+  <div class="col-xs-12 col-md-4">
+     <h6> Catégorie  </h6>
+    <%= select_tag 'query[category]', options_for_select(Jewel::CATEGORY)  %>
+  </div>
+
+  <div class="col-xs-12 col-md-4">
+    <h6> Etat </h6>
+    <%= select_tag 'query[state]', options_for_select(Jewel::STATES) %>
+  </div>
+
+ <div class="col-xs-12 col-md-4">
+      <h6> Marque </h6>
      <%= select_tag 'query[brand]', options_for_select(Jewel::BRANDS) %>
-      </div>
-    </div>
-   </div>
   </div>
 
-    <div class="searchbouton">
-      <%= submit_tag "Rechercher", class: "btn btn-search" %>
+
+
+
+  </div>
+
+<div class="searchbouton text-center">
+      <%= submit_tag "Rechercher", class: "btn btn-search text-center" %>
       <%= link_to "🅧", jewels_path %>
-    </div>
-
-
-  </div>
-
-
+     </div>
 
 
 <% end %>
+
+<div class="line_confirmation"></div>
   <% @jewels.each do |jewel| %>
-  <div class="line_confirmation"></div>
-  <div class="card-trip">
+
+  <div class="card-trial">
+    <div class="card-trial-elements">
     <% if jewel.product.product_attachments.first %>
        <img src= <%= jewel.product.product_attachments.first.photo.url %> >
    <% else %>
       <img src="https://i.ibb.co/NNZJd2h/serkan-turk-v6jc-Ubxet-L0-unsplash.jpg" >
     <% end %>
-    <div class="card-trip-infos">
-      <div class="card-trip-detail">
-        <h2> <%= jewel.category %></h2>
+        <p> <%= jewel.category %></p>
         <p><%= jewel.product.description %></p>
+        <p> <%= jewel.product.price.to_i %> euros</p>
+
       </div>
-      <div >
-        <%= link_to 'Voir Produit',jewel_path(jewel), class: "btn btn-card-trip" %>
+
+      <div class="text-center">
+        <%= link_to 'DESCRIPTION',jewel_path(jewel), class: "btn btn-description text-center" %>
       </div>
-      <h2 class="card-trip-pricing"> <%= jewel.product.price.to_i %>€</h2>
-      <% if jewel.product.user.photo.url %>
-      <%= cl_image_tag jewel.product.user.photo, class:"card-trip-user avatar-bordered"  %>
-      <% else %>
-      <img src="https://i.ibb.co/mhL9zjd/user.png" class="card-trip-user avatar-bordered">
-      <% end %>
+
     </div>
-  </div>
   <% end %>
-</div>
+
+  <%= render 'shared/footer' %>
+
+

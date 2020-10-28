@@ -1,25 +1,27 @@
+<div class="annonce-banner">
+
 <% if user_signed_in? %>
 <%= simple_form_for(@annonce) do |f| %>
 <%= f.error_notification %>
-<div class="banner" style="background-image:
-  url(<%= image_path 'deal.png' %>);">
-  <div class="card black-card ">
-    <div class="form-row">
-      <div class="col">
+
+  <div class=" black-card ">
+    <div class="form-row2">
+      <div class="col-xs-12 col-md-4">
         <%= f.input :category, name: "type", collection: ["Bijoux","Diamant","Montre", "Demande spéciale"], label: false , placeholder: "Type 2" %>
       </div>
-    </div>
+</div>
     <%= f.input :description, as: :text, :input_html => { :rows => 7, :cols => 2 }, label: false %>
-    <%= f.button :submit, "AJOUTER A MA DEMANDE",class: "btn btn-block  btn-annonce",
+
+    <div class="annonce-flex">
+    <%= f.button :submit, "AJOUTER A MA DEMANDE",class: " btn-description4 text-center",
     data: { confirm: "Votre annonce a bien été prise en compte ! Elle sera validé et diffusé sur la plateforme sous maximum 24h" } %>
+    </div>
   </div>
 </div>
-<div class="banner-btn-center">
+
   <% end %>
-</div>
-</div>
-</div>
-</div>
+
+
 <% end %>
 <%= render 'shared/list_annonces',annonces: @annonces %>
 <%= render 'shared/footer' %>

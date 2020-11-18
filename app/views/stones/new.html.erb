@@ -1,4 +1,4 @@
-<div class="container">
+<div class="addcontainer">
   <div class="row">
     <div class=" col-xs-12 col-lg-12">
       <div class="contactcard text-center">
@@ -7,11 +7,11 @@
         <%= simple_form_for(@stone, as: :stone, method: :post, url: product_stones_path(@product)) do |f| %>
         <%= f.error_notification %>
         <div class="form-row">
-          <div class="col-xs-12 col-md-6">
+          <div class="col-xs-12 col-md-6 ">
             <%= f.input :shape, collection: Stone::SHAPES, label:'Forme' %>
           </div>
           <div class="col-xs-12 col-md-6">
-            <%= f.input :weight, label: 'Precisez le poids en Carats' %>
+            <%= f.input :weight, label: 'Poids (Carats)' %>
           </div>
           <div class="col-xs-12 col-md-6">
             <%= f.input :color, collection: Stone::COLORS, label:'Couleur' %>
@@ -36,12 +36,12 @@
           </div>
             <div class="col-xs-12 col-md-6">
             <div class="field">
-                <%= f.input :cert_attachment, input_html: { class: 'hidden', id: 'cert-input' }, label_html: { class: 'upload-photo', id: 'btn-cert'}, label: 'Upload le Certificat' %>
+                <%= f.input :cert_attachment, input_html: { class: 'hidden', id: 'cert-input' }, label_html: { class: 'upload-certificat', id: 'btn-cert'}, label: 'Charger le Certificat' %>
                 <%= f.hidden_field :cert_attachment_cache %>
             </div>
           </div>
           <div class=" form-actions col-xs-12 col-md-6">
-            <%= f.submit "Valider", class: "btn-contact" %>
+            <%= f.submit "Valider", class: "btn-search" %>
           </div>
           <% end %>
         </div>

@@ -135,7 +135,7 @@
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
-    background-color: #020a0a;
+    background-color: #03033A;
 }
 
 .nav {
@@ -369,6 +369,7 @@ justify-content: center;
   color: black;
   width: 27vw;
   border-radius: 7px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -389,16 +390,28 @@ justify-content: center;
 
 
 .upload-photo {
-    border: #808080 solid 2px;
+    border: #655a5a solid 2px;
     padding: 9px 12px;
     cursor: pointer;
     font-weight: 500;
     background-color: white;
     border-radius: 11px;
-    color: #808080;
+    color: #000000;
     margin-top: 20px;
+
 }
 
+.upload-photo {
+    border: #655a5a solid 1px;
+    padding: 9px 12px;
+    cursor: pointer;
+    font-weight: 500;
+    background-color: white;
+    border-radius: 11px;
+    color: #000000;
+    margin-top: 20px;
+
+}
 
 .hidden {
   display: none;

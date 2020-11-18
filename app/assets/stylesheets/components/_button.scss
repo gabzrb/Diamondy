@@ -206,7 +206,7 @@ margin-left: 15px;
 }
 
 .svgprofile {
-background-color: black;
+background-color: #03033A;
 background-attachment: fixed;
 background-size: cover;
 height: 30vh;
@@ -235,5 +235,14 @@ height: 30vh;
 
 .confirmed {
   background-color: #24cec6 !important;
+}
+
+
+.carousel-control-prev-icon {
+    background-color: black;
+}
+
+.carousel-control-next-icon {
+    background-color: black;
 }
 

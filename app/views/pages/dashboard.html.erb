@@ -36,35 +36,29 @@
     <div class="container list-nav">
       <h3>Mes Produits en ligne (<%= current_user.products.count %>)</h3>
       <% current_user.products.each do |product| %>
-      <div class="card-trip">
-        <% if product.product_attachments.first %>
+      <div class="card-trial">
+
+        <div class="card-trial-elements">
+
+            <% if product.product_attachments.first %>
         <%= cl_image_tag product.product_attachments.first.photo %>
         <% else %>
         <%= image_tag "https://i.ibb.co/cYPRmcc/diamondproduct.jpg" %>
         <% end %>
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= product.show_element %></h2>
-            <p><%= product.description %>.</p>
+            <p><%= product.show_element %></p>
+            <p> <%= product.price.to_i %>€</p>
+             <%= link_to 'Voir Produit', "/#{product.element}s/#{product.conect.id}", class: "btn btn-search" %>
             <div class='icon-edit'>
-              <p><i class="fas fa-pen"></i> <%= link_to 'Editer',edit_product_path(product) %></p>
-              <p> <i class="fas fa-trash"></i> <%= link_to 'Supprimer ',product_path(product), method: :delete %> </p>
+              <p id="link-dashboard"><i class="fas fa-pen"></i> <%= link_to 'Editer',edit_product_path(product) %></p>
+              <p id="link-dashboard"> <i class="fas fa-trash"></i> <%= link_to 'Supprimer ',product_path(product), method: :delete %> </p>
             </div>
           </div>
-          <div>
-            <%= link_to 'Voir Produit', "/#{product.element}s/#{product.conect.id}", class: "btn btn-contact" %>
-          </div>
-          <h2 class="card-trip-pricing"> <%= product.price.to_i %>€</h2>
-          <% if product.user.photo.url %>
-          <%= cl_image_tag product.user.photo, class:"card-trip-user avatar-bordered"  %>
-          <% else %>
-          <img src="https://i.ibb.co/mhL9zjd/user.png" class="card-trip-user avatar-bordered">
-          <% end %>
         </div>
-      </div>
       <% end %>
     </div>
+
   </div>
+
   <div class="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
     <div class="container list-nav">
       <div class="card">

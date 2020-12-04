@@ -38,7 +38,121 @@ select {
     height: 25px;
 }
 
+@media(max-width: 768px) {
 
+  #product_price {
+ border-radius: 20px;
+    border: 1px solid black;
+    padding-right: 8px;
+   text-align: center;
+    width: 80%;
+    height: 5vh;
+  margin-left: 29px !important;
+}
+
+
+#product_element {
+ border-radius: 20px;
+    border: 1px solid black;
+    padding-right: 8px;
+    padding-left: 5px;
+    width: 80%;
+  margin-left: 29px !important;
+  text-align-last: center;
+}
+
+  #stone_shape {
+border-radius: 20px;
+ border: 1px solid black;
+ width: 76%;
+color: black;
+ margin-left: 38px !important;
+-moz-text-align-last: center;
+text-align-last: center;
+ }
+
+ #stone_weight {
+ border-radius: 20px;
+    border: 1px solid black;
+    padding-right: 8px;
+    padding-left: 5px;
+    width: 80%;
+  margin-left: 38px !important;
+  text-align-last: center;
+  }
+
+  #stone_color {
+ border-radius: 20px;
+    border: 1px solid black;
+    padding-right: 8px;
+    padding-left: 5px;
+    width: 80%;
+   margin-left: 38px !important;
+  text-align-last: center;
+}
+
+#stone_purity {
+ border-radius: 20px;
+    border: 1px solid black;
+    padding-right: 8px;
+    padding-left: 5px;
+    width: 80%;
+  margin-left: 38px !important;
+  text-align-last: center;
+}
+
+
+#stone_size {
+ border-radius: 20px;
+    border: 1px solid black;
+    padding-right: 8px;
+    padding-left: 5px;
+    width: 80%;
+  margin-left: 38px !important;
+  text-align-last: center;
+}
+
+#stone_symetry {
+ border-radius: 20px;
+    border: 1px solid black;
+    padding-right: 8px;
+    padding-left: 5px;
+    width: 80%;
+  margin-left: 38px !important;
+  text-align-last: center;
+}
+
+#stone_polish {
+ border-radius: 20px;
+    border: 1px solid black;
+    padding-right: 8px;
+    padding-left: 5px;
+    width: 80%;
+  margin-left: 38px !important;
+  text-align-last: center;
+}
+
+#stone_fluo {
+ border-radius: 20px;
+    border: 1px solid black;
+    padding-right: 8px;
+    padding-left: 5px;
+    width: 80%;
+  margin-left: 38px !important;
+  text-align-last: center;
+}
+
+
+#stone_certificate {
+ border-radius: 20px;
+    border: 1px solid black;
+    padding-right: 8px;
+    padding-left: 5px;
+    width: 80%;
+  margin-left: 38px !important;
+  text-align-last: center;
+}
+}
 
 #stone_shape {
 border-radius: 20px;

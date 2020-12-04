@@ -241,6 +241,14 @@ height: 30vh;
 }
 
 @media(max-width: 768px) {
+
+.svgprofile {
+background-color: #03033A;
+background-attachment: fixed;
+background-size: cover;
+height: 34vh;
+}
+
   .btn-validation {
     padding: 10px;
     width: -webkit-fill-available;

@@ -93,7 +93,10 @@ body {
   background-color: #ffff
 }
 
-
+.watch_brand_material {
+  max-width: 60px;
+  overflow: scroll;
+}
 
 @media(max-width: 768px) {
 .card-trial-elements {
@@ -104,4 +107,11 @@ body {
     flex-grow: 1;
    padding: 22px 20px 0px;}
  }
+
+@media(max-width: 768px) {
+.watch_brand_material {
+  overflow: scroll;
+
+}
+   }
 

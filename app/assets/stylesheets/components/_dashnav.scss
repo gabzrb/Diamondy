@@ -90,11 +90,29 @@ width: 11vw;
   position: relative;
 }
 
-
 body {
   background-color: #ffff
 }
 
+@media screen and (min-width: 576px) {
+.card-trial-elements {
+   display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+   padding: 22px 20px 0px;
 
+      }
+}
 
+@media(max-width: 768px) {
+.card-trial-elements {
+   display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+   padding: 22px 20px 0px;}
+ }
 

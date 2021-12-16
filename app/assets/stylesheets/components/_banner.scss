@@ -44,7 +44,7 @@ color: white;
 
 @media(max-width: 768px) {
 .banner-product {
-  height: 25vh !important;
+  height: 20vh !important;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   background-repeat:no-repeat;
@@ -52,7 +52,7 @@ color: white;
 }
 
 .banner-product2 {
-  height: 32vh !important;
+  height: 27vh !important;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   background-repeat:no-repeat;
